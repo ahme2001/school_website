@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+  <div class="main">
+    <div class="login">
+      <form>
+        <label for="chk" aria-hidden="true">Login</label>
+        <input (keyup)="signIn()" type="text" [(ngModel)]="id" name="email" placeholder="username || id" required="">
+        <input (keyup)="signIn()" type="password" [(ngModel)]="password" name="pswd" placeholder="Password" required="">
+        <button (click)="enter()">Login</button>
+      </form>
+      
+      <div class="error" [style.display]="displayAlert">
+        <p>Your id and password doesn't match</p>
+      </div>
+      
+      <div class="done" [style.display]="displayDone">
+        <p>Your id and password matched</p>
+      </div>
+    
+    </div>
+  </div>
+</body>
+
+</html>
