@@ -11,9 +11,9 @@ public class DButil {
         if(connection != null) return connection;
 
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/?useSSL=false";
-        String user = "";
-        String password = "";
+        String url = "jdbc:mysql://localhost:3306/school?useSSL=false";
+        String user = "root";
+        String password = "TIGER";
 
         try {
             Class.forName(driver);

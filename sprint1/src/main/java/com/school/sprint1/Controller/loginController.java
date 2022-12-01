@@ -14,6 +14,9 @@ public class loginController {
 
     @PostMapping("/login")
     public boolean test(@RequestBody String input){
-        return loginService.run(input);
+//        System.out.println(input);
+        boolean res = loginService.run(input);
+//        System.out.println(res);
+        return res;
     }
 }
