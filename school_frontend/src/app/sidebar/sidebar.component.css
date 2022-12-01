@@ -1,0 +1,48 @@
+.container{
+  width: 20%;
+  position: relative;
+  border: grey solid 1px;
+  height: 100vh;
+  float: left;
+	background: linear-gradient(to bottom, #00539CFF, #EEA47FFF);
+  color: white;
+}
+*{
+  box-sizing: border-box;
+
+}
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+nav{
+  width: 80%;
+  float: left;
+}
+h2{
+  text-align: center;
+}
+ul{
+  list-style: none;
+  width: 100%;
+}
+li{
+  padding-top: 3px;
+  font-size: 30px;
+  cursor: pointer;
+  width: 100%;
+  margin: auto;
+}
+a{
+  text-decoration: none;
+  color: rgb(2, 2, 2);
+}
+li :hover{
+  background-color: rgb(70, 82, 16);
+}
+.btn{
+  text-align: center;
+  margin: 0 auto;
+  background-color: #00539CFF;
+  color: #fff;
+}
