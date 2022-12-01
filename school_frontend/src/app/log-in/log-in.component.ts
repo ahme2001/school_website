@@ -18,11 +18,13 @@ export class LogInComponent implements OnInit {
   sendRequestSignIn(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/expression", x,
+      this.http.post("http://localhost:8070/School/login", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
-            if(this.answer == "ERROR"){
+            console.log(this.answer);
+            
+            if(this.answer == "ERROR"||this.answer =="false"){
               this.displayAlert = "block"
               this.displayDone = "None"
             }
@@ -42,26 +44,8 @@ export class LogInComponent implements OnInit {
   displayAlert: string = "None"
   displayDone: string = "None"
   signIn() {
-    console.log(this.password);
-    
-    // let signin = {
-    //   "email": this.emailSignIn,
-    //   "password": this.passwordSignIn
-    // }
-    // let sign = "signin&"+JSON.stringify(signin)
-    
     let msg = this.id + "," + this.password
-    console.log(msg)
     this.sendRequestSignIn(msg)
-    // if(this.id=="michael" && this.password=="123"){
-    //     this.displayDone = "block"
-    //     this.displayAlert = "None"
-    // }
-    // else{
-    //     this.displayDone = "None"
-    //     this.displayAlert = "block"
-    // }
-    console.log(this.answer)
   }
   enter(){
     if(this.displayDone == "block")
