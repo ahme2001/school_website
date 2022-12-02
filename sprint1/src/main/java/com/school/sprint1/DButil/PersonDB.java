@@ -11,7 +11,16 @@ public class PersonDB {
     public PersonDB() {
         connection = DButil.getConnection();
     }
+    public boolean addPerson(String values){
+        try {
+            PreparedStatement statement = connection.prepareStatement("insert into PERSON values(" + values + ")");
+            statement.execute();
 
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
     public String getPass(String id){
         String pass = "";
         try {

@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -14,12 +15,14 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LogInComponent,
     SidebarComponent,
-    ProfileComponent
+    ProfileComponent,
+    StaffComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
