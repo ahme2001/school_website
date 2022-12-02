@@ -49,7 +49,6 @@
 			<version>2.10</version>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DButil {
+    //change password of your database connection before begining
     private static Connection connection = null;
 
     public static Connection getConnection(){
