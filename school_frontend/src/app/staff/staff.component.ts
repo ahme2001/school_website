@@ -20,47 +20,61 @@ export class StaffComponent implements OnInit {
   StudentForm:FormGroup;
   TeacherForm:FormGroup;
   StaffForm:FormGroup;
+  parent = {
+    "Name":"",
+    "National_Id":"",
+    "phone":"",
+    "Job":"",
+    "Address":"",
+    "Sex":""
+  };
 
   ngOnInit(): void {
     this.StudentForm = new FormGroup({
-      select: new FormControl(null),
-      name: new FormControl(null,Validators.required),
-      phone: new FormControl(null,[Validators.minLength(11),Validators.maxLength(11)]),
-      national_id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
-      address: new FormControl(null),
+      // select: new FormControl("Student"),
+      Name: new FormControl(null,Validators.required),
+      Phone: new FormControl(null,[Validators.minLength(11),Validators.maxLength(11)]),
+      National_Id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
+      Address: new FormControl(null),
       birth_date: new FormControl(null,Validators.required),
-      gender: new FormControl(null,Validators.required),
-      class: new FormControl(null,Validators.required),
+      Sex: new FormControl(null,Validators.required),
+      Class_Id: new FormControl(null,Validators.required),
+      St_Term_Id: new FormControl(null,Validators.required),
+      Curr_Term_Id: new FormControl(null,Validators.required),
       parent_name: new FormControl(null,Validators.required),
       parent_national_id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
-      parent_job: new FormControl(null,Validators.required)
+      parent_phone: new FormControl(null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]),
+      parent_job: new FormControl(null,Validators.required),
+      parent_sex: new FormControl(null,Validators.required),
     });
     this.TeacherForm = new FormGroup({
-      select: new FormControl(null),
-      name: new FormControl(null,Validators.required),
-      phone: new FormControl(null),
-      national_id: new FormControl(null,Validators.required),
-      address: new FormControl(null),
+      // select: new FormControl("Teacher"),
+      Name: new FormControl(null,Validators.required),
+      Phone: new FormControl(null,[Validators.minLength(11),Validators.maxLength(11)]),
+      National_Id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
+      Address: new FormControl(null),
       birth_date: new FormControl(null,Validators.required),
-      gender: new FormControl(null,Validators.required),
-      subject: new FormControl(null,Validators.required)
+      Sex: new FormControl(null,Validators.required),
+      Sub: new FormControl(null,Validators.required),
+      Experience: new FormControl(null,Validators.required)
     });
     this.StaffForm = new FormGroup({
-      select: new FormControl(null),
-      name: new FormControl(null,Validators.required),
-      phone: new FormControl(null),
-      national_id: new FormControl(null,Validators.required),
-      address: new FormControl(null),
+      // select: new FormControl("Staff"),
+      Name: new FormControl(null,Validators.required),
+      Phone: new FormControl(null,[Validators.minLength(11),Validators.maxLength(11)]),
+      National_Id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
+      Address: new FormControl(null),
       birth_date: new FormControl(null,Validators.required),
-      gender: new FormControl(null,Validators.required),
-      job: new FormControl(null,Validators.required)
+      Sex: new FormControl(null,Validators.required),
+      Job: new FormControl(null,Validators.required)
     });
   }
 
+  URL : string;
   answer=""
-  sendRequestCreateAccount(x: object) {
+  sendRequestCreateAccount(x: string) {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/", x,
+      this.http.post(this.URL, x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -69,7 +83,7 @@ export class StaffComponent implements OnInit {
               alert(this.answer)
             }
             else{
-              alert("Succes")
+              alert(this.answer)
             }
         }
           , (error) => {
@@ -107,20 +121,35 @@ export class StaffComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     if(this.selection == "Student"){
-      console.log(typeof(this.StudentForm.value))
-      console.log(this.StudentForm.value)
-      this.sendRequestCreateAccount(this.StudentForm.value);
+      // this.StudentForm.value.select = this.selection;
+      this.parent.Name = this.StudentForm.value.parent_name
+      this.parent.National_Id = this.StudentForm.value.parent_national_id
+      this.parent.Job = this.StudentForm.value.parent_job
+      this.parent.phone = this.StudentForm.value.parent_phone
+      this.parent.Sex = this.StudentForm.value.parent_sex
+      this.parent.Address = this.StudentForm.value.Address
+      this.URL = "http://localhost:8070/School/create/parent";
+      var temp = JSON.stringify(this.parent);
+      console.log(temp)
+      // this.sendRequestCreateAccount(temp);
+      var temp = JSON.stringify(this.StudentForm.value);
+      console.log(temp)
+      this.URL = "http://localhost:8070/School/create/student";
+      // this.sendRequestCreateAccount(temp);
       this.StudentForm.reset();
     }else if (this.selection == "Teacher"){
-      console.log(typeof(this.TeacherForm.value))
-      console.log(this.TeacherForm.value)
-      this.sendRequestCreateAccount(this.TeacherForm.value);
+      var temp = JSON.stringify(this.TeacherForm.value);
+      console.log(temp)
+      this.URL = "http://localhost:8070/School/create/teacher";
+      // this.sendRequestCreateAccount(temp);
       this.TeacherForm.reset();
     }else{
-      console.log(typeof(this.StaffForm.value))
-      console.log(this.StaffForm.value)
-      this.sendRequestCreateAccount(this.StaffForm.value);
+      var temp = JSON.stringify(this.StaffForm.value);
+      console.log(temp)
+      this.URL = "http://localhost:8070/School/create/staff";
+      // this.sendRequestCreateAccount(temp);
       this.StaffForm.reset();
     }
+    this.submitted = false
   }
 }
