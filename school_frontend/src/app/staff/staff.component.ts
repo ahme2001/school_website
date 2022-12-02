@@ -23,7 +23,7 @@ export class StaffComponent implements OnInit {
   parent = {
     "Name":"",
     "National_Id":"",
-    "phone":"",
+    "Phone":"",
     "Job":"",
     "Address":"",
     "Sex":""
@@ -125,7 +125,7 @@ export class StaffComponent implements OnInit {
       this.parent.Name = this.StudentForm.value.parent_name
       this.parent.National_Id = this.StudentForm.value.parent_national_id
       this.parent.Job = this.StudentForm.value.parent_job
-      this.parent.phone = this.StudentForm.value.parent_phone
+      this.parent.Phone = this.StudentForm.value.parent_phone
       this.parent.Sex = this.StudentForm.value.parent_sex
       this.parent.Address = this.StudentForm.value.Address
       this.URL = "http://localhost:8070/School/create/parent";
