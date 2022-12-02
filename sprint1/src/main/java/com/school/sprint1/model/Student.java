@@ -48,7 +48,7 @@ public class Student extends Person{
 
     public void setP_id() {
         String p_id = new ParentDB().getID(this.parent_national_id);
-        P_id = p_id;
+        this.P_id = p_id;
     }
 
     public String getSt_Term_Id() {

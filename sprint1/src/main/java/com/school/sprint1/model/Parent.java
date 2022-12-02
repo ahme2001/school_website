@@ -1,11 +1,10 @@
 package com.school.sprint1.model;
 
 import com.school.sprint1.DButil.ParentDB;
-import com.school.sprint1.DButil.StudentDB;
 
 public class Parent extends Person{
     String P_id;
-    String Jop;
+    String Job;
 
     public String getP_id() {
         return P_id;
@@ -15,12 +14,12 @@ public class Parent extends Person{
         P_id = super.id;
     }
 
-    public String getJop() {
-        return Jop;
+    public String getJob() {
+        return Job;
     }
 
-    public void setJop(String Jop) {
-        this.Jop = Jop;
+    public void setJob(String Jop) {
+        this.Job = Jop;
     }
 
     @Override
@@ -40,7 +39,7 @@ public class Parent extends Person{
     }
     public String ToStringSpecific() {
         return "\"" + this.P_id + "\"," +
-                "\"" + this.Jop + "\"" ;
+                "\"" + this.Job + "\"" ;
     }
     @Override
     public String generateId() {

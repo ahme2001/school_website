@@ -1,6 +1,5 @@
 package com.school.sprint1.Controller;
 
-import com.school.sprint1.Service.loginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

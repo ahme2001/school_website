@@ -118,7 +118,9 @@ export class StaffComponent implements OnInit {
       this.displayStafDone = "block"
     }
   }
-  onSubmit(){
+  sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+  async onSubmit(){
     this.submitted = true;
     if(this.selection == "Student"){
       // this.StudentForm.value.select = this.selection;
@@ -131,23 +133,24 @@ export class StaffComponent implements OnInit {
       this.URL = "http://localhost:8070/School/create/parent";
       var temp = JSON.stringify(this.parent);
       console.log(temp)
-      // this.sendRequestCreateAccount(temp);
+      this.sendRequestCreateAccount(temp);
       var temp = JSON.stringify(this.StudentForm.value);
+      await this.sleep(1000);
       console.log(temp)
       this.URL = "http://localhost:8070/School/create/student";
-      // this.sendRequestCreateAccount(temp);
-      this.StudentForm.reset();
+      this.sendRequestCreateAccount(temp);
+      // this.StudentForm.reset();
     }else if (this.selection == "Teacher"){
       var temp = JSON.stringify(this.TeacherForm.value);
       console.log(temp)
       this.URL = "http://localhost:8070/School/create/teacher";
-      // this.sendRequestCreateAccount(temp);
+      this.sendRequestCreateAccount(temp);
       this.TeacherForm.reset();
     }else{
       var temp = JSON.stringify(this.StaffForm.value);
       console.log(temp)
       this.URL = "http://localhost:8070/School/create/staff";
-      // this.sendRequestCreateAccount(temp);
+      this.sendRequestCreateAccount(temp);
       this.StaffForm.reset();
     }
     this.submitted = false
