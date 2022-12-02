@@ -39,7 +39,7 @@ public class ParentDB {
         }
         return str;
     }
-    public boolean addStudent(String values){
+    public boolean addParent(String values){
         try {
             PreparedStatement statement = connection.prepareStatement("insert into PARENT values(" + values + ")");
             statement.execute();

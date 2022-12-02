@@ -24,7 +24,7 @@ public class StaffDB {
         }
         return count;
     }
-    public boolean addStudent(String values){
+    public boolean addStaff(String values){
         try {
             PreparedStatement statement = connection.prepareStatement("insert into STAFF values(" + values + ")");
             statement.execute();

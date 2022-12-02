@@ -5,10 +5,6 @@ import com.school.sprint1.DButil.*;
 import com.school.sprint1.model.*;
 import org.springframework.stereotype.Service;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Objects;
 
 @Service
 public class CreateAccountService {
@@ -32,12 +28,12 @@ public class CreateAccountService {
         if(type == "Student") {
             return res && new StudentDB().addStudent(person.ToStringSpecific());
         }else if(type == "Staff"){
-            return res && new StaffDB().addStudent(person.ToStringSpecific());
+            return res && new StaffDB().addStaff(person.ToStringSpecific());
         }else if(type == "Parent"){
             System.out.println(person.ToStringSpecific());
-            return res && new ParentDB().addStudent(person.ToStringSpecific());
+            return res && new ParentDB().addParent(person.ToStringSpecific());
         }else if(type == "Teacher"){
-            return res && new TeacherDB().addStudent(person.ToStringSpecific());
+            return res && new TeacherDB().addTeacher(person.ToStringSpecific());
         }
         return true;
     }
