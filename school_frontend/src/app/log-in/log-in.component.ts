@@ -48,9 +48,13 @@ export class LogInComponent implements OnInit {
     this.sendRequestSignIn(msg)
   }
   enter(){
+    localStorage.setItem("Id", JSON.stringify(this.id))
+    localStorage.setItem("type", JSON.stringify("student"))
     if(this.displayDone == "block")
       this._router.navigate(['profile'])
     else
       this.displayAlert = "block"
+
+    console.log(JSON.parse(localStorage.getItem("Id")))
   }
 }
