@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SetGradesComponent } from './set-grades/set-grades.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     SidebarComponent,
     ProfileComponent,
-    StaffComponent
+    StaffComponent,
+    SetGradesComponent
   ],
   imports: [
     BrowserModule,
