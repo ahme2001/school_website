@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SetGradesComponent } from './set-grades/set-grades.component';
+import { ShowGradesComponent } from './show-grades/show-grades.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SetGradesComponent } from './set-grades/set-grades.component';
     SidebarComponent,
     ProfileComponent,
     StaffComponent,
-    SetGradesComponent
+    SetGradesComponent,
+    ShowGradesComponent
   ],
   imports: [
     BrowserModule,

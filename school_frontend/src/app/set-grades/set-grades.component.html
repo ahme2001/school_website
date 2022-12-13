@@ -25,9 +25,14 @@
     </div>
     <div class="col-2">
         <label>select Class</label>
-        <select class="form-control" [(ngModel)]="selection" (change)="change_selection()">
+        <select class="form-control" [(ngModel)]="class_selection" (change)="change_selection()">
         <option value="" [disabled]="true"> Select which one</option>
         <option *ngFor="let c of class" [value]="c?.name">{{ c?.name }}</option>
+        </select>
+        <label>Subject</label>
+        <select class="form-control" [(ngModel)]="subject_selection" >
+        <option value="" [disabled]="true"> Select which one</option>
+        <option *ngFor="let c of subject" [value]="c?.name">{{ c?.name }}</option>
         </select>
     </div>
 </div>

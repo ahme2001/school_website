@@ -22,11 +22,12 @@ export class SetGradesComponent implements OnInit {
       "grade": 0,
     }
   ]
-  selection = "1"
+  class_selection = "1"
+  subject_selection = "arabic";
+
+  subject=[{"name":"Arabic"},{"name":"Math"},{"name":"Science"},{"name":"Geography"}]
   class = [
-    {
-      "name":"3"
-    }
+    {"name":"3"}
   ]
   displaytable = "none"
 

@@ -1,0 +1,26 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+    <div class="col-9" >
+        <table class="table" [style.display]="displayTable">
+            <thead>
+              <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Grade</th>
+              </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let item of grades" >
+                    <th scope="row" class="col-2">{{item.subject}}</th>
+                    <td class="col-1">{{item.grade}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-2">
+        <label>select Class</label>
+        <select class="form-control" [(ngModel)]="class_selection" (change)="change_selection()">
+        <option value="" [disabled]="true"> Select which one</option>
+        <option *ngFor="let c of term" [value]="c?.name">{{ c?.name }}</option>
+        </select>
+    </div>
+</div>
