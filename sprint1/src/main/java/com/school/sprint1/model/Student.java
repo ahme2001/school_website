@@ -51,6 +51,10 @@ public class Student extends Person{
         this.P_id = p_id;
     }
 
+    public void setP_id(String p_id) {
+        P_id = p_id;
+    }
+
     public String getSt_Term_Id() {
         return St_Term_Id;
     }
