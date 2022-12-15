@@ -10,23 +10,60 @@ export class ProfileComponent implements OnInit {
   isStudent = false
   isTeacher = false
   isStaff = false
-  profile = {
-    "Name":"Michael Samir Azmy",
-    "National_Id":"3010101012",
-    "Phone":"01286265623",
+  isParent = false
+  student = {
+    "Class_Id":"",
+    "ST_Term_Id":"",
+    "Curr_term_id":"",
+    "P_id":"",
+    "Address":"",
+    "Phone":"",
+    "Sex":"",
+    "National_Id":"",
+    "Name":"",
+    "password":""
+  };
+
+  parent = {
     "Job":"",
     "Address":"",
-    "Sex":""
+    "Phone":"",
+    "Sex":"",
+    "National_Id":"",    
+    "Name":"",
+    "password":""
   };
+
+  teacher = {
+    "Experience":"",
+    "Sub":"",
+    "Address":"",
+    "Phone":"",
+    "Sex":"",
+    "National_Id":"",    
+    "Name":"",
+    "password":""
+  };
+
+  staff = {
+    "Job":"",
+    "Address":"",
+    "Phone":"",
+    "Sex":"",
+    "National_Id":"",
+    "Name":"",
+    "Password":"",
+  }
+
+
   constructor(private _router:Router,private http :HttpClient) { 
-    
     let x = JSON.parse(localStorage.getItem("type"))
-    // this.sendRequestSignIn(x)
-    // this.profile = JSON.parse(this.answer)
     if(x =="student") this.isStudent = true
     else if(x=="teacher") this.isTeacher = true
-    else this.isStaff = true
-    console.log(x);
+    else if(x=="staff") this.isStaff = true
+    else this.isParent = true;
+    let id = JSON.parse(localStorage.getItem("id"))
+    this.sendRequestSignIn(id)
   }
   answer =""
   sendRequestSignIn(x: string) {
@@ -36,16 +73,25 @@ export class ProfileComponent implements OnInit {
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
+            if(this.isStudent){
+              this.student= JSON.parse(this.answer)
+            }
+            else if(this.isParent){
+              this.parent= JSON.parse(this.answer)
+            }
+            else if(this.isTeacher){
+              this.teacher= JSON.parse(this.answer)
+            }
+            else{
+                this.staff= JSON.parse(this.answer)
+            }
+
             console.log(this.answer);
         }
           , (error) => {
             console.log(error);
           });
     }
-  }
-  
-  findingType(){
-    
   }
   ngOnInit(): void {
   }
