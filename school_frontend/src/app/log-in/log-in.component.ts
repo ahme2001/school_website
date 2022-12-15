@@ -43,13 +43,29 @@ export class LogInComponent implements OnInit {
   password:string = ""
   displayAlert: string = "None"
   displayDone: string = "None"
+  account = {
+    "id":"",
+    "pass":"",
+  };
   signIn() {
-    let msg = this.id + "," + this.password
+
+    this.account.id = this.id
+    this.account.pass = this.password;
+    // let msg = this.id + "," + this.password
+    let msg = JSON.stringify(this.account)
+    console.log(msg)
     this.sendRequestSignIn(msg)
   }
   enter(){
     localStorage.setItem("Id", JSON.stringify(this.id))
-    localStorage.setItem("type", JSON.stringify("student"))
+    if(this.id[2]=='0')
+      localStorage.setItem("type", JSON.stringify("student"))
+    else if(this.id[2]=='1')
+      localStorage.setItem("type", JSON.stringify("parent"))
+    else if(this.id[2]=='2')
+      localStorage.setItem("type", JSON.stringify("teacher"))
+    else if(this.id[2]=='3')
+      localStorage.setItem("type", JSON.stringify("staff"))
     if(this.displayDone == "block")
       this._router.navigate(['profile'])
     else
