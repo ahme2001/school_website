@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewQuizComponent } from './new-quiz/new-quiz.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     SidebarComponent,
     ProfileComponent,
-    StaffComponent
+    StaffComponent,
+    NewQuizComponent
   ],
   imports: [
     BrowserModule,
