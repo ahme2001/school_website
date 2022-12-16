@@ -57,6 +57,7 @@ export class LogInComponent implements OnInit {
     this.sendRequestSignIn(msg)
   }
   enter(){
+
     localStorage.setItem("Id", JSON.stringify(this.id))
     if(this.id[3]=='1')
       localStorage.setItem("type", JSON.stringify("student"))

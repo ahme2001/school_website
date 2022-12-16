@@ -1,0 +1,66 @@
+<app-sidebar></app-sidebar>
+<h1 class="text-center">Add new Quiz</h1>
+<div class="container">
+    <div class="row py-3">
+        <p class="choose col-6">Choose the class:</p>
+        <select class="m-auto col-6" name="classes" id="">
+            <option [(ngModel)]="chosenClass" *ngFor="let item of classes" value="{{item.Id}}">{{item.Name}}</option>
+        </select>
+        <div class="row">
+            <p class="choose col-6">Quiz description</p>
+            <input class="col-6 m-auto" type="text" [(ngModel)]="QuizTitle">
+        </div>
+        <div class="row"> 
+            <p class="choose col-6">The quiz end date</p>
+            <input class="col-6" type="date" [(ngModel)]="endDate">
+        </div>
+    </div>
+
+    <div class="row">
+        <p class="choose col-4">Add new question</p>
+        <textarea [(ngModel)]="question" class="m-auto mx-5" name="question" id="" cols="100" rows="3"
+            placeholder="The question"></textarea>
+
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <p>Choice 1</p>
+            <input [(ngModel)]="ch1" required="" type="text">
+            <p>Choice 2</p>
+            <input [(ngModel)]="ch2" required="" class="" type="text">
+        </div>
+        <div class="col-5">
+            <p>Choice 3</p>
+            <input [(ngModel)]="ch3" required="" class="w-100" class="" type="text">
+            <p>Choice 4</p>
+            <input [(ngModel)]="ch4" required="" class="" type="text">
+        </div>
+    </div>
+    <div class="row py-2">
+        <p class="col-5 px-3">The solution is 1 or 2 or 3 or 4:</p>
+        <input [(ngModel)]="sol" required class="col-5" type="number">
+    </div>
+    <div class="error" [style.display]="displayAlert">
+        <p>{{alert}}</p>
+    </div>
+    <button (click)="addQuestion()" class="btn btn-secondary w-25  my-1">ADD question</button>
+    <div *ngIf="isQuestion" class="card p-2 m-2">
+        <p class="choose">The Questions added</p>
+        <div *ngFor="let item of questions;let i = index">
+
+            <p><b>Question {{i+1}} is:</b> {{item.question}}</p>
+            <div class="row">
+                <p class="col-6"><b>Choice 1:</b> {{item.choice_1}}</p>
+                <p class="col-6"><b>Choice 2:</b> {{item.choice_2}}</p>
+                <p class="col-6"><b>Choice 3:</b> {{item.choice_3}}</p>
+                <p class="col-6"><b>Choice 4:</b> {{item.choice_4}}</p>
+                <p><b>The solution:</b> {{item.solution}}</p>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <button (click)="submit()" class="btn btn-secondary w-25 float-end my-1">Submit Quiz</button>
+
+</div>

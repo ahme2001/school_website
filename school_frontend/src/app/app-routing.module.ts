@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LogInComponent } from './log-in/log-in.component';
 import { NewQuizComponent } from './new-quiz/new-quiz.component';
 import { ProfileComponent } from './profile/profile.component';
+import { QuizComponent } from './quiz/quiz.component';
 import { StaffComponent } from './staff/staff.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'log',component:LogInComponent},
   {path:'new_Quiz',component:NewQuizComponent},
+  {path:'Quiz',component:QuizComponent},
   {path:'',component:LogInComponent}
 ];
 
