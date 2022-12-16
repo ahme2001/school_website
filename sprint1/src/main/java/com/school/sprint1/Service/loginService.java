@@ -13,6 +13,7 @@ public class loginService {
         loginInfo info = getInfo(input);
         String id = info.getId();
         String pass = info.getPass();
+        System.out.println(id + " " + pass);
         return check(id,pass);
     }
 
@@ -20,8 +21,7 @@ public class loginService {
     private boolean check(String id,String pass){
         PersonDB personDB = new PersonDB();
         String passFromDb = personDB.getPass(id);
-        if(Objects.equals(pass, passFromDb)) return true;
-        return false;
+        return Objects.equals(pass, passFromDb);
     }
 
     private loginInfo getInfo(String input){
