@@ -11,7 +11,7 @@ public class PersonDB {
     public PersonDB() {
         connection = DButil.getConnection();
     }
-    public boolean addPerson(String values){
+    public boolean addPerson(String values) {
         try {
             PreparedStatement statement = connection.prepareStatement("insert into PERSON values(" + values + ")");
             statement.execute();
@@ -21,6 +21,8 @@ public class PersonDB {
             return false;
         }
         return true;
+    }
+
     public String getPass(String id){
         String pass = "";
         try {

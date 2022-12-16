@@ -1,5 +1,8 @@
 package com.school.sprint1.DButil;
 
+import com.school.sprint1.model.Student;
+import com.school.sprint1.model.Teacher;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,4 +39,5 @@ public class TeacherDB {
         }
         return true;
     }
+
 }
