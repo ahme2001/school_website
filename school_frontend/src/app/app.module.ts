@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SetExamTableComponent } from './set-exam-table/set-exam-table.component';
+import { ShowExamTableComponent } from './show-exam-table/show-exam-table.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     SidebarComponent,
     ProfileComponent,
-    StaffComponent
+    StaffComponent,
+    SetExamTableComponent,
+    ShowExamTableComponent
   ],
   imports: [
     BrowserModule,

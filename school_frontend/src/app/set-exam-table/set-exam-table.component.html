@@ -1,0 +1,49 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+  <div class="mt-2">
+    <label>Select Year</label>
+    <select  [(ngModel)]="YearSelection" class="col-2 ms-3">
+      <option *ngFor="let c of year" [value]="c?.code">{{ c?.name }}</option>
+    </select>
+    <label class="ms-3">Select Term</label>
+    <select [(ngModel)]="TermSelection" class="col-2 ms-3">
+      <option *ngFor="let c of term" [value]="c?.name">{{ c?.name }}</option>
+    </select>
+    <button style="background-color: #00539CFF; color:white;" (click)="getSubject()" class="col-2 ms-5 my-3 ps-3">
+      Get Subject
+    </button>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Subject</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody >
+          <tr *ngFor="let item of examTable.days" >
+              <th scope="row" class="col-3">{{item.subject}}</th>
+              <td class="col-3">
+                <input type="datetime-local" name="birthdaytime" class="ms-2" [(ngModel)]="item.date">
+              </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <button style="background-color: #00539CFF; color:white;" (click)="submitTable()" class="col-1 ms-3">
+    Submit
+</button>
+</div>
+  <!-- <div *ngFor="let item of examTable.days" class="mt-2">
+    <label >Exam date (day and time):</label>
+    <input type="datetime-local" name="birthdaytime" class="ms-2" [(ngModel)]="item.date">
+    <label class="ms-5">Subject</label>
+    <input type="text" class="ms-2" name="birthdaytime" [(ngModel)]="item.subject">
+  </div>
+  <div class="col-2 ms-5 my-3 ps-3">
+  <button style="background-color: #00539CFF; color:white;" (click)="submitTable()" class="form-control">
+          Submit
+  </button>
+</div>
+</div> -->
