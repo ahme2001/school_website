@@ -23,7 +23,7 @@ export class LogInComponent implements OnInit {
         .subscribe(response => {
             this.answer = response;
             console.log(this.answer);
-            
+
             if(this.answer == "ERROR"||this.answer =="false"){
               this.displayAlert = "block"
               this.displayDone = "None"
@@ -43,14 +43,25 @@ export class LogInComponent implements OnInit {
   password:string = ""
   displayAlert: string = "None"
   displayDone: string = "None"
+  account = {
+    "id":"",
+    "pass":"",
+  };
   signIn() {
-    let msg = this.id + "," + this.password
+    this.account.id = this.id
+    this.account.pass = this.password;
+    // let msg = this.id + "," + this.password
+    let msg = JSON.stringify(this.account)
     this.sendRequestSignIn(msg)
   }
   enter(){
+    localStorage.setItem("Id", JSON.stringify(this.id))
+    localStorage.setItem("type", JSON.stringify("student"))
     if(this.displayDone == "block")
       this._router.navigate(['profile'])
     else
       this.displayAlert = "block"
+
+    console.log(JSON.parse(localStorage.getItem("Id")))
   }
 }

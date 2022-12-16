@@ -123,7 +123,6 @@ export class StaffComponent implements OnInit {
   async onSubmit(){
     this.submitted = true;
     if(this.selection == "Student"){
-      // this.StudentForm.value.select = this.selection;
       this.parent.Name = this.StudentForm.value.parent_name
       this.parent.National_Id = this.StudentForm.value.parent_national_id
       this.parent.Job = this.StudentForm.value.parent_job
