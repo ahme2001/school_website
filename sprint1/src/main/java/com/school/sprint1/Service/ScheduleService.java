@@ -4,12 +4,13 @@ package com.school.sprint1.Service;
 import com.google.gson.Gson;
 import com.school.sprint1.DButil.ClassTableDB;
 import com.school.sprint1.DButil.StudentDB;
-import com.school.sprint1.gson.ClassTableSetting;
-import com.school.sprint1.gson.Day_Lecture;
-import com.school.sprint1.gson.Lectures;
-import com.school.sprint1.gson.scheduleInfo;
+import com.school.sprint1.DButil.TeacherDB;
+import com.school.sprint1.DButil.TeacherTableDB;
+import com.school.sprint1.gson.*;
 import com.school.sprint1.model.ClassTable;
 import com.school.sprint1.model.Student;
+import com.school.sprint1.model.Teacher;
+import com.school.sprint1.model.TeacherTable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,8 +21,6 @@ public class ScheduleService {
         String id = info.getId();
         StudentDB studentDB = new StudentDB();
         Student student = studentDB.getStudent(id);;
-
-
         String classId = student.getClass_Id();
 
         // get table from class table with the class id
@@ -51,16 +50,24 @@ public class ScheduleService {
         String id = info.getId();
 
         // get table from teacher table with the id
+        TeacherTableDB teacherTableDB = new TeacherTableDB();
+        TeacherTable[] teacherTables = teacherTableDB.getTeacherTable(id);
+
+        TeacherTableSetting teacherTable = getTeacherTable(teacherTables);
 
         Gson gson = new Gson();
-//        return gson.toJson(teacherTable)
-        return null;
+        return gson.toJson(teacherTable);
     }
 
     public boolean setTeacherTable(String input){
 
+        // split the gson
+        TeacherTableSetting teacherTableSetting = splitTeacherTable(input);
 
-        return true;
+        // insert the table to the database
+        TeacherTableDB teacherTableDB = new TeacherTableDB();
+        return teacherTableDB.insertTable(teacherTableSetting);
+
     }
 
     private scheduleInfo getInfo(String input){
@@ -93,5 +100,30 @@ public class ScheduleService {
             days[i] = day_lecture;
         }
         return new ClassTableSetting(classId,termId,days);
+    }
+
+    private TeacherTableSetting splitTeacherTable(String input){
+        Gson gson = new Gson();
+        return gson.fromJson(input,TeacherTableSetting.class);
+    }
+
+    private TeacherTableSetting getTeacherTable(TeacherTable[] teacherTables){
+        String teacherId = teacherTables[0].getTeacher_id();
+
+        Day_Lecture[] days = new Day_Lecture[6];
+        for(int i=0;i<6;i++){
+            Day_Lecture day_lecture = new Day_Lecture();
+            day_lecture.setDay(teacherTables[i].getDay());
+            Lectures lectures = new Lectures();
+            lectures.setLec1(teacherTables[i].getLec1());
+            lectures.setLec2(teacherTables[i].getLec2());
+            lectures.setLec3(teacherTables[i].getLec3());
+            lectures.setLec4(teacherTables[i].getLec4());
+            lectures.setLec5(teacherTables[i].getLec5());
+            lectures.setLec6(teacherTables[i].getLec6());
+            day_lecture.setLectures(lectures);
+            days[i] = day_lecture;
+        }
+        return new TeacherTableSetting(teacherId,days);
     }
 }

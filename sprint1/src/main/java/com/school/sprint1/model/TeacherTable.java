@@ -10,6 +10,20 @@ public class TeacherTable {
     private String lec5;
     private String lec6;
 
+    public TeacherTable(String teacher_id, String day, String lec1, String lec2, String lec3, String lec4, String lec5, String lec6) {
+        this.teacher_id = teacher_id;
+        this.day = day;
+        this.lec1 = lec1;
+        this.lec2 = lec2;
+        this.lec3 = lec3;
+        this.lec4 = lec4;
+        this.lec5 = lec5;
+        this.lec6 = lec6;
+    }
+
+    public TeacherTable() {
+    }
+
     public String getTeacher_id() {
         return teacher_id;
     }
@@ -72,5 +86,17 @@ public class TeacherTable {
 
     public void setLec6(String lec6) {
         this.lec6 = lec6;
+    }
+
+    @Override
+    public String toString() {
+        return "\"" + this.teacher_id + "\"," +
+                "\"" + this.day + "\"," +
+                "\"" + this.lec1 + "\"," +
+                "\"" + this.lec2 + "\"," +
+                "\"" + this.lec3 + "\"," +
+                "\"" + this.lec4 + "\"," +
+                "\"" + this.lec5 + "\"," +
+                "\"" + this.lec6 + "\"";
     }
 }
