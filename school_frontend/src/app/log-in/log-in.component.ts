@@ -56,12 +56,17 @@ export class LogInComponent implements OnInit {
   }
   enter(){
     localStorage.setItem("Id", JSON.stringify(this.id))
-    localStorage.setItem("type", JSON.stringify("student"))
+    if(this.id[3]=='1')
+      localStorage.setItem("type", JSON.stringify("student"))
+    else if(this.id[3]=='2')
+      localStorage.setItem("type", JSON.stringify("parent"))
+    else if(this.id[3]=='3')
+      localStorage.setItem("type", JSON.stringify("teacher"))
+    else if(this.id[3]=='4')
+      localStorage.setItem("type", JSON.stringify("staff"))
     if(this.displayDone == "block")
       this._router.navigate(['profile'])
     else
       this.displayAlert = "block"
-
-    console.log(JSON.parse(localStorage.getItem("Id")))
   }
 }

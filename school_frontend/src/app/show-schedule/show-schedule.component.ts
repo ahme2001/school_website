@@ -11,11 +11,11 @@ export class ShowScheduleComponent implements OnInit {
 
   constructor(private _router:Router,private http :HttpClient) {
     this.type = localStorage.getItem("type");
-    this.Person_id.ID = JSON.parse(localStorage.getItem("Id"))
-    if(this.type == "student")
+    this.Person_id.id = JSON.parse(localStorage.getItem("Id"))
+    if(this.type.match("student") !== null)
     {
       this.URL = "http://localhost:8070/School/student/get/table";
-    }else if (this.type == "teacher"){
+    }else if (this.type.match("teacher") !== null){
       this.URL = "http://localhost:8070/School/teacher/get/table";
     }
     var temp = JSON.stringify(this.Person_id);
@@ -27,7 +27,7 @@ export class ShowScheduleComponent implements OnInit {
 
   type = ""
   Person_id = {
-    "ID" : ""
+    "id" : ""
   }
 
   Table = {
