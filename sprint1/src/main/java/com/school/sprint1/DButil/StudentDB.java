@@ -1,9 +1,14 @@
 package com.school.sprint1.DButil;
 
+import com.google.gson.Gson;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Vector;
 
 public class StudentDB {
     private Connection connection;
@@ -34,5 +39,19 @@ public class StudentDB {
             return false;
         }
         return true;
+    }
+    public Map<String,String> getStudents(String Term){
+        Map<String,String> mapStudent =new HashMap();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT St_Id, Name  FROM STUDENT join PERSON ON St_Id = Id WHERE Curr_Term_Id  LIKE \"" + Term +"%\"");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                mapStudent.put(resultSet.getString(1), resultSet.getString(2));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return mapStudent;
     }
 }
