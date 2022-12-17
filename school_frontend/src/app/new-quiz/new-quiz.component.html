@@ -3,8 +3,8 @@
 <div class="container">
     <div class="row py-3">
         <p class="choose col-6">Choose the class:</p>
-        <select class="m-auto col-6" name="classes" id="">
-            <option [(ngModel)]="chosenClass" *ngFor="let item of classes" value="{{item.Id}}">{{item.Name}}</option>
+        <select [(ngModel)]="chosenClass" class="m-auto col-6" name="classes" id="">
+            <option  *ngFor="let item of classes" value="{{item.Id}}">{{item.Name}} </option>
         </select>
         <div class="row">
             <p class="choose col-6">Quiz description</p>
@@ -48,7 +48,6 @@
     <div *ngIf="isQuestion" class="card p-2 m-2">
         <p class="choose">The Questions added</p>
         <div *ngFor="let item of questions;let i = index">
-
             <p><b>Question {{i+1}} is:</b> {{item.question}}</p>
             <div class="row">
                 <p class="col-6"><b>Choice 1:</b> {{item.choice_1}}</p>

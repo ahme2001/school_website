@@ -20,14 +20,7 @@ export class NewQuizComponent implements OnInit {
   chosenClass = ""
   alert = ""
   questions = [
-    {
-      "question": "",
-      "choice_1": "",
-      "choice_2": "",
-      "choice_3": "",
-      "choice_4": "",
-      "solution": "",
-    }]
+    ]
   temp = {
     "question": "",
     "choice_1": "",
@@ -37,36 +30,40 @@ export class NewQuizComponent implements OnInit {
     "solution": "",
   }
   classes = [
-    {
-      "Id": "",
-      "Name": ""
-    }
   ]
+  class = {
+    "Id": [],
+    "Name": []
+  }
   constructor(private _router: Router, private http: HttpClient) {
     let id = localStorage.getItem("Id")
-    //  this.sendRequestClass(id)
-    let counter = 0
-    for (let i = 0; i < this.class.Class_Id.length; i++) {
-      let c = {
-        "Id": "",
-        "Name": ""
-      }
-      c.Id = this.class.Class_Id[counter]
-      c.Name = this.class.Name[counter]
-      this.classes.push(c)
-      counter++
-    }
+    console.log(id);
+    
+    this.sendRequestClass(id)
+    
   }
   answer = ""
   sendRequestClass(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/getInfo", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
           this.answer = response;
           this.class = JSON.parse(this.answer)
           console.log(this.class);
+          for (let i = 0; i < this.class.Id.length; i++) {
+            let c = {
+              "Id": "",
+              "Name": ""
+            }
+            c.Id = this.class.Id[i]
+            c.Name = this.class.Name[i]
+            this.classes.push(c)
+          }
+          console.log(this.classes);
+          
+          
         }
           , (error) => {
             console.log(error);
@@ -76,10 +73,12 @@ export class NewQuizComponent implements OnInit {
   sendRequestSubmit(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/setQuiz", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
           this.answer = response;
+          console.log(this.answer);
+          
         }
           , (error) => {
             console.log(error);
@@ -110,20 +109,17 @@ export class NewQuizComponent implements OnInit {
   }
 
   t = {
-    "class": "",
+    "classId": "",
     "endDate": "",
     "Qname":"",
-    "quetions": [],
+    "questions": [],
     "choice1": [],
     "choice2": [],
     "choice3": [],
     "choice4": [],
-    "solution": []
+    "answers": []
   }
-  class = {
-    "Class_Id": [],
-    "Name": []
-  }
+  
   submit() {
     if (this.questions.length != 0) {
       let counter = 0;
@@ -132,28 +128,24 @@ export class NewQuizComponent implements OnInit {
         this.alert = "Write the end date"
       }
       else {
-        this.t.class = this.chosenClass
+        // console.log(this.chosenClass);
+        
+        this.t.classId = this.chosenClass
         this.t.endDate = this.endDate
+        this.t.Qname = this.QuizTitle
         for (let i = 0; i < this.questions.length; i++) {
-          this.t.quetions[counter] = this.questions[counter].question
-          this.t.choice1[counter] = this.questions[counter].choice_1
-          this.t.choice2[counter] = this.questions[counter].choice_2
-          this.t.choice3[counter] = this.questions[counter].choice_3
-          this.t.choice4[counter] = this.questions[counter].choice_4
-          this.t.solution[counter] = this.questions[counter].solution
+          this.t.questions[i] = this.questions[i].question
+          this.t.choice1[i] = this.questions[i].choice_1
+          this.t.choice2[i] = this.questions[i].choice_2
+          this.t.choice3[i] = this.questions[i].choice_3
+          this.t.choice4[i] = this.questions[i].choice_4
+          this.t.answers[i] = this.questions[i].solution
           counter++;
         }
         console.log(JSON.stringify(this.t));
-        // this.sendRequestSubmit(JSON.stringify(this.t))
+        this.sendRequestSubmit(JSON.stringify(this.t))
         this.questions = [
-          {
-            "question": "",
-            "choice_1": "",
-            "choice_2": "",
-            "choice_3": "",
-            "choice_4": "",
-            "solution": "",
-          }]
+         ]
         this.displayAlert = "None"
       }
     }
@@ -180,9 +172,10 @@ export class NewQuizComponent implements OnInit {
     this.sol = ""
     console.log(JSON.stringify(this.questions));
     this.class = {
-      "Class_Id": [],
+      "Id": [],
       "Name": []
     }
+  
   }
   ngOnInit(): void {
   }

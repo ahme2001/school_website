@@ -1,13 +1,39 @@
 <app-sidebar></app-sidebar>
-<div class="container">
+<div *ngIf="f1">
+      <h1 class="text-center">The Quizes</h1>
+      <table class="text-center w-50 m-auto table table-striped">
+        <thead>
+          <tr>
+            <th >#</th>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Start</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of Quizes;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.Name}}</td>
+            <td>{{item.Id}}</td>
+            <td><button (click)="findingQuiz(item.Id)" class="btn btn-secondary my-1">Enter this quiz</button></td>
+          </tr>
+        </tbody>
+      </table>  
+</div>
+
+
+<div *ngIf="f2" class="container">
     <h1 class="text-center">The Quiz</h1>
     <div class="card p-2 m-2">
         <p class="choose">The Questions</p>
+        <p><b>Quiz name : </b>{{QuizName}}</p>
+        <p><b>End date : </b>{{EndDate}}</p>
         <div *ngFor="let item of questions;let i = index">
 
             <!-- <p><b>Question {{i+1}} is:</b> {{item.question}}</p> -->
             <fieldset>
-                <legend><p><b>Question {{i+1}}</b>{{item.question}}</p></legend>
+                <legend><p><b>Question {{i+1}}:  </b>{{item.question}}</p></legend>
+                
                 <div>
                   <input type="radio" id="ch1" value="1" name = {{i}} [(ngModel)]="value[i]">
                   <label for="ch1">{{item.choice_1}}</label>
@@ -35,7 +61,15 @@
         <div class="error" [style.display]="displayAlert">
             <p>You should answer all questions</p>
         </div>
-        <button (click)="print()" class="btn btn-secondary w-25 float-end my-1">Submit Quiz</button>
+        <button (click)="submit()" class="btn btn-secondary w-25 float-end my-1">Submit Quiz</button>
 
     </div>
+</div>
+
+
+<div *ngIf="f3" class="container">
+  <h1 class="text-center">The Quizes</h1>
+  <h2 class="text-center">You had done the quiz</h2>
+  <p class="text-center">Your score is <b class="c">{{grade.grade}}</b> from  <b class="c"> {{grade.from}} </b></p>
+
 </div>

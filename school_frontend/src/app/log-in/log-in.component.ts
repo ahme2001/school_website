@@ -51,8 +51,8 @@ export class LogInComponent implements OnInit {
 
     this.account.id = this.id
     this.account.pass = this.password;
-    // let msg = this.id + "," + this.password
-    let msg = JSON.stringify(this.account)
+    let msg = this.id + "," + this.password
+    // let msg = JSON.stringify(this.account)
     console.log(msg)
     this.sendRequestSignIn(msg)
   }
