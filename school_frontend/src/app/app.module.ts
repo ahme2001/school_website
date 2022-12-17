@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SetScheduleComponent } from './set-schedule/set-schedule.component';
+import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     SidebarComponent,
     ProfileComponent,
-    StaffComponent
+    StaffComponent,
+    SetScheduleComponent,
+    ShowScheduleComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ public class loginController {
     private loginService loginService;
 
     @PostMapping("/login")
-    public boolean test(@RequestBody String input){
+    public boolean login(@RequestBody String input){
 //        System.out.println(input);
         boolean res = loginService.run(input);
 //        System.out.println(res);
