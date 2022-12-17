@@ -54,7 +54,7 @@ public class ScheduleService {
         TeacherDB teacherDB = new TeacherDB();
         Teacher teacher = teacherDB.getTeacher(id);
         if(teacher == null) return null;
-
+        
         // get table from teacher table with the id
         TeacherTableDB teacherTableDB = new TeacherTableDB();
         TeacherTable[] teacherTables = teacherTableDB.getTeacherTable(id);
