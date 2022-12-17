@@ -3,13 +3,10 @@ package com.school.sprint1.Service;
 
 import com.google.gson.Gson;
 import com.school.sprint1.DButil.EnrollmentDB;
-import com.school.sprint1.DButil.StudentDB;
 import com.school.sprint1.DButil.SubDB;
 import com.school.sprint1.gson.ExamTableStudentInfo;
 import com.school.sprint1.gson.SubjectsInfo;
 import com.school.sprint1.gson.Year_Code;
-import com.school.sprint1.model.Enrollment;
-import com.school.sprint1.model.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,7 +32,7 @@ public class ExamTableService {
         SubjectsInfo[] subjectsInfoList = new Gson().fromJson(input,SubjectsInfo[].class);
 
         SubDB subDB = new SubDB();
-        return subDB.insertExamDates(subjectsInfoList);
+        return subDB.updateExamDates(subjectsInfoList);
     }
 
     public String getSubjects(String input){

@@ -36,10 +36,10 @@ public class SubDB {
         return subjectsInfosList;
     }
 
-    public boolean insertExamDates(SubjectsInfo[] subjectsInfo){
+    public boolean updateExamDates(SubjectsInfo[] subjectsInfo){
         for(int i=0;i< subjectsInfo.length;i++){
             try {
-                PreparedStatement statement = connection.prepareStatement("insert into Sub(Sub_Id,Name,Exam_Date) values(" + subjectsInfo[i] + ")");
+                PreparedStatement statement = connection.prepareStatement("update Sub set Exam_Date = \""+ subjectsInfo[i].getDate() + "\" where Sub_Id = " + subjectsInfo[i].getId());
                 statement.execute();
 
             } catch (SQLException e) {
