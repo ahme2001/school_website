@@ -9,8 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SetScheduleComponent } from './set-schedule/set-schedule.component';
-import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
+import { SetExamTableComponent } from './set-exam-table/set-exam-table.component';
+import { ShowExamTableComponent } from './show-exam-table/show-exam-table.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
     SidebarComponent,
     ProfileComponent,
     StaffComponent,
-    SetScheduleComponent,
-    ShowScheduleComponent
+    SetExamTableComponent,
+    ShowExamTableComponent
   ],
   imports: [
     BrowserModule,

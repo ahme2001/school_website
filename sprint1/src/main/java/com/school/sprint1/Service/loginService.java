@@ -2,7 +2,7 @@ package com.school.sprint1.Service;
 
 import com.google.gson.Gson;
 import com.school.sprint1.DButil.PersonDB;
-import com.school.sprint1.gson.loginInfo;
+import com.school.sprint1.gson.loginPersonInfo;
 import org.springframework.stereotype.Service;
 import java.util.Objects;
 
@@ -10,10 +10,9 @@ import java.util.Objects;
 public class loginService {
 
     public boolean run(String input){
-        loginInfo info = getInfo(input);
+        loginPersonInfo info = getInfo(input);
         String id = info.getId();
         String pass = info.getPass();
-        System.out.println(id + " " + pass);
         return check(id,pass);
     }
 
@@ -24,9 +23,9 @@ public class loginService {
         return Objects.equals(pass, passFromDb);
     }
 
-    private loginInfo getInfo(String input){
+    private loginPersonInfo getInfo(String input){
         Gson gson = new Gson();
-        return gson.fromJson(input, loginInfo.class);
+        return gson.fromJson(input, loginPersonInfo.class);
     }
 
 }

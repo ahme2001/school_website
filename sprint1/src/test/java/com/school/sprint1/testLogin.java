@@ -37,7 +37,7 @@ public class testLogin {
     @Test
     public void test4(){
         loginService ls = new loginService();
-        String input = "{'id':'20010003','pass':'test'}";
+        String input = "{'id':'20020003','pass':'test'}";
         boolean res = ls.run(input);
         assertEquals(true,res);
     }
@@ -45,7 +45,7 @@ public class testLogin {
     @Test
     public void test5(){
         loginService ls = new loginService();
-        String input = "{'id':'20010004','pass':'MpnA012'}";
+        String input = "{'id':'20030004','pass':'MpnA012'}";
         boolean res = ls.run(input);
         assertEquals(true,res);
     }
@@ -53,7 +53,7 @@ public class testLogin {
     @Test
     public void test6(){
         loginService ls = new loginService();
-        String input = "{'id':'20010005','pass':'GHDGFDGFDHBFGH5'}";
+        String input = "{'id':'20040005','pass':'GHDGFDGFDHBFGH5'}";
         boolean res = ls.run(input);
         assertEquals(true,res);
     }

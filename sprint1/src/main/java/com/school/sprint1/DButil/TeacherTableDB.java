@@ -38,6 +38,7 @@ public class TeacherTableDB {
                 teacherTables[index++] = tablePerDay;
             }
         } catch (SQLException e) {
+            System.out.println(e);
             return null;
         }
 
@@ -73,6 +74,5 @@ public class TeacherTableDB {
         String lec6 = lectures.getLec6();
 
         return new TeacherTable(teacherId,day,lec1,lec2,lec3,lec4,lec5,lec6);
-
     }
 }
