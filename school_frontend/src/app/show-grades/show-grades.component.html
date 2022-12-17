@@ -20,7 +20,7 @@
         <label>select Class</label>
         <select class="form-control" [(ngModel)]="class_selection" (change)="change_selection()">
         <option value="" [disabled]="true"> Select which one</option>
-        <option *ngFor="let c of term" [value]="c?.name">{{ c?.name }}</option>
+        <!-- <option *ngFor="let c of term" [value]="c?.name">{{ c?.name }}</option> -->
         </select>
     </div>
 </div>

@@ -1,38 +1,45 @@
 <app-sidebar></app-sidebar>
 <div class="row">
-    <div class="col-9" [style.display]="displaytable">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Grade</th>
-              </tr>
-            </thead>
-            <tbody >
-                <tr *ngFor="let item of Student" >
-                    <th scope="row" class="col-3">{{item.id}}</th>
-                    <td class="col-3">{{item.name}}</td>
-                    <td class="col-3">
-                        <input type="text" value="{{item.grade}}" [(ngModel)]="item.grade">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="col-2 ms-5 my-3 ps-3">
-            <button style="background-color: #00539CFF; color:white;" (click)="submit()" class="form-control">Submit</button>
-          </div>
+  <div class="mt-2">
+    <label>Select Year</label>
+    <select  [(ngModel)]="YearSelection" class="col-2 ms-3">
+      <option *ngFor="let c of year" [value]="c?.code">{{ c?.name }}</option>
+    </select>
+    <label class="ms-3">Select Term</label>
+    <select [(ngModel)]="TermSelection" class="col-2 ms-3">
+      <option *ngFor="let c of term" [value]="c?.name">{{ c?.name }}</option>
+    </select>
+    <button style="background-color: #00539CFF; color:white;" (click)="getStudent()" class="col-2 ms-5 my-3 ps-3">
+      Get Student
+    </button>
+  </div>
+  <div class="col-9" [style.display]="displaytable">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let item of Student.students">
+                <th scope="row" class="col-3">{{item.id}}</th>
+                <td class="col-3">{{item.name}}</td>
+                <td class="col-3">
+                    <input type="text" value="{{item.grade}}" [(ngModel)]="item.grade">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="">
+      <label class="ms-3">Select Subject</label>
+      <select [(ngModel)]="SubjectSelection" class="col-2 ms-3">
+        <option *ngFor="let c of subject" [value]="c?.code">{{ c?.name }}</option>
+      </select>
     </div>
-    <div class="col-2">
-        <label>select Class</label>
-        <select class="form-control" [(ngModel)]="class_selection" (change)="change_selection()">
-        <option value="" [disabled]="true"> Select which one</option>
-        <option *ngFor="let c of class" [value]="c?.name">{{ c?.name }}</option>
-        </select>
-        <label>Subject</label>
-        <select class="form-control" [(ngModel)]="subject_selection" >
-        <option value="" [disabled]="true"> Select which one</option>
-        <option *ngFor="let c of subject" [value]="c?.name">{{ c?.name }}</option>
-        </select>
+    <div class="col-2 ms-5 my-3 ps-3">
+        <button style="background-color: #00539CFF; color:white;" (click)="submit()" class="form-control">Submit</button>
     </div>
+  </div>
 </div>

@@ -15,20 +15,67 @@ export class SetGradesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Student = [
+  year = [
     {
+      "name": "First primary",
+      "code": "03",
+    },
+    {
+      "name": "Second primary",
+      "code": "04",
+    },
+    {
+      "name": "Third primary",
+      "code": "05",
+    },
+    {
+      "name": "Fourth primary",
+      "code": "06",
+    },{
+      "name": "Fifth primary",
+      "code": "07",
+    },{
+      "name": "Sixth primary",
+      "code": "08",
+    },{
+      "name": "First preparatory",
+      "code": "09",
+    },
+    {
+      "name": "Second preparatory",
+      "code": "10",
+    },{
+      "name": "Third preparatory",
+      "code": "11",
+    }
+  ]
+  term = [
+    {
+      "name":"1"
+    },{
+      "name":"2"
+    },{
+      "name":"3"
+    }
+  ]
+  YearSelection = "";
+  TermSelection = "";
+  SubjectSelection = "";
+
+
+  Student = {
+    "subject":"",
+    "students": [{
       "id":0,
       "name": "",
       "grade": 0,
-    }
-  ]
-  class_selection = "1"
-  subject_selection = "arabic";
+    }]
+  }
 
-  subject=[{"name":"Arabic"},{"name":"Math"},{"name":"Science"},{"name":"Geography"}]
-  class = [
-    {"name":"3"}
-  ]
+  subject=[{"name":"Arabic","code":"01"},{"name":"English","code":"02"},{"name":"French","code":"03"},{"name":"Science","code":"04"},
+  {"name":"Math","code":"05"},{"name":"Social studies","code":"06"},{"name":"Algebra","code":"07"},{"name":"geometry","code":"08"},
+  {"name":"activities","code":"09"}]
+
   displaytable = "none"
 
 
@@ -46,12 +93,12 @@ export class SetGradesComponent implements OnInit {
             }
             else{
               if(y==1){
-                this.Student = JSON.parse(this.answer);
+                this.Student.students = JSON.parse(this.answer);
                 this.displaytable = "block";
               }else{
                 alert(this.answer);
                 this.displaytable = "none";
-                this.Student = [
+                this.Student.students = [
                   {
                     "id":0,
                     "name": "",
@@ -66,16 +113,25 @@ export class SetGradesComponent implements OnInit {
           });
   }
 
-  change_selection(){
-    this.displaytable = "block";
-    this.URL  = "http://localhost:8070/School/create/student";
-    // this.sendRequestSetGrades(this.selection,1);
+  submit(){
+    if(this.SubjectSelection != ""){
+      this.Student.subject = this.YearSelection + this.TermSelection + this.SubjectSelection
+      var temp = JSON.stringify(this.Student);
+      console.log(temp)
+      // this.URL  = "http://localhost:8070/School/create/student";
+      // this.sendRequestSetGrades(temp,2);
+    }
   }
 
-  submit(){
-    this.URL  = "http://localhost:8070/School/create/student";
-    var temp = JSON.stringify(this.Student);
-    // this.sendRequestSetGrades(temp,2);
+  getStudent(){
+    if((this.YearSelection != "")&&(this.TermSelection != "")){
+      var yearId = this.YearSelection + this.TermSelection
+      // this.examTable.termId = yearId.code;
+      console.log(yearId);
+      // this.URL = "http://localhost:8070/School/create/teacher";
+      // this.sendRequestSetGrades(yearId,1)
+      this.displaytable = "block";
+    }
   }
 
 }

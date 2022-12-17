@@ -10,31 +10,38 @@ import { Router } from '@angular/router';
 export class ShowGradesComponent implements OnInit {
 
   constructor(private _router:Router,private http :HttpClient) {
-    // get id from cache
-    this.URL = "http://localhost:8070/School/create/student";
-    // this.sendRequestSetGrades(id,1)
+    this.type = localStorage.getItem("type");
+    this.Person_id.id = JSON.parse(localStorage.getItem("Id"))
+    //
+    // this.URL = "http://localhost:8070/School/create/student";
+    // this.sendRequestShowGrades(id,1)
   }
   ngOnInit(): void {
-
   }
+
+  type = ""
+  Person_id = {
+    "id" : ""
+  }
+
   grades = [
     {
       "subject": "Arabic",
       "grade": 0,
     }
   ]
-  term = [
-    {
-      "name" : ""
-    }
-  ]
+  term ={
+      "name" : 0,
+      "end" : 0
+  }
+
   class_selection = "1";
   displayTable = "none";
 
 
   URL : string;
   answer=""
-  sendRequestSetGrades(x: string,y: number) {
+  sendRequestShowGrades(x: string,y: number) {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
       this.http.post(this.URL, x,
         { headers: headers, responseType: 'text' })
@@ -42,7 +49,7 @@ export class ShowGradesComponent implements OnInit {
             this.answer = response;
             console.log(this.answer);
             if(this.answer == "ERROR"||this.answer =="false"){
-              alert("Wrong class")
+              alert(this.answer)
             }
             else{
               if(y==1){
