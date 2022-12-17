@@ -13,7 +13,7 @@
       Get Subject
     </button>
   </div>
-  <div>
+  <div [style.display]="divdisplay">
     <table class="table">
       <thead>
         <tr>
@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody >
-          <tr *ngFor="let item of examTable.days" >
+          <tr *ngFor="let item of examTable" >
               <th scope="row" class="col-3">{{item.subject}}</th>
               <td class="col-3">
                 <input type="datetime-local" name="birthdaytime" class="ms-2" [(ngModel)]="item.date">
@@ -30,20 +30,8 @@
           </tr>
       </tbody>
     </table>
+    <button style="background-color: #00539CFF; color:white;" (click)="submitTable()" class="col-1 ms-3">
+      Submit
+    </button>
   </div>
-  <button style="background-color: #00539CFF; color:white;" (click)="submitTable()" class="col-1 ms-3">
-    Submit
-</button>
 </div>
-  <!-- <div *ngFor="let item of examTable.days" class="mt-2">
-    <label >Exam date (day and time):</label>
-    <input type="datetime-local" name="birthdaytime" class="ms-2" [(ngModel)]="item.date">
-    <label class="ms-5">Subject</label>
-    <input type="text" class="ms-2" name="birthdaytime" [(ngModel)]="item.subject">
-  </div>
-  <div class="col-2 ms-5 my-3 ps-3">
-  <button style="background-color: #00539CFF; color:white;" (click)="submitTable()" class="form-control">
-          Submit
-  </button>
-</div>
-</div> -->

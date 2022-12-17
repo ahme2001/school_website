@@ -9,15 +9,24 @@ import { Router } from '@angular/router';
 })
 export class ShowExamTableComponent implements OnInit {
 
-  constructor(private _router:Router,private http :HttpClient) { }
-
+  constructor(private _router:Router,private http :HttpClient) {
+    this.Person_id.id = JSON.parse(localStorage.getItem("Id"))
+    var temp = JSON.stringify(this.Person_id)
+    this.URL = "http://localhost:8070/School/get/exam-table";
+    this.sendRequestShowExamTable(temp)
+  }
   ngOnInit(): void {
   }
 
+  Person_id = {
+    "id" : ""
+  }
+
+  examTable = []
 
   URL : string;
   answer=""
-  sendRequestCreateAccount(x: string) {
+  sendRequestShowExamTable(x: string) {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
       this.http.post(this.URL, x,
         { headers: headers, responseType: 'text' })
@@ -28,7 +37,7 @@ export class ShowExamTableComponent implements OnInit {
               alert(this.answer)
             }
             else{
-              alert(this.answer)
+              this.examTable = JSON.parse(this.answer);
             }
         }
           , (error) => {

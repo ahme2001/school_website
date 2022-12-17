@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class SetExamTableComponent implements OnInit {
 
   constructor(private _router:Router,private http :HttpClient) { }
-
   ngOnInit(): void {
   }
 
@@ -62,30 +61,7 @@ export class SetExamTableComponent implements OnInit {
   YearSelection = "";
   TermSelection = "";
 
-  examTable = {
-    "termId" : "",
-    "days" : [
-      {
-        "subject" :"arabic",
-        "id": "12461",
-        "date":""
-      },
-      {
-        "subject" :"english",
-        "id": "3556",
-        "date":""
-      }
-    ]
-  }
-
-  addday(){
-    // this.examTable.days.push(this.examday);
-    // this.examday = {
-    //   "date":"",
-    //   "subject" :""
-    // }
-  }
-
+  examTable =  []
 
   URL : string;
   answer=""
@@ -101,9 +77,14 @@ export class SetExamTableComponent implements OnInit {
             }
             else{
               if(y == 1){
-                this.examTable.days = JSON.parse(this.answer)
+                this.examTable = JSON.parse(this.answer)
+                this.divdisplay = "block"
               }else{
                 alert(this.answer)
+                this.examTable = []
+                this.divdisplay = "none"
+                this.YearSelection = "";
+                this.TermSelection = "";
               }
             }
         }
@@ -112,19 +93,20 @@ export class SetExamTableComponent implements OnInit {
           });
   }
 
+  divdisplay = "none"
+
   getSubject(){
     var yearId = {
       "code" : this.YearSelection + this.TermSelection
     }
-    this.examTable.termId = yearId.code;
     console.log(JSON.stringify(yearId));
-    // this.URL = "http://localhost:8070/School/create/teacher";
+    this.URL = "http://localhost:8070/School/get/all-subjects";
     // this.sendRequestSetExamTable(JSON.stringify(yearId),1)
   }
 
   submitTable(){
     console.log(JSON.stringify(this.examTable))
-    // this.URL = "http://localhost:8070/School/create/teacher";
+    this.URL = "http://localhost:8070/School/set/exam-table";
     // this.sendRequestSetExamTable(JSON.stringify(this.examTable),2)
   }
 
