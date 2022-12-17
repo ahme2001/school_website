@@ -30,10 +30,17 @@ export class ShowGradesComponent implements OnInit {
       "grade": 0,
     }
   ]
+  
   term ={
-      "name" : 0,
-      "end" : 0
+      "startyear" : "",
+      "currentyear" : ""
   }
+
+  selectyear ={
+    "id" : "",
+    "term" : ""
+  }
+
 
   class_selection = "1";
   displayTable = "none";
