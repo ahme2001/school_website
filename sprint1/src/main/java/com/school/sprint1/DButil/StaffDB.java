@@ -34,4 +34,15 @@ public class StaffDB {
         }
         return true;
     }
+    public boolean addGrade(String values){
+        try {
+            PreparedStatement statement = connection.prepareStatement("insert into ENROLMENT values "+ values);
+            statement.execute();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
 }

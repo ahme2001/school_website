@@ -14,10 +14,19 @@ public class GradesController {
     private GradesService gradesService;
 
     @PostMapping("/grades/IDs")
-    public String test(@RequestBody String input){
-//        System.out.println(input);
+    public String getIDs(@RequestBody String input){
         String res = gradesService.getIds(input);
-//        System.out.println(res);
+        return res;
+    }
+    @PostMapping("/grades/range")
+    public String getRange(@RequestBody String Id){
+        String res = gradesService.getTermRange(Id);
+        return res;
+    }
+//    {"subject":"05103","students":[{"id":"01010001","name":"","grade":"50"}]}
+    @PostMapping("/grades/save")
+    public boolean saveGrades(@RequestBody String input){
+        boolean res = gradesService.saveGrades(input);
         return res;
     }
 }

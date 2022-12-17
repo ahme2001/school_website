@@ -54,4 +54,19 @@ public class StudentDB {
         }
         return mapStudent;
     }
+    public Map<String,String> getTermRange(String ID){
+        Map<String,String> mapRange =new HashMap();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT St_Term_Id, Curr_Term_Id  FROM STUDENT WHERE St_Id = " + ID);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                mapRange.put("startyear", resultSet.getString(1));
+                mapRange.put("currentyear", resultSet.getString(2));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return mapRange;
+    }
 }
