@@ -11,6 +11,9 @@ public class ClassTableSetting {
         this.days = days;
     }
 
+    public ClassTableSetting() {
+    }
+
     public String getClassId() {
         return classId;
     }

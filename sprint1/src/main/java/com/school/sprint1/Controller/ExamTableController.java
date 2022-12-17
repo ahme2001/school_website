@@ -13,10 +13,12 @@ public class ExamTableController {
     @Autowired
     private ExamTableService examTableService;
 
+
     @PostMapping("/student/get/all-subjects")
     public String getSubjects(@RequestBody String input){
         return examTableService.getSubjects(input);
     }
+
 
     @PostMapping("/student/get/exam-table")
     public String getExamTable(@RequestBody String input){

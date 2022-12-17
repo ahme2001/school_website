@@ -1,0 +1,101 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+    <div class="mt-2">
+        <label>Class ID </label>
+        <input type="text" class="ms-2"
+        placeholder="write class id" [(ngModel)]="StudentTable.classId" required>
+        <label class="ms-5">Term ID </label>
+        <input type="text" class="ms-2" placeholder="write term id" [(ngModel)]="StudentTable.termId" required>
+    </div>
+    <!-- ms-5 mt-3 ps-3 -->
+    <div class="mt-3">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Lecture_1</th>
+                <th scope="col">Lecture_2</th>
+                <th scope="col">Lecture_3</th>
+                <th scope="col">Lecture_4</th>
+                <th scope="col">Lecture_5</th>
+                <th scope="col">Lecture_6</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of StudentTable.days" >
+                    <th scope="row" >{{item.Day}}</th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec1}}"  [(ngModel)]="item.lectures.lec1">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec2}}"  [(ngModel)]="item.lectures.lec2">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec3}}"  [(ngModel)]="item.lectures.lec3">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec4}}"  [(ngModel)]="item.lectures.lec4">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec5}}"  [(ngModel)]="item.lectures.lec5">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec6}}"  [(ngModel)]="item.lectures.lec6">
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-2 ms-5 my-3 ps-3">
+        <button style="background-color: #00539CFF; color:white;" (click)="submitStudent()" class="form-control" >Submit</button>
+    </div>
+    <hr>
+    <div>
+        <label >Teacher ID </label>
+        <input type="text" class="ms-3" [(ngModel)]="TeacherTable.Teacher_Id">
+    </div>
+    <div class="mt-3">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Lecture_1</th>
+                <th scope="col">Lecture_2</th>
+                <th scope="col">Lecture_3</th>
+                <th scope="col">Lecture_4</th>
+                <th scope="col">Lecture_5</th>
+                <th scope="col">Lecture_6</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of TeacherTable.days" >
+                    <th scope="row" >{{item.Day}}</th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec1}}"  [(ngModel)]="item.lectures.lec1">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec2}}"  [(ngModel)]="item.lectures.lec2">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec3}}"  [(ngModel)]="item.lectures.lec3">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec4}}"  [(ngModel)]="item.lectures.lec4">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec5}}"  [(ngModel)]="item.lectures.lec5">
+                    </th>
+                    <th>
+                        <input type="text" value="{{item.lectures.lec6}}"  [(ngModel)]="item.lectures.lec6">
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-2 ms-5 my-3 ps-3">
+        <button style="background-color: #00539CFF; color:white;" (click)="submitTeacher()" class="form-control">
+            Submit
+        </button>
+    </div>
+</div>
+

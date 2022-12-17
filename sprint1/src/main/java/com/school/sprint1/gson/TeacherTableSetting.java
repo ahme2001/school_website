@@ -9,6 +9,9 @@ public class TeacherTableSetting {
         this.days = days;
     }
 
+    public TeacherTableSetting() {
+    }
+
     public String getTeacherId() {
         return Teacher_Id;
     }
