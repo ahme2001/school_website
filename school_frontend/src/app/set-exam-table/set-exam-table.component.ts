@@ -99,15 +99,13 @@ export class SetExamTableComponent implements OnInit {
     var yearId = {
       "code" : this.YearSelection + this.TermSelection
     }
-    console.log(JSON.stringify(yearId));
-    this.URL = "http://localhost:8070/School/get/all-subjects";
-    // this.sendRequestSetExamTable(JSON.stringify(yearId),1)
+    this.URL = "http://localhost:8070/School/student/get/all-subjects";
+    this.sendRequestSetExamTable(JSON.stringify(yearId),1)
   }
 
   submitTable(){
-    console.log(JSON.stringify(this.examTable))
-    this.URL = "http://localhost:8070/School/set/exam-table";
-    // this.sendRequestSetExamTable(JSON.stringify(this.examTable),2)
+    this.URL = "http://localhost:8070/School/staff/set/exam-table";
+    this.sendRequestSetExamTable(JSON.stringify(this.examTable),2)
   }
 
 }

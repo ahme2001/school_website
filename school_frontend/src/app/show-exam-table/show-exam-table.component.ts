@@ -12,7 +12,7 @@ export class ShowExamTableComponent implements OnInit {
   constructor(private _router:Router,private http :HttpClient) {
     this.Person_id.id = JSON.parse(localStorage.getItem("Id"))
     var temp = JSON.stringify(this.Person_id)
-    this.URL = "http://localhost:8070/School/get/exam-table";
+    this.URL = "http://localhost:8070/School/student/get/exam-table";
     this.sendRequestShowExamTable(temp)
   }
   ngOnInit(): void {
