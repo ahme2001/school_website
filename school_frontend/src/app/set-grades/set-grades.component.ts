@@ -61,8 +61,6 @@ export class SetGradesComponent implements OnInit {
   YearSelection = "";
   TermSelection = "";
   SubjectSelection = "";
-
-
   Student = {
     "subject":"",
     "students": []
@@ -71,7 +69,6 @@ export class SetGradesComponent implements OnInit {
   subject=[{"name":"Arabic","code":"01"},{"name":"English","code":"02"},{"name":"French","code":"03"},{"name":"Science","code":"04"},
   {"name":"Math","code":"05"},{"name":"Social studies","code":"06"},{"name":"Algebra","code":"07"},{"name":"geometry","code":"08"},
   {"name":"activities","code":"09"}]
-
   displaytable = "none"
 
 
@@ -85,26 +82,20 @@ export class SetGradesComponent implements OnInit {
             this.answer = response;
             console.log(this.answer);
             if(this.answer == "ERROR"||this.answer =="false"){
-              alert("Wrong class")
+              alert(this.answer)
             }
             else{
               if(y==1){
+                this.Student.students = [];
                 var temp = JSON.parse(this.answer);
                 for(let i = 0; i < temp.length; i++){
                   this.Student.students.push(JSON.parse(temp[i]))
                 }
-
                 this.displaytable = "block";
               }else{
                 alert(this.answer);
                 this.displaytable = "none";
-                this.Student.students = [
-                  {
-                    "id":0,
-                    "name": "",
-                    "grade": 0,
-                  }
-                ]
+                this.Student.students = []
               }
             }
         }
@@ -118,19 +109,16 @@ export class SetGradesComponent implements OnInit {
       this.Student.subject = this.YearSelection + this.TermSelection + this.SubjectSelection
       var temp = JSON.stringify(this.Student);
       console.log(temp)
-      // this.URL  = "http://localhost:8070/School/create/student";
-      // this.sendRequestSetGrades(temp,2);
+      this.URL  = "http://localhost:8070/School/grades/save";
+      this.sendRequestSetGrades(temp,2);
     }
   }
 
   getStudent(){
     if((this.YearSelection != "")&&(this.TermSelection != "")){
       var yearId = this.YearSelection + this.TermSelection
-      // this.examTable.termId = yearId.code;
-      console.log(yearId);
       this.URL = "http://localhost:8070/School/grades/IDs";
       this.sendRequestSetGrades(yearId,1)
-      this.displaytable = "block";
     }
   }
 
