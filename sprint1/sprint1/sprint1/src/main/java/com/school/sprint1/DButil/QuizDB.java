@@ -3,14 +3,13 @@ import com.google.gson.Gson;
 import com.school.sprint1.model.DO_QUIZ;
 import com.school.sprint1.model.Question;
 import com.school.sprint1.model.Quiz;
-import gson.QuizQuestions;
-import gson.Quizzes;
-
+import com.school.sprint1.gson.QuizQuestions;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class QuizDB {
@@ -86,7 +85,7 @@ public class QuizDB {
             return false;
         }
 
-         return true;
+        return true;
     }
     public int getCount(String class_id) {
         int count=0;
@@ -161,5 +160,24 @@ public class QuizDB {
         qq.put("choice3",choice3);
         qq.put("choice4",choice4);
         return new Gson().toJson(qq);
+    }
+
+    public int[] getSolutions(String qId , String sId , int len){
+        int[] sol = new int[len];
+        int counter = 0;
+        try {
+            System.out.println(qId + "  " +sId);
+            PreparedStatement statement = connection.prepareStatement("select Question.Solution from Question , DO_QUIZ where DO_QUIZ.Quiz_Id =Question.Quiz_Id and DO_QUIZ.Quiz_Id ="+qId+" and DO_QUIZ.St_Id=" + sId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                System.out.println(resultSet.getInt(1));
+                sol[counter++]=resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.out.println("2222");
+            return new int[len] ;
+        }
+        System.out.println(Arrays.toString(sol));
+        return sol;
     }
 }

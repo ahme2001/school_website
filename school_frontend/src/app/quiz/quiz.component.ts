@@ -59,13 +59,9 @@ export class QuizComponent implements OnInit {
         .subscribe(response => {
           this.answer = response
           this.quiz = JSON.parse(this.answer);
-          console.log(this.quiz);
-          console.log(this.quiz.choice1.length);
           this.QuizName = this.quiz.Qname
           this.EndDate = this.quiz.endDate
           for(let i=0;i<this.quiz.choice1.length;i++){
-            console.log("ehhbf");
-            
             let q ={
               "question": "",
               "choice_1": "",
@@ -88,13 +84,18 @@ export class QuizComponent implements OnInit {
     }
   }
   sendRequestGetgrade(x: string) {
+    console.log(x);
+    
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/getResult", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
           this.answer = response
+          console.log(this.answer)
           this.grade = JSON.parse(this.answer);
+          // console.log(this.grade);
+          
         }
           , (error) => {
             console.log(error);
@@ -102,8 +103,8 @@ export class QuizComponent implements OnInit {
     }
   }
   grade = {
-    "grade":24,
-    "from" :25
+    "grade":"",
+    "from" :""
   }
   QuizId =""
   findingQuiz(i:string){
@@ -144,15 +145,15 @@ export class QuizComponent implements OnInit {
       this.value[i] = Number(this.value[i])
     }
     let response = {
-      "StudentId":"",
+      "StId":"",
       "QuizId":"",
-      "solutions":[]
+      "answers":[]
     }
-    response.solutions = this.value
-    response.StudentId = localStorage.getItem("id")
+    response.answers = this.value
+    response.StId = localStorage.getItem("Id")
     response.QuizId = this.QuizId
-    console.log(this.value);
-    // this.sendRequestGetgrade(JSON.stringify(response))
+    console.log(response);
+    this.sendRequestGetgrade(JSON.stringify(response))
     this.f2 = false
     this.f3 = true
     this.displayAlert = "block"
@@ -167,4 +168,7 @@ export class QuizComponent implements OnInit {
   this.displayAlert ="block"
   this.value =[]
  }
+ refresh(){
+  window.location.reload()
+}
 }

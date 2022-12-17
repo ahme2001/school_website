@@ -1,4 +1,4 @@
-package gson;
+package com.school.sprint1.gson;
 
 import java.util.Arrays;
 import java.util.Date;

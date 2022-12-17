@@ -51,7 +51,7 @@ export class NewQuizComponent implements OnInit {
         .subscribe(response => {
           this.answer = response;
           this.class = JSON.parse(this.answer)
-          console.log(this.class);
+          console.log(this.answer);
           for (let i = 0; i < this.class.Id.length; i++) {
             let c = {
               "Id": "",
@@ -71,6 +71,8 @@ export class NewQuizComponent implements OnInit {
     }
   }
   sendRequestSubmit(x: string) {
+    console.log(x);
+    
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
       this.http.post("http://localhost:8070/School/setQuiz", x,
@@ -142,6 +144,7 @@ export class NewQuizComponent implements OnInit {
           this.t.answers[i] = this.questions[i].solution
           counter++;
         }
+        
         console.log(JSON.stringify(this.t));
         this.sendRequestSubmit(JSON.stringify(this.t))
         this.questions = [

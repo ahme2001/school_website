@@ -27,5 +27,11 @@ public class QuizController {
     public String DoQuiz(@RequestBody String input){
         return new QuizService().DoQuiz(input);
     }
+    @PostMapping("getResult")
+    public String getResult(@RequestBody String input){
+        return new QuizService().calcRes(input);
+    }
+
+
 
 }
