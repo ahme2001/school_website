@@ -65,11 +65,7 @@ export class SetGradesComponent implements OnInit {
 
   Student = {
     "subject":"",
-    "students": [{
-      "id":0,
-      "name": "",
-      "grade": 0,
-    }]
+    "students": []
   }
 
   subject=[{"name":"Arabic","code":"01"},{"name":"English","code":"02"},{"name":"French","code":"03"},{"name":"Science","code":"04"},
@@ -93,7 +89,11 @@ export class SetGradesComponent implements OnInit {
             }
             else{
               if(y==1){
-                this.Student.students = JSON.parse(this.answer);
+                var temp = JSON.parse(this.answer);
+                for(let i = 0; i < temp.length; i++){
+                  this.Student.students.push(JSON.parse(temp[i]))
+                }
+
                 this.displaytable = "block";
               }else{
                 alert(this.answer);
@@ -128,8 +128,8 @@ export class SetGradesComponent implements OnInit {
       var yearId = this.YearSelection + this.TermSelection
       // this.examTable.termId = yearId.code;
       console.log(yearId);
-      // this.URL = "http://localhost:8070/School/create/teacher";
-      // this.sendRequestSetGrades(yearId,1)
+      this.URL = "http://localhost:8070/School/grades/IDs";
+      this.sendRequestSetGrades(yearId,1)
       this.displaytable = "block";
     }
   }
