@@ -51,6 +51,7 @@ public class StudentDB {
                 student.setP_id(resultSet.getString(5));
             }
         } catch (SQLException e) {
+            System.out.println(e);
             return null;
         }
         return student;

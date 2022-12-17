@@ -38,6 +38,7 @@ public class ClassTableDB {
                 classTable[index++] = classPerDay;
             }
         } catch (SQLException e) {
+            System.out.println(e);
             return null;
         }
 
@@ -45,13 +46,11 @@ public class ClassTableDB {
     }
 
     public boolean insertTable(ClassTableSetting classTableSetting){
-
         for(int i=0;i<6;i++){
             try {
                 ClassTable classTable = getDayTable(classTableSetting,i);
                 PreparedStatement statement = connection.prepareStatement("insert into class_dialy_table values(" + classTable + ")");
                 statement.execute();
-
             } catch (SQLException e) {
                 System.out.println(e);
                 return false;
