@@ -4,10 +4,12 @@ package com.school.sprint1.Service;
 import com.google.gson.Gson;
 import com.school.sprint1.DButil.ClassTableDB;
 import com.school.sprint1.DButil.StudentDB;
+import com.school.sprint1.DButil.TeacherDB;
 import com.school.sprint1.DButil.TeacherTableDB;
 import com.school.sprint1.gson.*;
 import com.school.sprint1.model.ClassTable;
 import com.school.sprint1.model.Student;
+import com.school.sprint1.model.Teacher;
 import com.school.sprint1.model.TeacherTable;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +20,9 @@ public class ScheduleService {
         schedulePersonInfo info = getInfo(input);
         String id = info.getId();
         StudentDB studentDB = new StudentDB();
-        Student student = studentDB.getStudent(id);;
+        Student student = studentDB.getStudent(id);
         String classId = student.getClass_Id();
+        if(classId == null) return null;
 
         // get table from class table with the class id
         ClassTableDB classTableDB = new ClassTableDB();
@@ -46,6 +49,12 @@ public class ScheduleService {
     public String getTeacherTable(String input){
         schedulePersonInfo info = getInfo(input);
         String id = info.getId();
+
+        // check if the id exists in teacher table
+        TeacherDB teacherDB = new TeacherDB();
+        Teacher teacher = teacherDB.getTeacher(id);
+        if(teacher == null) return null;
+
 
         // get table from teacher table with the id
         TeacherTableDB teacherTableDB = new TeacherTableDB();

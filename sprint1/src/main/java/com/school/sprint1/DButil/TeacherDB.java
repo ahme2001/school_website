@@ -51,6 +51,7 @@ public class TeacherDB {
                 teacher.setSub(resultSet.getString(3));
             }
         } catch (SQLException e) {
+            System.out.println(e);
             return null;
         }
         return teacher;
