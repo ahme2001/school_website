@@ -62,14 +62,15 @@ export class ProfileComponent implements OnInit {
     else if(x=="teacher") this.isTeacher = true
     else if(x=="staff") this.isStaff = true
     else this.isParent = true;
-    let id = JSON.parse(localStorage.getItem("id"))
+    let id = JSON.parse(localStorage.getItem("Id"))
+    // console.log(id)
     this.sendRequestSignIn(id)
   }
   answer =""
   sendRequestSignIn(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/profile", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -85,8 +86,6 @@ export class ProfileComponent implements OnInit {
             else{
                 this.staff= JSON.parse(this.answer)
             }
-
-            console.log(this.answer);
         }
           , (error) => {
             console.log(error);
