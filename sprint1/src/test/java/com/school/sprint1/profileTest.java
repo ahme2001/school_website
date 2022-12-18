@@ -43,5 +43,26 @@ public class profileTest {
         String trueRes = "Error bad ID format";
         assertEquals(trueRes,res);
     }
+    @Test
+    public void test6(){
+        ProfileService ps = new ProfileService();
+        String res = ps.run("02020000");
+        String trueRes = "{\"Job\":\"doctor\",\"Address\":\"bgfb\",\"Phone\":\"01203214567\",\"Sex\":\"Male\",\"National_Id\":\"12365478912345\",\"Name\":\"momo\",\"Password\":\"123456\"}";
+        assertEquals(trueRes,res);
+    }
+    @Test
+    public void test7(){
+        ProfileService ps = new ProfileService();
+        String res = ps.run("03030000");
+        String trueRes = "{\"Experience\":\"6\",\"Sub\":\"arabic\",\"Address\":\"fowa\",\"Phone\":\"01005422136\",\"Sex\":\"Male\",\"National_Id\":\"301041500236\",\"Name\":\"mohamed\",\"Password\":\"123456\"}";
+        assertEquals(trueRes,res);
+    }
+    @Test
+    public void test8(){
+        ProfileService ps = new ProfileService();
+        String res = ps.run("04040000");
+        String trueRes = "{\"Job\":\"manager\",\"Address\":\"fowwa\",\"Phone\":\"01005622358\",\"Sex\":\"Male\",\"National_Id\":\"12345696325148\",\"Name\":\"mostafa\",\"Password\":\"123456\"}";
+        assertEquals(trueRes,res);
+    }
 
 }
