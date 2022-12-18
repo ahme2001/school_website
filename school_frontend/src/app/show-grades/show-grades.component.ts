@@ -10,40 +10,71 @@ import { Router } from '@angular/router';
 export class ShowGradesComponent implements OnInit {
 
   constructor(private _router:Router,private http :HttpClient) {
-    this.type = localStorage.getItem("type");
-    this.Person_id.id = JSON.parse(localStorage.getItem("Id"))
-    //
-    // this.URL = "http://localhost:8070/School/create/student";
-    // this.sendRequestShowGrades(id,1)
+    this.Person_id = JSON.parse(localStorage.getItem("Id"));
+    this.selectyear.id = JSON.parse(localStorage.getItem("Id"));
+    this.URL = "http://localhost:8070/School/grades/range";
+    this.sendRequestShowGrades(JSON.stringify(this.Person_id),1)
   }
   ngOnInit(): void {
   }
 
-  type = ""
-  Person_id = {
-    "id" : ""
-  }
-
-  grades = [
+  Person_id : string;
+  year = [
     {
-      "subject": "Arabic",
-      "grade": 0,
+      "name": "First primary",
+      "code": "03",
+    },
+    {
+      "name": "Second primary",
+      "code": "04",
+    },
+    {
+      "name": "Third primary",
+      "code": "05",
+    },
+    {
+      "name": "Fourth primary",
+      "code": "06",
+    },{
+      "name": "Fifth primary",
+      "code": "07",
+    },{
+      "name": "Sixth primary",
+      "code": "08",
+    },{
+      "name": "First preparatory",
+      "code": "09",
+    },
+    {
+      "name": "Second preparatory",
+      "code": "10",
+    },{
+      "name": "Third preparatory",
+      "code": "11",
     }
   ]
-  
+  terms = [
+    {
+      "name":"1"
+    },{
+      "name":"2"
+    },{
+      "name":"3"
+    }
+  ]
   term ={
       "startyear" : "",
       "currentyear" : ""
   }
-
   selectyear ={
     "id" : "",
     "term" : ""
   }
-
-
-  class_selection = "1";
+  termselect = "";
+  yearselect = "";
   displayTable = "none";
+  selectedYear = []
+  grades = []
 
 
   URL : string;
@@ -54,15 +85,23 @@ export class ShowGradesComponent implements OnInit {
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
-            console.log(this.answer);
             if(this.answer == "ERROR"||this.answer =="false"){
               alert(this.answer)
             }
             else{
               if(y==1){
                 this.term = JSON.parse(this.answer);
+                var begin = Number(this.term.startyear);
+                var end = Number(this.term.currentyear);
+                for(let i = begin-3; i <= end-3; i++){
+                  this.selectedYear.push(this.year[i])
+                }
               }else{
-                this.grades = JSON.parse(this.answer);
+                this.grades = []
+                var temp = JSON.parse(this.answer);
+                for(let i = 0; i < temp.length; i++){
+                  this.grades.push(JSON.parse(temp[i]))
+                }
                 this.displayTable = "block";
               }
             }
@@ -72,9 +111,10 @@ export class ShowGradesComponent implements OnInit {
           });
   }
 
-  change_selection(){
-    this.displayTable = "block";
-    this.URL  = "http://localhost:8070/School/create/student";
-    // this.sendRequestSetGrades(this.class_selection,2);
+  getgrade(){
+    this.selectyear.term = this.yearselect + this.termselect;
+    var temp = JSON.stringify(this.selectyear)
+    this.URL  = "http://localhost:8070/School/grades/show";
+    this.sendRequestShowGrades(temp,2);
   }
 }
