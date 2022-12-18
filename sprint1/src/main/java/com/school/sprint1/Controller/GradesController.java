@@ -29,4 +29,10 @@ public class GradesController {
         boolean res = gradesService.saveGrades(input);
         return res;
     }
+
+    @PostMapping("/grades/show")
+    public String showGrades(@RequestBody String input){
+        String res = gradesService.showGrades(input);
+        return res;
+    }
 }

@@ -34,16 +34,27 @@ public class GradesService {
         String res = gson.toJson(mapStudents);
         return  res;
     }
-    public boolean saveGrades(String input){
-        String res = getValues(input);
-        return true;
+    public String showGrades(String input){
+        Gson gson = new Gson();
+        Type type = new TypeToken<Map<String, String>>(){}.getType();
+        Map<String, String> userData = gson.fromJson(input, type);
+        Map<String, String> grades = new StudentDB().getTermGrades(userData.get("id"), userData.get("term"));
+
+        if(grades == null || grades.size()==0) return "ERROR";
+
+        String res = getGradesGson(grades);
+        return res;
     }
-    private String getValues(String input){
+    public boolean saveGrades(String input){
+        boolean res = getValues(input);
+        return res;
+    }
+    private boolean getValues(String input){
         String subject;
         Gson gson = new Gson();
         Map<String,String> values = new HashMap<>();
         Type type = new TypeToken<Map<String, Object>>(){}.getType();
-        Map<String, Object> userData = new Gson().fromJson(input, type);
+        Map<String, Object> userData = gson.fromJson(input, type);
         values.put("subject",(String) userData.get("subject"));
         ArrayList arr = (ArrayList) userData.get("students");
 
@@ -60,9 +71,9 @@ public class GradesService {
             else state=0;
             values.put("state", Integer.toString(state));
             String sqlValues = valuesToString(values);
-            new StaffDB().addGrade(sqlValues);
+            if (! new StaffDB().addGrade(sqlValues)) return false;
         }
-        return "a7";
+        return true;
     }
     private String valuesToString(Map<String,String> values){
         String res=  "(\"" + values.get("subject") + "\"," +
@@ -85,6 +96,18 @@ public class GradesService {
             map.put("id", entry.getKey());
             map.put("name", entry.getValue());
             map.put("grade","");
+            res[i++] = gson.toJson(map);
+        }
+        return gson.toJson(res);
+    }
+    private String getGradesGson(Map<String,String> mapGrades){
+        Map<String,String> map = new HashMap();
+        String[] res = new String[mapGrades.size()];
+        Gson gson = new Gson();
+        int i=0;
+        for (Map.Entry<String,String> entry : mapGrades.entrySet()) {
+            map.put("subject", entry.getKey());
+            map.put("grade", entry.getValue());
             res[i++] = gson.toJson(map);
         }
         return gson.toJson(res);

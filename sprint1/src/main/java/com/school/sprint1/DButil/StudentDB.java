@@ -69,4 +69,28 @@ public class StudentDB {
         }
         return mapRange;
     }
+    public Map<String,String> getTermGrades(String ID, String Term){
+        Map<String,String> mapGrades =new HashMap();
+        String previousSub = "";
+        String currentSub = "";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT Sub_Id, Exam_grade FROM ENROLMENT WHERE St_Id = \"" + ID + "\" AND Term_Id  LIKE \'" + Term + "%\' ORDER by Sub_Id, Term_Id DESC");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                currentSub = resultSet.getString(1);
+                if(currentSub.compareTo(previousSub) != 0){
+                    statement = connection.prepareStatement("SELECT Name FROM SUB WHERE Sub_Id = \"" + currentSub + "\"");
+                    ResultSet subName = statement.executeQuery();
+                    subName.next();
+                    mapGrades.put(subName.getString(1), resultSet.getString(2));
+                }
+                previousSub = currentSub;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return mapGrades;
+    }
 }
