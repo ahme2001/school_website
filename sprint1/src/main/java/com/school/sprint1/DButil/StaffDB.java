@@ -28,7 +28,6 @@ public class StaffDB {
         try {
             PreparedStatement statement = connection.prepareStatement("insert into STAFF values(" + values + ")");
             statement.execute();
-
         } catch (SQLException e) {
             return false;
         }
