@@ -17,7 +17,6 @@ public class CreateAccountService {
 
     public boolean run(String input, String type){
         Person person = getPerson(input,type);
-        person.setType(type);
         person.setId(person.generateId());
         person.setPassword(person.generatePassword());
         return StoreDB(type, person);

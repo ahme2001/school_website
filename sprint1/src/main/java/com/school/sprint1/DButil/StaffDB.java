@@ -1,9 +1,9 @@
 package com.school.sprint1.DButil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.school.sprint1.model.Parent;
+import com.school.sprint1.model.Staff;
+
+import java.sql.*;
 
 public class StaffDB {
     private Connection connection;
@@ -33,5 +33,20 @@ public class StaffDB {
             return false;
         }
         return true;
+    }
+
+    public Staff getInfo(String ID){
+        Staff staff = new Staff();
+        try {
+            if(!new PersonDB().getInfo(ID, staff)) return  null;
+            PreparedStatement statement = connection.prepareStatement("select * from STAFF where S_id = " + ID);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            staff.setJob(resultSet.getString(2));
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return staff;
     }
 }

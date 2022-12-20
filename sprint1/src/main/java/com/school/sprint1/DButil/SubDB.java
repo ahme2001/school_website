@@ -71,7 +71,4 @@ public class SubDB {
         return subjectsInfosList;
     }
 
-    private Sub getSubObject(SubjectsInfo subjectsInfo){
-        return new Sub(subjectsInfo.getId(), subjectsInfo.getSubject(), null,null,null,null,subjectsInfo.getDate());
-    }
 }
