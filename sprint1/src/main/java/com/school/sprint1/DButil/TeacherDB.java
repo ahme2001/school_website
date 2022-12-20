@@ -1,5 +1,8 @@
 package com.school.sprint1.DButil;
 
+import com.school.sprint1.model.Student;
+import com.school.sprint1.model.Teacher;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,4 +39,22 @@ public class TeacherDB {
         }
         return true;
     }
+
+    public Teacher getTeacher(String id){
+        Teacher teacher = new Teacher();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select * from student where Teacher_Id = " + id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                teacher.setTeacher_id(id);
+                teacher.setExperience(resultSet.getString(2));
+                teacher.setSub(resultSet.getString(3));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return teacher;
+    }
+
 }

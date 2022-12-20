@@ -1,5 +1,5 @@
 package com.school.sprint1.DButil;
-
+import com.school.sprint1.model.Student;
 import com.google.gson.Gson;
 
 import java.sql.Connection;
@@ -40,6 +40,7 @@ public class StudentDB {
         }
         return true;
     }
+    
     public Map<String,String> getStudents(String Term){
         Map<String,String> mapStudent =new HashMap();
         try {
@@ -92,5 +93,23 @@ public class StudentDB {
             return null;
         }
         return mapGrades;
+    }
+    public Student getStudent(String id){
+        Student student = new Student();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select * from student where st_id = " + id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                student.setSt_id(resultSet.getString(1));
+                student.setClass_Id(resultSet.getString(2));
+                student.setSt_Term_Id(resultSet.getString(3));
+                student.setCurr_Term_Id(resultSet.getString(4));
+                student.setP_id(resultSet.getString(5));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return student;
     }
 }

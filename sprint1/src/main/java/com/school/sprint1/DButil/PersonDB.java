@@ -22,8 +22,9 @@ public class PersonDB {
         }
         return true;
     }
+    
     public String getPass(String id){
-        String pass = "";
+        String pass = null;
         try {
             PreparedStatement statement = connection.prepareStatement("select password from person where id = " + id);
             ResultSet resultSet = statement.executeQuery();
