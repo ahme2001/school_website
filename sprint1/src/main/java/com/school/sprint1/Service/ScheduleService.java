@@ -53,7 +53,6 @@ public class ScheduleService {
         // check if the id exists in teacher table
         TeacherDB teacherDB = new TeacherDB();
         Teacher teacher = teacherDB.getTeacher(id);
-        System.out.println(teacher);
         if(teacher == null) return null;
         
         // get table from teacher table with the id

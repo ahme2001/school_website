@@ -14,9 +14,7 @@ public class profileController {
 
     @PostMapping("/profile")
     public String getProfile(@RequestBody String ID) {
-        System.out.println(ID);
         String res = profileService.run(ID);
-//        System.out.println(res);
         return res;
     }
 }

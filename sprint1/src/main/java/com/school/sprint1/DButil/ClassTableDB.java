@@ -22,7 +22,17 @@ public class ClassTableDB {
         int index =0;
 
         try {
-            PreparedStatement statement = connection.prepareStatement("select * from class_dialy_table where Class_Id = " + classId);
+            String sql = "select * from class_dialy_table where Class_Id = " + classId + " ORDER BY\n" +
+                    "     CASE\n" +
+                    "          WHEN Day = 'Saturday' THEN 1\n" +
+                    "          WHEN Day = 'Sunday' THEN 2\n" +
+                    "          WHEN Day = 'Monday' THEN 3\n" +
+                    "          WHEN Day = 'Tuesday' THEN 4\n" +
+                    "          WHEN Day = 'Wednesday' THEN 5\n" +
+                    "          WHEN Day = 'Thursday' THEN 6\n" +
+                    "     END ASC";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 ClassTable classPerDay = new ClassTable();

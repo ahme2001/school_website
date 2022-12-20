@@ -38,6 +38,22 @@ public class TeacherDB {
         return true;
     }
 
+    public Teacher getInfo(String ID){
+        Teacher teacher = new Teacher();
+        try {
+            if(!new PersonDB().getInfo(ID, teacher)) return  null;
+            PreparedStatement statement = connection.prepareStatement("select * from TEACHER where Teacher_Id = " + ID);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            teacher.setExperience(resultSet.getString(2));
+            teacher.setSub(resultSet.getString(3));
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return teacher;
+    }
+
     public Teacher getTeacher(String ID){
         Teacher teacher = null;
         try {
@@ -45,7 +61,7 @@ public class TeacherDB {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 teacher = new Teacher();
-//                teacher.setTeacher_id(ID);
+                teacher.setTeacher_id(ID);
                 teacher.setExperience(resultSet.getString(2));
                 teacher.setSub(resultSet.getString(3));
 

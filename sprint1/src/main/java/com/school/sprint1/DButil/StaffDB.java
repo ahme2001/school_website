@@ -34,15 +34,15 @@ public class StaffDB {
         }
         return true;
     }
+
     public Staff getInfo(String ID){
-        Staff staff = null;
+        Staff staff = new Staff();
         try {
+            if(!new PersonDB().getInfo(ID, staff)) return  null;
             PreparedStatement statement = connection.prepareStatement("select * from STAFF where S_id = " + ID);
             ResultSet resultSet = statement.executeQuery();
-            while(resultSet.next()){
-                staff = new Staff();
-                staff.setJob(resultSet.getString(2));
-            }
+            resultSet.next();
+            staff.setJob(resultSet.getString(2));
         } catch (SQLException e) {
             System.out.println(e);
             return null;
