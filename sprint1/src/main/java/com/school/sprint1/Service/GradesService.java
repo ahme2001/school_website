@@ -20,6 +20,7 @@ import java.util.*;
 public class GradesService {
 
     public String getIds(String Term){
+        if(Term.length() == 0) return "ERROR";
         Map<String,String> mapStudents = new StudentDB().getStudents(Term);
         if(mapStudents == null || mapStudents.size()==0) return "ERROR";
         String res = getGson(mapStudents);
@@ -35,6 +36,8 @@ public class GradesService {
         return  res;
     }
     public String showGrades(String input){
+        if(input.length() == 0) return "ERROR";
+
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, String>>(){}.getType();
         Map<String, String> userData = gson.fromJson(input, type);
@@ -46,6 +49,7 @@ public class GradesService {
         return res;
     }
     public boolean saveGrades(String input){
+        if (input.length() == 0) return false;
         boolean res = getValues(input);
         return res;
     }
