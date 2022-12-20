@@ -29,6 +29,25 @@ public class StudentDB {
         }
         return count;
     }
+
+    public Student getInfo(String ID){
+        Student student = new Student();
+        try {
+            if(!new PersonDB().getInfo(ID, student)) return  null;
+            PreparedStatement statement = connection.prepareStatement("select * from STUDENT where St_Id = " + ID);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            student.setClass_Id(resultSet.getString(2));
+            student.setSt_Term_Id(resultSet.getString(3));
+            student.setCurr_Term_Id(resultSet.getString(4));
+            student.setP_id(resultSet.getString(5));
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return student;
+    }
+
     public boolean addStudent(String values){
         try {
             PreparedStatement statement = connection.prepareStatement("insert into STUDENT values(" + values + ")");
