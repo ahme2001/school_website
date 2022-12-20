@@ -4,6 +4,7 @@ import com.school.sprint1.DButil.TeacherDB;
 import com.google.gson.Gson;
 import com.school.sprint1.gson.QuizQuestions;
 import com.school.sprint1.gson.QuizRes;
+import com.school.sprint1.model.Quiz;
 import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
@@ -13,7 +14,7 @@ import java.util.HashMap;
 public class QuizService {
     private Connection connection;
 
-    public String getInfo(String tId){
+    public String getTeacherInfo(String tId){
         return new TeacherDB().getClass(tId);
     }
 
@@ -29,7 +30,6 @@ public class QuizService {
     }
     public String DoQuiz(String qId){
         return new QuizDB().getQuiz(qId);
-
     }
 
     public String calcRes(String input){
@@ -44,11 +44,13 @@ public class QuizService {
         for (int i = 0 ; i < ans.length ; i++){
             if(ans[i]==sol[i])
                 grade++;
+            if (sol[i]==0)
+                return "can't found";
         }
         res.put("grade",Integer.toString(grade));
         res.put("from",Integer.toString(ans.length));
+        QuizDB QD = new QuizDB();
+        QD.updateDoQuiz(qId,sId,grade);
         return new Gson().toJson(res);
     }
-
-
 }

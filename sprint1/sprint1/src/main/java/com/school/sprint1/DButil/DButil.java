@@ -14,7 +14,7 @@ public class DButil {
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/SCHOOL?useSSL=false";
         String user = "root";
-        String password = "Michael82468246";
+        String password ="124578369’ة";
         try {
             Class.forName(driver);
             connection = DriverManager.getConnection(url,user,password);

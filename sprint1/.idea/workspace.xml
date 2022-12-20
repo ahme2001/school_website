@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../SWE_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SWE_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gson-2.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/CreateAccController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/loginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/ParentDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/PersonDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StaffDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/TeacherDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/CreateAccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/loginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Sprint1Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Parent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Staff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/Sprint1ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/Controller/loginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/Service/loginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/Sprint1Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/model/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/school/sprint1/Sprint1ApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2J0YrnrWC0blvJRX1c6EEN0fruJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "E:/school/school_website/sprint1/sprint1"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="" />
+      <created>1671216680514</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671216680514</updated>
+    </task>
+    <servers />
+  </component>
+</project>

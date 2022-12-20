@@ -8,10 +8,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
-
 public class QuizDB {
     private Connection connection;
 
@@ -27,15 +27,11 @@ public class QuizDB {
         String quizId = quiz.generateId();
         quiz.setQuiz_Id(quizId);
         try {
-//            System.out.println(quiz.ToString());
             PreparedStatement statement = connection.prepareStatement("insert into QUIZ values(" + quiz.ToString() + ")");
             statement.execute();
-
         } catch (SQLException e) {
-            System.out.println("4444444444");
             return false;
         }
-//        System.out.println(qq.ToString());
         String[] questions = qq.getQuestions();
         String[] choice1 = qq.getChoice1();
         String[] choice2 = qq.getChoice2();
@@ -50,15 +46,16 @@ public class QuizDB {
             q.setChoice4(choice4[i]);
             q.setQuestion(questions[i]);
             q.setSolution(sol[i]);
-            q.setQuestion_Id(quizId+ i);
+            if(i>9) q.setQuestion_Id(quizId+ i);
+            else q.setQuestion_Id(quizId+"0"+i);
+
             try {
-//                System.out.println(q.ToString());
                 PreparedStatement statement = connection.prepareStatement("insert into Question values(" + q.ToString() + ")");
                 statement.execute();
 
             } catch (SQLException e) {
-                System.out.println("3333333");
                 return false;
+
             }
         }
         return announceAll(quizId , qq.getClassId());
@@ -76,21 +73,20 @@ public class QuizDB {
                     statement2.execute();
 
                 } catch (SQLException e) {
-                    System.out.println("1111");
                     return false;
+
                 }
             }
-        } catch (SQLException e) {
-            System.out.println("2222");
+        }catch (SQLException e) {
             return false;
         }
 
         return true;
     }
-    public int getCount(String class_id) {
+    public int getCount() {
         int count=0;
         try {
-            PreparedStatement statement = connection.prepareStatement("select count(Quiz_Id) from QUIZ where Class_Id = " + class_id);
+            PreparedStatement statement = connection.prepareStatement("select count(Quiz_Id) from QUIZ");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 count = resultSet.getInt(1);
@@ -116,8 +112,7 @@ public class QuizDB {
             System.out.println("2222");
             return "can't found";
         }
-//        qs.setId((String[]) Id.toArray());
-//        qs.setName((String[]) Name.toArray());
+
         qs.put("Id",Id);
         qs.put("Name",Name);
         return new Gson().toJson(qs);
@@ -137,8 +132,7 @@ public class QuizDB {
                 qq.put("endDate",resultSet.getString(3));
             }
         } catch (SQLException e) {
-            System.out.println("2222");
-            return "can't do it ";
+            return "can't found";
         }
         try {
             PreparedStatement statement = connection.prepareStatement("select Question , choice1 , choice2 , choice3 , choice4  from Question  where Quiz_Id = " + qId);
@@ -151,8 +145,7 @@ public class QuizDB {
                 choice4.add(resultSet.getString(5));
             }
         } catch (SQLException e) {
-            System.out.println("2222");
-            return "can't do it ";
+            return "can't found";
         }
         qq.put("questions",questions);
         qq.put("choice1",choice1);
@@ -166,18 +159,28 @@ public class QuizDB {
         int[] sol = new int[len];
         int counter = 0;
         try {
-            System.out.println(qId + "  " +sId);
             PreparedStatement statement = connection.prepareStatement("select Question.Solution from Question , DO_QUIZ where DO_QUIZ.Quiz_Id =Question.Quiz_Id and DO_QUIZ.Quiz_Id ="+qId+" and DO_QUIZ.St_Id=" + sId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
-                System.out.println(resultSet.getInt(1));
                 sol[counter++]=resultSet.getInt(1);
             }
         } catch (SQLException e) {
-            System.out.println("2222");
             return new int[len] ;
         }
-        System.out.println(Arrays.toString(sol));
         return sol;
+    }
+
+    public boolean updateDoQuiz(String qId , String sId , int grade){
+        try {
+            Date d = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yy");
+            PreparedStatement statement1 = connection.prepareStatement("update do_quiz set SubmissionTime=\""+ format.format(d) +"\" where DO_QUIZ.Quiz_Id ="+qId+" and DO_QUIZ.St_Id=" + sId);
+            PreparedStatement statement2 = connection.prepareStatement("update do_quiz set grade="+ grade +" where DO_QUIZ.Quiz_Id ="+qId+" and DO_QUIZ.St_Id=" + sId);
+            statement1.execute();
+            statement2.execute();
+        } catch (SQLException e) {
+            return false;
+        }
+        return true ;
     }
 }

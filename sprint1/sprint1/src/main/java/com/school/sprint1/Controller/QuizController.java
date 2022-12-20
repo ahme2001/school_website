@@ -11,7 +11,7 @@ public class QuizController {
     private com.school.sprint1.Service.CreateAccountService CreateService;
     @PostMapping("getInfo")
     public String  getInfo(@RequestBody String input){
-        return new QuizService().getInfo(input);
+        return new QuizService().getTeacherInfo(input);
     }
     @PostMapping("setQuiz")
     public boolean setQuiz(@RequestBody String input){

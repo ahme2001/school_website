@@ -4,7 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="" />
+    <list default="true" id="632862a9-b17e-4b7b-9eee-92af7c05a6d7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../SWE_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../SWE_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gson-2.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/Controller/CreateAccController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/Controller/loginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/DButil/ParentDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/DButil/PersonDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/DButil/StaffDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/DButil/TeacherDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/Service/CreateAccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/Service/loginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/Sprint1Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/model/Parent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/model/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/model/Staff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/model/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/school/sprint1/model/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/com/school/sprint1/Sprint1ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/com/school/sprint1/testLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/school/sprint1/Controller/loginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/school/sprint1/DButil/DButil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/school/sprint1/Service/loginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/school/sprint1/Sprint1Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/school/sprint1/model/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/test-classes/com/school/sprint1/Sprint1ApplicationTests.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,32 +57,196 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectId" id="2J0YrnrWC0blvJRX1c6EEN0fruJ" />
+  <component name="ProjectId" id="2Ixv6dQWvDT81HDVEPKXAw6Qi8Y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;E:/school/school_website/sprint1/sprint1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.testQuiz">
+    <configuration name="testQuiz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testQuiz.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
+      <option name="METHOD_NAME" value="test4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testQuiz.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
+      <option name="METHOD_NAME" value="test5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testQuiz.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
+      <option name="METHOD_NAME" value="test6" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testQuiz.test7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
+      <option name="METHOD_NAME" value="test7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.testQuiz" />
+        <item itemvalue="JUnit.testQuiz.test7" />
+        <item itemvalue="JUnit.testQuiz.test6" />
+        <item itemvalue="JUnit.testQuiz.test5" />
+        <item itemvalue="JUnit.testQuiz.test4" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="" />
-      <created>1671216680514</created>
+      <changelist id="632862a9-b17e-4b7b-9eee-92af7c05a6d7" name="Changes" comment="" />
+      <created>1671135874209</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1671216680514</updated>
+      <updated>1671135874209</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/school/sprint1/testQuiz.java</url>
+          <line>87</line>
+          <properties class="com.school.sprint1.testQuiz" method="test13">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz_test3.ic" NAME="testQuiz.test3 Coverage Results" MODIFIED="1671568219738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz_test1.ic" NAME="testQuiz.test1 Coverage Results" MODIFIED="1671568198087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz_test2.ic" NAME="testQuiz.test2 Coverage Results" MODIFIED="1671568207666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz.ic" NAME="testQuiz Coverage Results" MODIFIED="1671568472338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz_test4.ic" NAME="testQuiz.test4 Coverage Results" MODIFIED="1671568227195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz_test5.ic" NAME="testQuiz.test5 Coverage Results" MODIFIED="1671568238354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz_test6.ic" NAME="testQuiz.test6 Coverage Results" MODIFIED="1671568246147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testLogin.ic" NAME="testLogin Coverage Results" MODIFIED="1671567434278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pom_xml$testQuiz_test7.ic" NAME="testQuiz.test7 Coverage Results" MODIFIED="1671568256525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
   </component>
 </project>

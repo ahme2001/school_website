@@ -44,7 +44,7 @@ public class Quiz {
     }
     public String generateId() {
         QuizDB qDB = new QuizDB();
-        return Integer.toString(qDB.getCount(this.Class_Id));
+        return Integer.toString(qDB.getCount());
     }
     public String ToString() {
         return "\"" + this.Quiz_Id + "\"," +
