@@ -57,17 +57,9 @@ public class ParentDB {
     public Parent getInfo(String ID){
         Parent parent = new Parent();
         try {
-            PreparedStatement statement = connection.prepareStatement("select * from PERSON where Id = " + ID);
+            if(new PersonDB().getInfo(ID, parent) == false) return  null;
+            PreparedStatement statement = connection.prepareStatement("select * from PARENT where P_id = " + ID);
             ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-            parent.setAddress(resultSet.getString(2));
-            parent.setPhone(resultSet.getString(3));
-            parent.setName(resultSet.getString(4));
-            parent.setNational_Id(resultSet.getString(5));
-            parent.setSex(resultSet.getString(6));
-            parent.setPassword(resultSet.getString(7));
-            statement = connection.prepareStatement("select * from PARENT where P_id = " + ID);
-            resultSet = statement.executeQuery();
             resultSet.next();
             parent.setJob(resultSet.getString(2));
         } catch (SQLException e) {
