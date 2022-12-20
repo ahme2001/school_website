@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class ExamTableService {
 
@@ -51,14 +52,14 @@ public class ExamTableService {
     }
 
 
-
     private ExamTableStudentInfo getInfo(String input){
         Gson gson = new Gson();
         return gson.fromJson(input, ExamTableStudentInfo.class);
     }
 
-    private Year_Code getYearCode(String input){
+    private Year_Code getYearCode(String input) {
         Gson gson = new Gson();
-        return gson.fromJson(input,Year_Code.class);
+        return gson.fromJson(input, Year_Code.class);
     }
+
 }

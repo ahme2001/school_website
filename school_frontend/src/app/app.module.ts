@@ -11,6 +11,8 @@ import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SetExamTableComponent } from './set-exam-table/set-exam-table.component';
 import { ShowExamTableComponent } from './show-exam-table/show-exam-table.component';
+import { SetScheduleComponent } from './set-schedule/set-schedule.component';
+import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ShowExamTableComponent } from './show-exam-table/show-exam-table.compon
     ProfileComponent,
     StaffComponent,
     SetExamTableComponent,
-    ShowExamTableComponent
+    ShowExamTableComponent,
+    SetScheduleComponent,
+    ShowScheduleComponent
   ],
   imports: [
     BrowserModule,
