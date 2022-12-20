@@ -50,8 +50,8 @@ export class LogInComponent implements OnInit {
   signIn() {
     this.account.id = this.id
     this.account.pass = this.password;
-    // let msg = this.id + "," + this.password
-    let msg = JSON.stringify(this.account)
+    let msg = this.id + "," + this.password
+    // let msg = JSON.stringify(this.account)
     this.sendRequestSignIn(msg)
   }
   enter(){

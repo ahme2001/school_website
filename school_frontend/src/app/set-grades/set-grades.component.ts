@@ -80,7 +80,6 @@ export class SetGradesComponent implements OnInit {
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
-            console.log(this.answer);
             if(this.answer == "ERROR"||this.answer =="false"){
               alert(this.answer)
             }
@@ -108,7 +107,6 @@ export class SetGradesComponent implements OnInit {
     if(this.SubjectSelection != ""){
       this.Student.subject = this.YearSelection + this.TermSelection + this.SubjectSelection
       var temp = JSON.stringify(this.Student);
-      console.log(temp)
       this.URL  = "http://localhost:8070/School/grades/save";
       this.sendRequestSetGrades(temp,2);
     }
