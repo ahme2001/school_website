@@ -1,7 +1,6 @@
 package com.school.sprint1.DButil;
 
 import com.school.sprint1.model.Person;
-import com.school.sprint1.model.Staff;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,8 +24,9 @@ public class PersonDB {
         }
         return true;
     }
+
     public String getPass(String id){
-        String pass = "";
+        String pass = null;
         try {
             PreparedStatement statement = connection.prepareStatement("select password from person where id = " + id);
             ResultSet resultSet = statement.executeQuery();
@@ -38,21 +38,23 @@ public class PersonDB {
         }
         return pass;
     }
-    public boolean getInfo(String ID, Person person){
-        try {
-            PreparedStatement statement = connection.prepareStatement("select * from PERSON where Id = " + ID);
-            ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-            person.setAddress(resultSet.getString(2));
-            person.setPhone(resultSet.getString(3));
-            person.setName(resultSet.getString(4));
-            person.setNational_Id(resultSet.getString(5));
-            person.setSex(resultSet.getString(6));
-            person.setPassword(resultSet.getString(7));
-        } catch (SQLException e) {
-            System.out.println(e);
-            return false;
-        }
-        return true;
-    }
+
+
+//    public boolean getInfo(String ID, Person person){
+//        try {
+//            PreparedStatement statement = connection.prepareStatement("select * from PERSON where Id = " + ID);
+//            ResultSet resultSet = statement.executeQuery();
+//            resultSet.next();
+//            person.setAddress(resultSet.getString(2));
+//            person.setPhone(resultSet.getString(3));
+//            person.setName(resultSet.getString(4));
+//            person.setNational_Id(resultSet.getString(5));
+//            person.setSex(resultSet.getString(6));
+//            person.setPassword(resultSet.getString(7));
+//        } catch (SQLException e) {
+//            System.out.println(e);
+//            return false;
+//        }
+//        return true;
+//    }
 }

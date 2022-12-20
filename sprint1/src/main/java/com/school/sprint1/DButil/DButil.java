@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DButil {
-    //change password of your database connection before begining
+    //change password of your database connection before beginning
     private static Connection connection = null;
 
     public static Connection getConnection(){
@@ -14,7 +14,7 @@ public class DButil {
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/SCHOOL?useSSL=false";
         String user = "root";
-        String password = "welcome123";
+        String password = "TIGER";
 
         try {
             Class.forName(driver);

@@ -15,7 +15,6 @@ public class ProfileService {
         return person;
     }
     private String getPerson(String ID){
-        String type="";
         String identifier="";
 
         identifier += ID.charAt(2);
@@ -24,7 +23,7 @@ public class ProfileService {
 
         if(identifier.compareTo("01") == 0){
             StudentDB DB = new StudentDB();
-            Student student = DB.getInfo(ID);
+            Student student = DB.getStudent(ID);
             if(student == null) return "ID not found in the database";
             return gson.toJson(student);
         }else if(identifier.compareTo("02") == 0){
@@ -34,7 +33,7 @@ public class ProfileService {
             return gson.toJson(parent);
         }else if(identifier.compareTo("03") == 0){
             TeacherDB DB = new TeacherDB();
-            Teacher teacher = DB.getInfo(ID);
+            Teacher teacher = DB.getTeacher(ID);
             if(teacher == null) return "ID not found in the database";
             return gson.toJson(teacher);
         }else if(identifier.compareTo("04") == 0){

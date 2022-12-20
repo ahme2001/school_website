@@ -55,13 +55,15 @@ public class ParentDB {
         return true;
     }
     public Parent getInfo(String ID){
-        Parent parent = new Parent();
+        Parent parent = null;
         try {
-            if(new PersonDB().getInfo(ID, parent) == false) return  null;
             PreparedStatement statement = connection.prepareStatement("select * from PARENT where P_id = " + ID);
             ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-            parent.setJob(resultSet.getString(2));
+            while (resultSet.next()){
+                parent = new Parent();
+                parent.setJob(resultSet.getString(2));
+            }
+
         } catch (SQLException e) {
             System.out.println(e);
             return null;

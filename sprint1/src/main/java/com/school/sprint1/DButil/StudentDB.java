@@ -37,17 +37,20 @@ public class StudentDB {
         }
         return true;
     }
-    public Student getInfo(String ID){
-        Student student = new Student();
+
+    public Student getStudent(String ID){
+        Student student = null;
         try {
-            if(new PersonDB().getInfo(ID, student) == false) return  null;
             PreparedStatement statement = connection.prepareStatement("select * from STUDENT where St_Id = " + ID);
             ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-            student.setClass_Id(resultSet.getString(2));
-            student.setSt_Term_Id(resultSet.getString(3));
-            student.setCurr_Term_Id(resultSet.getString(4));
-            student.setP_id(resultSet.getString(5));
+            while (resultSet.next()){
+                student = new Student();
+//                student.setSt_id(resultSet.getString(1));
+                student.setClass_Id(resultSet.getString(2));
+                student.setSt_Term_Id(resultSet.getString(3));
+                student.setCurr_Term_Id(resultSet.getString(4));
+                student.setP_id(resultSet.getString(5));
+            }
         } catch (SQLException e) {
             System.out.println(e);
             return null;
