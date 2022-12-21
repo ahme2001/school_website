@@ -6,8 +6,8 @@ import com.school.sprint1.DButil.StudentDB;
 public class Student extends Person{
     String St_id;
     String Class_Id;
-    String St_Term_Id;
-    String Curr_Term_Id;
+    String ST_Term_Id;
+    String Curr_term_id;
     String P_id;
     String parent_national_id;
     public String getSt_id() {
@@ -27,19 +27,19 @@ public class Student extends Person{
     }
 
     public String getSt_term_is() {
-        return St_Term_Id;
+        return ST_Term_Id;
     }
 
     public void setSt_term_is(String st_term_id) {
-        St_Term_Id = st_term_id;
+        ST_Term_Id = st_term_id;
     }
 
     public String getCurrent_term_is() {
-        return Curr_Term_Id;
+        return Curr_term_id;
     }
 
     public void setCurrent_term_is(String current_term_id) {
-        Curr_Term_Id = current_term_id;
+        Curr_term_id = current_term_id;
     }
 
     public String getP_id() {
@@ -55,20 +55,20 @@ public class Student extends Person{
         this.P_id = p_id;
     }
 
-    public String getSt_Term_Id() {
-        return St_Term_Id;
+    public String getST_Term_Id() {
+        return ST_Term_Id;
     }
 
-    public void setSt_Term_Id(String st_Term_Id) {
-        St_Term_Id = st_Term_Id;
+    public void setST_Term_Id(String ST_Term_Id) {
+        this.ST_Term_Id = ST_Term_Id;
     }
 
-    public String getCurr_Term_Id() {
-        return Curr_Term_Id;
+    public String getCurr_term_id() {
+        return Curr_term_id;
     }
 
-    public void setCurr_Term_Id(String curr_Term_Id) {
-        Curr_Term_Id = curr_Term_Id;
+    public void setCurr_term_id(String curr_term_id) {
+        Curr_term_id = curr_term_id;
     }
 
     public String getParent_national_id() {
@@ -97,13 +97,13 @@ public class Student extends Person{
     public String ToStringSpecific() {
         return "\"" + this.St_id + "\"," +
         "\"" + this.Class_Id + "\"," +
-        "\"" + this.St_Term_Id + "\"," +
-        "\"" + this.Curr_Term_Id + "\"," +
+        "\"" + this.ST_Term_Id + "\"," +
+        "\"" + this.Curr_term_id + "\"," +
         "\"" + this.P_id + "\"" ;
     }
     @Override
     public String generateId() {
-        String s_term = this.St_Term_Id;
+        String s_term = this.ST_Term_Id;
         StudentDB sdb = new StudentDB();
         int count = sdb.getCount(s_term);
         String c = Integer.toString(count);

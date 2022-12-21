@@ -24,7 +24,6 @@ public class PersonDB {
         }
         return true;
     }
-    
     public String getPass(String id){
         String pass = null;
         try {
@@ -39,6 +38,10 @@ public class PersonDB {
         return pass;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> phase_2
     public boolean getInfo(String ID, Person person){
         try {
             PreparedStatement statement = connection.prepareStatement("select * from PERSON where Id = " + ID);

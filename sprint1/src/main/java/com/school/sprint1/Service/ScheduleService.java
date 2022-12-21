@@ -21,8 +21,8 @@ public class ScheduleService {
         String id = info.getId();
         StudentDB studentDB = new StudentDB();
         Student student = studentDB.getStudent(id);
+        if(student == null) return null;
         String classId = student.getClass_Id();
-        if(classId == null) return null;
 
         // get table from class table with the class id
         ClassTableDB classTableDB = new ClassTableDB();
@@ -59,7 +59,7 @@ public class ScheduleService {
         TeacherTableDB teacherTableDB = new TeacherTableDB();
         TeacherTable[] teacherTables = teacherTableDB.getTeacherTable(id);
 
-        TeacherTableSetting teacherTable = getTeacherTable(teacherTables);
+        TeacherTableSetting teacherTable = getTeacherTableObjects(teacherTables);
 
         Gson gson = new Gson();
         return gson.toJson(teacherTable);
@@ -113,7 +113,7 @@ public class ScheduleService {
         return gson.fromJson(input,TeacherTableSetting.class);
     }
 
-    private TeacherTableSetting getTeacherTable(TeacherTable[] teacherTables){
+    private TeacherTableSetting getTeacherTableObjects(TeacherTable[] teacherTables){
         String teacherId = teacherTables[0].getTeacher_id();
 
         Day_Lecture[] days = new Day_Lecture[6];

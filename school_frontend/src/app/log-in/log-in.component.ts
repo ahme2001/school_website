@@ -68,5 +68,7 @@ export class LogInComponent implements OnInit {
       this._router.navigate(['profile'])
     else
       this.displayAlert = "block"
+
+    console.log(JSON.parse(localStorage.getItem("Id")))
   }
 }

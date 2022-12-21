@@ -1,11 +1,15 @@
 package com.school.sprint1.DButil;
-
 import com.school.sprint1.model.Staff;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import com.school.sprint1.model.Parent;
+import com.school.sprint1.model.Staff;
+
+import java.sql.*;
+
 
 public class StaffDB {
     private Connection connection;
