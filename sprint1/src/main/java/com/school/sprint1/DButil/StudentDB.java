@@ -38,8 +38,8 @@ public class StudentDB {
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             student.setClass_Id(resultSet.getString(2));
-            student.setSt_Term_Id(resultSet.getString(3));
-            student.setCurr_Term_Id(resultSet.getString(4));
+            student.setST_Term_Id(resultSet.getString(3));
+            student.setCurr_term_id(resultSet.getString(4));
             student.setP_id(resultSet.getString(5));
         } catch (SQLException e) {
             System.out.println(e);
