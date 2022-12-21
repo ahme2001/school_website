@@ -1,0 +1,19 @@
+<app-sidebar></app-sidebar>
+<div class="container">
+  <div class="row">
+    <table class="table mt-5 col-9 mx-auto" style="width:50%">
+      <thead>
+        <tr>
+          <th scope="col">Subject</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody >
+          <tr *ngFor="let item of examTable" >
+              <th scope="row" class="col-3">{{item.subject}}</th>
+              <td class="col-3"> {{item.date}} </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

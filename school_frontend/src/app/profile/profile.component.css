@@ -3,3 +3,12 @@ html, body {
     padding: 0px;
     box-sizing: border-box;
 } 
+h1{
+    color: #00539CFF;
+}
+b{
+    color: #00539CFF;
+}
+p{
+    line-height: 2;
+}
