@@ -1,9 +1,15 @@
 package com.school.sprint1.DButil;
+import com.school.sprint1.model.Staff;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import com.school.sprint1.model.Parent;
 import com.school.sprint1.model.Staff;
 
 import java.sql.*;
+
 
 public class StaffDB {
     private Connection connection;
@@ -28,13 +34,22 @@ public class StaffDB {
         try {
             PreparedStatement statement = connection.prepareStatement("insert into STAFF values(" + values + ")");
             statement.execute();
-
         } catch (SQLException e) {
             return false;
         }
         return true;
     }
+    public boolean addGrade(String values){
+        try {
+            PreparedStatement statement = connection.prepareStatement("insert into ENROLMENT values "+ values);
+            statement.execute();
 
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
     public Staff getInfo(String ID){
         Staff staff = new Staff();
         try {

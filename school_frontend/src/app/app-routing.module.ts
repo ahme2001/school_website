@@ -9,8 +9,12 @@ import { ShowExamTableComponent } from './show-exam-table/show-exam-table.compon
 import { SetExamTableComponent } from './set-exam-table/set-exam-table.component';
 import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
+import { SetGradesComponent } from './set-grades/set-grades.component';
+import { ShowGradesComponent } from './show-grades/show-grades.component';
 
 const routes: Routes = [
+  {path:'show_grades',component:ShowGradesComponent},
+  {path:'set_grades',component:SetGradesComponent},
   {path:'set_examsTable',component:SetExamTableComponent},
   {path:'show_examTable',component:ShowExamTableComponent},
   {path:'show_schedule',component:ShowScheduleComponent},

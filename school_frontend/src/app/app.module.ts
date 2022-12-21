@@ -15,6 +15,9 @@ import { SetExamTableComponent } from './set-exam-table/set-exam-table.component
 import { ShowExamTableComponent } from './show-exam-table/show-exam-table.component';
 import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
+import { SetGradesComponent } from './set-grades/set-grades.component';
+import { ShowGradesComponent } from './show-grades/show-grades.component';
+
 
 
 @NgModule({
@@ -24,6 +27,8 @@ import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
     SidebarComponent,
     ProfileComponent,
     StaffComponent,
+    SetGradesComponent,
+    ShowGradesComponent,
     NewQuizComponent,
     QuizComponent,
     SetExamTableComponent,

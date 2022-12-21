@@ -1,0 +1,32 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+  <div>
+    <label>select Year</label>
+    <select class="col-2 ms-2" [(ngModel)]="yearselect">
+    <option *ngFor="let c of selectedYear" [value]="c?.code">{{ c?.name }}</option>
+    </select>
+    <label class="ms-2">select Term</label>
+    <select class="col-2 ms-2" [(ngModel)]="termselect">
+    <option *ngFor="let c of terms" [value]="c?.name">{{ c?.name }}</option>
+    </select>
+    <button style="background-color: #00539CFF; color:white;" (click)="getgrade()" class="col-2 ms-5 my-3 ps-3">
+      Get Grades
+    </button>
+  </div>
+  <div>
+    <table class="table" [style.display]="displayTable">
+      <thead>
+        <tr>
+          <th scope="col">Subject</th>
+          <th scope="col">Grade</th>
+        </tr>
+      </thead>
+      <tbody >
+          <tr *ngFor="let item of grades" >
+              <th class="col-2">{{item.subject}}</th>
+              <td class="col-1">{{item.grade}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
