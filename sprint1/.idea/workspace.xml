@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-exam-table/set-exam-table.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-exam-table/set-exam-table.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-exam-table/set-exam-table.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-exam-table/set-exam-table.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-schedule/set-schedule.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-schedule/set-schedule.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-schedule/set-schedule.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-schedule/set-schedule.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-exam-table/show-exam-table.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-exam-table/show-exam-table.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-exam-table/show-exam-table.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-exam-table/show-exam-table.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-schedule/show-schedule.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-schedule/show-schedule.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-schedule/show-schedule.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-schedule/show-schedule.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/ClassTableSetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/Day_Lecture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/ExamTableInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/ExamTableStudentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/Lectures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/SubjectsInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/TeacherTableSetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/Year_Code.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/loginInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/loginPersonInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/scheduleInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/schedulePersonInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/log-in/log-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/log-in/log-in.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/profile/profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/profile/profile.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/staff/staff.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/staff/staff.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/ExamTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/ExamTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/ScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/profileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Controller/profileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/ClassTableDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/ClassTableDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/DButil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/EnrollmentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/EnrollmentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/ParentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/ParentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/PersonDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/PersonDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/StaffDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/StaffDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/StudentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/SubDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/SubDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/TeacherDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/TeacherDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/TeacherTableDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/DButil/TeacherTableDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/CreateAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/CreateAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/ExamTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/ExamTableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/ScheduleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/loginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/Service/loginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/ClassTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/ClassTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Enrollment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Sub.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/Sub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/TeacherTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/java/com/school/sprint1/model/TeacherTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/profileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/profileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/testExamTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/testExamTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/testLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/testLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/testSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/src/test/java/com/school/sprint1/testSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/Controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/sprint1/Controller/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/Service/loginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/sprint1/Service/loginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/sprint1/model/Person.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2J0YrnrWC0blvJRX1c6EEN0fruJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="" />
+      <created>1671216680514</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671216680514</updated>
+    </task>
+    <servers />
+  </component>
+</project>

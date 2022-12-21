@@ -6,8 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
-  constructor() { }
+  isStudent = false;
+  isParent = false;
+  isTeacher = false;
+  isStaff = false;
+  constructor() {
+    let x = localStorage.getItem("type")
+    console.log(x);
+    
+    if(x.match("student") !== null){
+      this.isStudent = true
+      console.log("usfusfus");
+      
+    }
+    else if(x.match("parent") !== null){
+      this.isParent = true
+    }
+    else if(x.match("staff") !== null){
+      this.isStaff = true
+    }
+    else{
+      this.isTeacher=true
+    }
+   }
 
   ngOnInit(): void {
   }

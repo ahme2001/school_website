@@ -8,8 +8,6 @@ public abstract class Person {
     String National_Id;
     String Name;
     String Password;
-    String School = "zeween";
-    String Type;
     public abstract String getId();
 
     public abstract void setId(String id);
@@ -62,22 +60,6 @@ public abstract class Person {
         Password = password;
     }
 
-    public String getSchool() {
-        return School;
-    }
-
-    public void setSchool(String school) {
-        School = school;
-    }
-
-    public String getType() {
-        return Type;
-    }
-
-    public void setType(String type) {
-        Type = type;
-    }
-
     @Override
     public String toString() {
         return "\"" + this.id + "\"," +
@@ -86,9 +68,7 @@ public abstract class Person {
                 "\"" + this.Name + "\"," +
                 "\"" + this.National_Id + "\"," +
                 "\"" + this.Sex + "\"," +
-                "\"" + this.Password + "\"," +
-                "\"" + this.School + "\"," +
-                "\"" + this.Type + "\"";
+                "\"" + this.Password + "\"";
     }
     public abstract String ToStringSpecific();
     public abstract String generateId();
