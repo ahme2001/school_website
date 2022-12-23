@@ -1,1 +1,43 @@
 <app-sidebar></app-sidebar>
+<h1 class="text-center">Profile</h1>
+<div class="row" *ngIf= "isStudent">
+    <div class="col_6 py-3 px-4" >
+        <p><b>Name:  </b> {{student.Name}}</p>
+        <p><b>National_Id:  </b> {{student.National_Id}}</p>
+        <p><b>Phone:  </b>{{student.Phone}}</p>
+        <p><b>Sex:  </b>{{student.Sex}}</p>
+        <p><b>Class Id:  </b>{{student.Class_Id}}</p>
+        <p><b>Term number:  </b>{{student.Curr_term_id}}</p>
+    </div>
+</div>
+
+<div class="row" *ngIf= "isParent">
+    <div class="col_6 py-3 px-4">
+        <p><b>Name:  </b> {{parent.Name}}</p>
+        <p><b>Job:  </b>{{parent.Job}}</p>
+        <p><b>National_Id:  </b> {{parent.National_Id}}</p>
+        <p><b>Phone:  </b>{{parent.Phone}}</p>
+        <p><b>Sex:  </b>{{parent.Sex}}</p>
+    </div>
+</div>
+
+<div class="row" *ngIf= "isStaff">
+    <div class="col_6 py-3 px-4">
+        <p><b>Name:  </b> {{staff.Name}}</p>
+        <p><b>Job:  </b>{{staff.Job}}</p>
+        <p><b>National_Id:  </b> {{staff.National_Id}}</p>
+        <p><b>Phone:  </b>{{staff.Phone}}</p>
+        <p><b>Sex:  </b>{{staff.Sex}}</p>
+    </div>
+</div>
+
+<div class="row" *ngIf= "isTeacher">
+    <div class="col_6 py-3 px-4">
+        <p><b>Name:  </b> {{teacher.Name}}</p>
+        <p><b>Subject:  </b>{{teacher.Sub}}</p>
+        <p><b>National_Id:  </b> {{teacher.National_Id}}</p>
+        <p><b>Phone:  </b>{{teacher.Phone}}</p>
+        <p><b>Sex:  </b>{{teacher.Sex}}</p>
+        <p><b>Years of experience:  </b>{{teacher.Experience}}</p>
+    </div>
+</div>

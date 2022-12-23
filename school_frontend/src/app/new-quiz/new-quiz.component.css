@@ -1,0 +1,29 @@
+h1{
+    color: #00539CFF;
+}
+.choose{
+    font-size: 20px;
+    color: #00539CFF;
+    font-weight: bold;
+}
+textarea{
+    resize: none;
+}
+.btn{
+    text-align: center;
+    margin: auto;
+    background-color: #00539CFF;
+    color: #fff;
+  }
+  .error{
+	background-color: rgba(207, 79, 79,0.6);
+	color: black;
+	margin: auto;
+	padding: 2px;
+	width: 50%;
+    margin: auto;
+	border-radius: 3px;
+	border: solid red;
+	font-size: 13px;
+	text-align: center;
+}

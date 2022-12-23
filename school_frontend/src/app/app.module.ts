@@ -9,10 +9,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StaffComponent } from './staff/staff.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewQuizComponent } from './new-quiz/new-quiz.component';
+import { QuizComponent } from './quiz/quiz.component';
 import { SetExamTableComponent } from './set-exam-table/set-exam-table.component';
 import { ShowExamTableComponent } from './show-exam-table/show-exam-table.component';
 import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
+import { SetGradesComponent } from './set-grades/set-grades.component';
+import { ShowGradesComponent } from './show-grades/show-grades.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,6 +27,10 @@ import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
     SidebarComponent,
     ProfileComponent,
     StaffComponent,
+    SetGradesComponent,
+    ShowGradesComponent,
+    NewQuizComponent,
+    QuizComponent,
     SetExamTableComponent,
     ShowExamTableComponent,
     SetScheduleComponent,
