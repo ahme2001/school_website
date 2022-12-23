@@ -11,8 +11,10 @@ import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 import { SetGradesComponent } from './set-grades/set-grades.component';
 import { ShowGradesComponent } from './show-grades/show-grades.component';
+import { ShowFeesComponent } from './show-fees/show-fees.component';
 
 const routes: Routes = [
+  {path:'show_fees',component:ShowFeesComponent},
   {path:'show_grades',component:ShowGradesComponent},
   {path:'set_grades',component:SetGradesComponent},
   {path:'set_examsTable',component:SetExamTableComponent},
