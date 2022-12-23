@@ -47,6 +47,7 @@ public class FeesService {
 
         // get current term of the student
         Student student = studentDB.getStudent(id);
+        if(student == null) return null;
         String curr_term = student.getCurr_term_id();
 
         // get the year code
