@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Vector;
 
 public class StudentDB {
     private Connection connection;
@@ -130,5 +131,21 @@ public class StudentDB {
             return null;
         }
         return student;
+    }
+
+    public Vector<String> getAllChildrenIds(String P_Id){
+        Vector<String> children = new Vector<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select St_Id from STUDENT where P_Id = " + P_Id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                String s = resultSet.getString(1);
+                children.add(s);
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return children;
     }
 }
