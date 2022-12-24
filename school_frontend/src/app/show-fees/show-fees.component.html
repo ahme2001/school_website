@@ -1,12 +1,17 @@
 <app-sidebar></app-sidebar>
-<div class="container col-lg-25 my-2 ms-2" >
-    <label class="ms-4 mt-5">Select Children</label>
-    <select class="col-2 ms-2" [(ngModel)]="selected.id">
-    <option *ngFor="let c of children" [value]="c?.Id">{{ c?.name }}</option>
-    </select>
-    <button style="background-color: #00539CFF; color:white;" (click)="showFees()" class="ms-5">Show Fees</button>
-</div>
-<div  [style.display]="displayfees">
-  <label class="ms-4 mt-5">Fees: </label>
-  {{fees}}
+<div class="row col-5"  style="text-align: center;">
+  <table class="table mt-5 ms-5">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Fees</th>
+      </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let item of children">
+            <td >{{item.name}}</td>
+            <td >{{item.fees}}</td>
+        </tr>
+    </tbody>
+  </table>
 </div>
