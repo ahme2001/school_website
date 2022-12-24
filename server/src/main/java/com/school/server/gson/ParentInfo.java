@@ -1,7 +1,7 @@
 package com.school.server.gson;
 
 public class ParentInfo {
-    String id;
+    private String id;
 
     public String getId() {
         return id;

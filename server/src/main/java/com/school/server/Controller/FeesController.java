@@ -17,13 +17,6 @@ public class FeesController {
         return feesService.setYearFees(input);
     }
 
-    @PostMapping("/parent/get/all/children")
-    public String getAllChildren(@RequestBody String input){
-        return feesService.getAllChildren(input);
-    }
-
-    @PostMapping("/parent/get/child/fees")
-    public String getStudentFees(@RequestBody String input){
-        return feesService.getStudentFees(input);
-    }
+    @PostMapping("/parent/get/children/fees")
+    public String getAllChildrenFees(@RequestBody String input){ return feesService.getAllChildrenFees(input); }
 }

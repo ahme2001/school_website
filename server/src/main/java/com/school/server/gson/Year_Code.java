@@ -1,7 +1,7 @@
 package com.school.server.gson;
 
 public class Year_Code {
-    String code;
+    private String code;
 
     public String getCode() {
         return code;
