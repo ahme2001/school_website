@@ -11,33 +11,26 @@ export class ShowFeesComponent implements OnInit {
 
   constructor(private _router:Router,private http :HttpClient) {
     this.Person_id.id = JSON.parse(localStorage.getItem("Id"));
-    this.URL = "http://localhost:8070/School/parent/get/all/children";
-    this.sendRequestShowFees(JSON.stringify(this.Person_id),1)
+    this.URL = "http://localhost:8070/School/parent/get/children/fees";
+    this.sendRequestShowFees(JSON.stringify(this.Person_id))
+  }
+  ngOnInit(): void {
   }
 
   Person_id = {
     "id":""
   }
 
-  ngOnInit(): void {
-  }
-
   children = [
     {
-      "Id":"",
-      "name": ""
+      "name": "",
+      "fees": ""
     }
   ]
-  selected={
-    "id":""
-  }
-
-  fees = "1500";
-  displayfees = "none"
 
   URL : string;
   answer=""
-  sendRequestShowFees(x: string,y: number) {
+  sendRequestShowFees(x: string) {
     const headers = new HttpHeaders({ 'Content-Type': "application/text" })
     this.http.post(this.URL, x,
       { headers: headers, responseType: 'text' })
@@ -47,12 +40,7 @@ export class ShowFeesComponent implements OnInit {
             alert(this.answer)
           }
           else{
-            if(y==1){
               this.children = JSON.parse(this.answer)
-            }else{
-              this.fees = JSON.parse(this.answer);
-              this.displayfees = "block";
-            }
           }
       }
         , (error) => {
@@ -60,10 +48,4 @@ export class ShowFeesComponent implements OnInit {
         });
   }
 
-  showFees(){
-    if(this.selected.id != ""){
-      this.URL = "http://localhost:8070/School/parent/get/child/fees";
-      this.sendRequestShowFees(JSON.stringify(this.Person_id),2);
-    }
-  }
 }
