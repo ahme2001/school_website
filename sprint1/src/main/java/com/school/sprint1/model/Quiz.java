@@ -48,8 +48,8 @@ public class Quiz {
                 "\"" + this.name + "\"," +
                 "\"" + this.teacher_Id + "\"," +
                 "\"" + this.endTime + "\"," +
-                "\"" + this.Class_Id + "\"" +
-                "\"" + this.maxGrade + "\","
+                "\"" + this.Class_Id + "\"," +
+                "\"" + this.maxGrade + "\""
                 ;
     }
 

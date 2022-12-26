@@ -33,6 +33,13 @@ public class QuizDB {
         String[] choice3 = qq.getChoice3();
         String[] choice4 = qq.getChoice4();
         int[] sol = qq.getAnswers();
+        quiz.setMaxGrade(Integer.toString(choice1.length));
+        try {
+            PreparedStatement statement = connection.prepareStatement("insert into QUIZ values(" + quiz.ToString() + ")");
+            statement.execute();
+        } catch (SQLException e) {
+            return false;
+        }
         for (int i =0 ; i< questions.length ; i++){
             q.setQuiz_Id(quizId);
             q.setChoice1(choice1[i]);
@@ -50,16 +57,9 @@ public class QuizDB {
 
             } catch (SQLException e) {
                 return false;
-
             }
         }
-        quiz.setMaxGrade(Integer.toString(choice1.length));
-        try {
-            PreparedStatement statement = connection.prepareStatement("insert into QUIZ values(" + quiz.ToString() + ")");
-            statement.execute();
-        } catch (SQLException e) {
-            return false;
-        }
+
         return announceAll(quizId , qq.getClassId());
     }
     public boolean announceAll(String qId , String classId){
@@ -195,7 +195,7 @@ public class QuizDB {
             PreparedStatement statement = connection.prepareStatement("select name , DO_QUIZ.grade , SubmissionTime , QUIZ.maxGrade from QUIZ , DO_QUIZ where DO_QUIZ.Quiz_Id =QUIZ.Quiz_Id and DO_QUIZ.grade != -1 and DO_QUIZ.St_Id=" + StId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
-                maxGrade.add(Integer.toString(4));
+                maxGrade.add(resultSet.getString(4));
                 grade.add(resultSet.getString(2));
                 Name.add(resultSet.getString(1));
                 submissionDate.add(resultSet.getString(3));
@@ -215,7 +215,7 @@ public class QuizDB {
         ArrayList<String> Name = new ArrayList<>();
         ArrayList<String> endDate = new ArrayList<>();
         try {
-            PreparedStatement statement = connection.prepareStatement("select Quiz_Id, name , endTime  from QUIZ  where QUIZ.Class_Id="+CId+"and QUIZ.teacher_Id="+TId);
+            PreparedStatement statement = connection.prepareStatement("select Quiz_Id, name , endTime  from QUIZ  where QUIZ.Class_Id="+"\""+CId+"\""+" and QUIZ.teacher_Id="+TId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 QId.add(resultSet.getString(1));
@@ -240,7 +240,7 @@ public class QuizDB {
         ArrayList<String> submissionDate = new ArrayList<>();
 
         try {
-            PreparedStatement statement = connection.prepareStatement("select student.St_Id , person.Name  , DO_QUIZ.grade , SubmissionTime from DO_QUIZ ,person , student where DO_QUIZ.Quiz_Id ="+QId+"and DO_QUIZ.grade != -1 and DO_QUIZ.St_Id=student.St_Id and DO_QUIZ.St_Id=person.Id ");
+            PreparedStatement statement = connection.prepareStatement("select student.St_Id , person.Name  , DO_QUIZ.grade , SubmissionTime from DO_QUIZ ,person , student where DO_QUIZ.Quiz_Id ="+"\""+QId+"\""+" and DO_QUIZ.grade != -1 and DO_QUIZ.St_Id=student.St_Id and DO_QUIZ.St_Id=person.Id ");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 DoneId.add(resultSet.getString(1));
@@ -252,7 +252,7 @@ public class QuizDB {
             return "can't found";
         }
         try {
-            PreparedStatement statement = connection.prepareStatement("select student.St_Id , person.Name  from DO_QUIZ ,person , student where DO_QUIZ.Quiz_Id ="+QId+"and DO_QUIZ.grade = -1 and DO_QUIZ.St_Id=student.St_Id and DO_QUIZ.St_Id=person.Id ");
+            PreparedStatement statement = connection.prepareStatement("select student.St_Id , person.Name  from DO_QUIZ ,person , student where DO_QUIZ.Quiz_Id ="+"\""+QId+"\""+" and DO_QUIZ.grade = -1 and DO_QUIZ.St_Id=student.St_Id and DO_QUIZ.St_Id=person.Id ");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 LateId.add(resultSet.getString(1));
