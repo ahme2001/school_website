@@ -1,0 +1,14 @@
+<app-sidebar></app-sidebar>
+<div *ngIf="chooseClass" class="container">
+    <h1 class="text-center">Discussion</h1>
+    <div class="row">
+        <div class="col-md-"></div>
+        <div class="col-md-8">
+            <h3 class="choose">Choose a class to enter its Discussion:</h3>
+            <select [(ngModel)]="chosenClass" class="m-auto w-50" name="classes" id="">
+                <option *ngFor="let item of classes" value="{{item.id}}">{{item.Name}} </option>
+            </select>
+        </div>  
+    </div>
+    <button type="submit" (click)="enter()" class="btn btn-primary float-end">Enter discussion</button>
+</div>

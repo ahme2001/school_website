@@ -62,8 +62,6 @@ export class NewQuizComponent implements OnInit {
             this.classes.push(c)
           }
           console.log(this.classes);
-          
-          
         }
           , (error) => {
             console.log(error);
@@ -72,7 +70,6 @@ export class NewQuizComponent implements OnInit {
   }
   sendRequestSubmit(x: string) {
     console.log(x);
-    
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
       this.http.post("http://localhost:8070/School/setQuiz", x,

@@ -51,7 +51,7 @@ public class testQuiz {
         QuizService QS = new QuizService();
         String res = QS.getQuizzes("01010000");
         System.out.println(res);
-        assertEquals("{\"Id\":[\"2\"],\"Name\":[\"Quiz3\"]}",res);
+        assertEquals("{\"Id\":[\"0\",\"2\"],\"Name\":[\"Quiz1\",\"Quiz3\"]}",res);
     }
     @Test
     public void test8(){

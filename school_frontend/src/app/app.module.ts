@@ -17,6 +17,8 @@ import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 import { SetGradesComponent } from './set-grades/set-grades.component';
 import { ShowGradesComponent } from './show-grades/show-grades.component';
+import { DiscussionStudentComponent } from './discussion-student/discussion-student.component';
+import { DiscussionTeacherComponent } from './discussion-teacher/discussion-teacher.component';
 
 
 
@@ -34,7 +36,9 @@ import { ShowGradesComponent } from './show-grades/show-grades.component';
     SetExamTableComponent,
     ShowExamTableComponent,
     SetScheduleComponent,
-    ShowScheduleComponent
+    ShowScheduleComponent,
+    DiscussionStudentComponent,
+    DiscussionTeacherComponent
   ],
   imports: [
     BrowserModule,
