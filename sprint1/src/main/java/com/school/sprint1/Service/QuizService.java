@@ -4,6 +4,7 @@ import com.school.sprint1.DButil.TeacherDB;
 import com.google.gson.Gson;
 import com.school.sprint1.gson.QuizQuestions;
 import com.school.sprint1.gson.QuizRes;
+import com.school.sprint1.gson.TeacherQuizzes;
 import com.school.sprint1.model.Quiz;
 import org.springframework.stereotype.Service;
 
@@ -53,4 +54,20 @@ public class QuizService {
         QD.updateDoQuiz(qId,sId,grade);
         return new Gson().toJson(res);
     }
+
+    public String getPrevResult(String StId){
+        return new QuizDB().getPrevResults(StId);
+    }
+    public String getClassQuizzes(String input){
+        Gson gson  = new Gson();
+        TeacherQuizzes tq =  gson.fromJson(input, TeacherQuizzes.class);
+        String TId = tq.getTeacher_Id();
+        String CId = tq.getClassId();
+        return new QuizDB().getClassQuizzes(TId,CId);
+    }
+
+    public String getQuizResults(String QId){
+        return new QuizDB().getQuizResults(QId);
+    }
 }
+

@@ -24,14 +24,9 @@ public class QuizDB {
         quiz.setClass_Id(qq.getClassId());
         quiz.setEndTime(qq.getEndDate());
         quiz.setName(qq.getQname());
+        quiz.setTeacher_Id(qq.getTeacher_Id());
         String quizId = quiz.generateId();
         quiz.setQuiz_Id(quizId);
-        try {
-            PreparedStatement statement = connection.prepareStatement("insert into QUIZ values(" + quiz.ToString() + ")");
-            statement.execute();
-        } catch (SQLException e) {
-            return false;
-        }
         String[] questions = qq.getQuestions();
         String[] choice1 = qq.getChoice1();
         String[] choice2 = qq.getChoice2();
@@ -57,6 +52,13 @@ public class QuizDB {
                 return false;
 
             }
+        }
+        quiz.setMaxGrade(Integer.toString(choice1.length));
+        try {
+            PreparedStatement statement = connection.prepareStatement("insert into QUIZ values(" + quiz.ToString() + ")");
+            statement.execute();
+        } catch (SQLException e) {
+            return false;
         }
         return announceAll(quizId , qq.getClassId());
     }
@@ -182,5 +184,90 @@ public class QuizDB {
             return false;
         }
         return true ;
+    }
+    public String getPrevResults(String StId ){
+        HashMap<String , Object> qs = new HashMap<>();
+        ArrayList<String> grade = new ArrayList<>();
+        ArrayList<String> maxGrade = new ArrayList<>();
+        ArrayList<String> Name = new ArrayList<>();
+        ArrayList<String> submissionDate = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select name , DO_QUIZ.grade , SubmissionTime , QUIZ.maxGrade from QUIZ , DO_QUIZ where DO_QUIZ.Quiz_Id =QUIZ.Quiz_Id and DO_QUIZ.grade != -1 and DO_QUIZ.St_Id=" + StId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                maxGrade.add(Integer.toString(4));
+                grade.add(resultSet.getString(2));
+                Name.add(resultSet.getString(1));
+                submissionDate.add(resultSet.getString(3));
+            }
+        } catch (SQLException e) {
+            return "can't found";
+        }
+        qs.put("Name",Name);
+        qs.put("Grade",grade);
+        qs.put("MaxGrade",maxGrade);
+        qs.put("Date",submissionDate);
+        return new Gson().toJson(qs);
+    }
+    public String getClassQuizzes(String TId , String CId ){
+        HashMap<String , Object> qs = new HashMap<>();
+        ArrayList<String> QId = new ArrayList<>();
+        ArrayList<String> Name = new ArrayList<>();
+        ArrayList<String> endDate = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select Quiz_Id, name , endTime  from QUIZ  where QUIZ.Class_Id="+CId+"and QUIZ.teacher_Id="+TId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                QId.add(resultSet.getString(1));
+                Name.add(resultSet.getString(2));
+                endDate.add(resultSet.getString(3));
+            }
+        } catch (SQLException e) {
+            return "can't found";
+        }
+        qs.put("QId",QId);
+        qs.put("Name",Name);
+        qs.put("endDate",endDate);
+        return new Gson().toJson(qs);
+    }
+    public String getQuizResults(String QId ){
+        HashMap<String , Object> qResults = new HashMap<>();
+        ArrayList<String> LateName = new ArrayList<>();
+        ArrayList<String> LateId = new ArrayList<>();
+        ArrayList<String> DoneName = new ArrayList<>();
+        ArrayList<String> DoneId = new ArrayList<>();
+        ArrayList<String> grade = new ArrayList<>();
+        ArrayList<String> submissionDate = new ArrayList<>();
+
+        try {
+            PreparedStatement statement = connection.prepareStatement("select student.St_Id , person.Name  , DO_QUIZ.grade , SubmissionTime from DO_QUIZ ,person , student where DO_QUIZ.Quiz_Id ="+QId+"and DO_QUIZ.grade != -1 and DO_QUIZ.St_Id=student.St_Id and DO_QUIZ.St_Id=person.Id ");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                DoneId.add(resultSet.getString(1));
+                DoneName.add(resultSet.getString(2));
+                grade.add(resultSet.getString(3));
+                submissionDate.add(resultSet.getString(4));
+            }
+        } catch (SQLException e) {
+            return "can't found";
+        }
+        try {
+            PreparedStatement statement = connection.prepareStatement("select student.St_Id , person.Name  from DO_QUIZ ,person , student where DO_QUIZ.Quiz_Id ="+QId+"and DO_QUIZ.grade = -1 and DO_QUIZ.St_Id=student.St_Id and DO_QUIZ.St_Id=person.Id ");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                LateId.add(resultSet.getString(1));
+                LateName.add(resultSet.getString(2));
+            }
+        } catch (SQLException e) {
+            return "can't found";
+        }
+        qResults.put("DoneId",DoneId);
+        qResults.put("DoneName",DoneName);
+        qResults.put("Grade",grade);
+        qResults.put("SubmissionTime",submissionDate);
+        qResults.put("LateId",LateId);
+        qResults.put("LateName",LateName);
+
+        return new Gson().toJson(qResults);
     }
 }
