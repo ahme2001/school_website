@@ -11,7 +11,11 @@ export class DiscussionStudentComponent implements OnInit {
 
   constructor(private _router:Router,private http :HttpClient) {
       let id = localStorage.getItem("Id")
-      // this.sendRequestgetPosts(id)
+      
+      let i ={
+        Id:id
+      }
+      // this.sendRequestgetPosts(i)
       this.newReply = this.counter(this.posts.length)
       console.log(this.newReply);
   }
@@ -57,7 +61,7 @@ export class DiscussionStudentComponent implements OnInit {
   reply = {
     id: "",
     content: "",
-    postid: "",
+    parentPost: "",
     date: ""
   }
   counter(i: number) {
@@ -71,7 +75,7 @@ export class DiscussionStudentComponent implements OnInit {
       this.reply.content = this.newReply[index]
       const now = new Date();
       this.reply.date = now.toLocaleDateString();
-      this.reply.postid = this.posts[index].postId
+      this.reply.parentPost = this.posts[index].postId
       // this.sendRequestNewReply(JSON.stringify(this.reply))
       console.log(JSON.stringify(this.reply))
       // this.sendRequestgetPosts(localStorage.getItem("Id"))
@@ -100,7 +104,7 @@ export class DiscussionStudentComponent implements OnInit {
       this.newPost.content = this.post
       const now = new Date();
       this.newPost.date = now.toLocaleDateString();
-      // this.sendRequestNewPost(JSON.stringify(this.newPost))
+      this.sendRequestNewPost(JSON.stringify(this.newPost))
       console.log(JSON.stringify(this.newPost))
       console.log(this.post);
       this.post = ""
@@ -140,7 +144,7 @@ export class DiscussionStudentComponent implements OnInit {
   sendRequestNewPost(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/discussion/post", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -155,7 +159,7 @@ export class DiscussionStudentComponent implements OnInit {
   sendRequestNewReply(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/discussion/post", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -166,4 +170,5 @@ export class DiscussionStudentComponent implements OnInit {
           });
     }
   }
+  
 }

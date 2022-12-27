@@ -6,7 +6,8 @@
         <div class="col-md-8">
             <h3 class="choose">Choose a class to enter its Discussion:</h3>
             <select [(ngModel)]="chosenClass" class="m-auto w-50" name="classes" id="">
-                <option *ngFor="let item of classes" value="{{item.id}}">{{item.Name}} </option>
+				<option value=""> </option>
+                <option *ngFor="let item of classes" value="{{item.Id}}">{{item.Name}}</option>
             </select>
         </div>  
     </div>

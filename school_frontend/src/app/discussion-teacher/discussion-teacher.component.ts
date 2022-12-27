@@ -9,7 +9,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DiscussionTeacherComponent implements OnInit {
 
-  constructor(private _router:Router,private http :HttpClient) { }
+  constructor(private _router:Router,private http :HttpClient) { 
+    this.sendRequestClass(localStorage.getItem("Id"))
+  }
   chosenClass=""
   
   answer = ""
@@ -19,21 +21,19 @@ export class DiscussionTeacherComponent implements OnInit {
     "Id": ["100","110"],
     "Name": ["2/3","2/5"]
   }
-  classes = [{
-    "id":"100",
-    "Name":"2/3"
-  },
-  {
-    "id":"110",
-    "Name":"2/5"
-  }
+  classes = [
 ]
 enter(){
+  console.log(this.chosenClass);
+  
   if(this.chosenClass != ""){
         this.chooseClass = false
         this.showPosts = true
         this.showNewPost = false
-        //  this.sendRequestgetPosts(this.chosenClass)
+        let i = {
+          classId:this.chosenClass
+        }
+        //  this.sendRequestgetPosts(i)
   }
 }
   chooseClass = true
@@ -122,7 +122,7 @@ enter(){
       const now = new Date();
       this.newPost.date = now.toLocaleDateString();
       this.newPost.classId = this.chosenClass
-      // this.sendRequestNewPost(JSON.stringify(this.newPost))
+      this.sendRequestNewPost(JSON.stringify(this.newPost))
       console.log(JSON.stringify(this.newPost))
       console.log(this.post);
       this.post = ""
@@ -166,7 +166,7 @@ enter(){
   sendRequestNewPost(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/discussion/post", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -182,11 +182,37 @@ enter(){
   sendRequestNewReply(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/disussion/post", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
             console.log(this.answer);
+        }
+          , (error) => {
+            console.log(error);
+          });
+    }
+  }
+
+  sendRequestClass(x: string) {
+    if (x != '') {
+      const headers = new HttpHeaders({ 'Content-Type': "application/text" })
+      this.http.post("http://localhost:8070/School/discussion/classes", x,
+        { headers: headers, responseType: 'text' })
+        .subscribe(response => {
+          this.answer = response;
+          this.class = JSON.parse(this.answer)
+          console.log(this.answer);
+          for (let i = 0; i < this.class.Id.length; i++) {
+            let c = {
+              "Id": "",
+              "Name": ""
+            }
+            c.Id = this.class.Id[i]
+            c.Name = this.class.Name[i]
+            this.classes.push(c)
+          }
+          console.log(this.classes);
         }
           , (error) => {
             console.log(error);
