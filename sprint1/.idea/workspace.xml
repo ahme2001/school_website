@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sprint1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sprint1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/GradesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/GradesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testQuiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +19,25 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -35,12 +48,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
-  <component name="RunManager" selected="JUnit.testQuiz.test5">
-    <configuration name="testQuiz.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Sprint1Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.Sprint1Application" />
       <module name="sprint1" />
       <extension name="coverage">
         <pattern>
@@ -48,85 +64,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.school.sprint1" />
-      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testQuiz.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.school.sprint1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.school.sprint1" />
-      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testQuiz.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.school.sprint1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.school.sprint1" />
-      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
-      <option name="METHOD_NAME" value="test3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testQuiz.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.school.sprint1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.school.sprint1" />
-      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
-      <option name="METHOD_NAME" value="test4" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testQuiz.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.school.sprint1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.school.sprint1" />
-      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testQuiz" />
-      <option name="METHOD_NAME" value="test5" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testQuiz.test5" />
-        <item itemvalue="JUnit.testQuiz.test4" />
-        <item itemvalue="JUnit.testQuiz.test3" />
-        <item itemvalue="JUnit.testQuiz.test2" />
-        <item itemvalue="JUnit.testQuiz.test1" />
+        <item itemvalue="Application.Sprint1Application" />
       </list>
     </recent_temporary>
   </component>
@@ -140,13 +84,5 @@
       <updated>1671216680514</updated>
     </task>
     <servers />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sprint1$testLogin.ic" NAME="testLogin Coverage Results" MODIFIED="1671637927294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.school.sprint1.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/sprint1$testExamTable.ic" NAME="testExamTable Coverage Results" MODIFIED="1671639533622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.school.sprint1.*</FILTER>
-    </SUITE>
   </component>
 </project>

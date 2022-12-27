@@ -12,14 +12,14 @@ public class profileTest {
     public void test1(){
         ProfileService ps = new ProfileService();
         String res = ps.run("01010000");
-        String trueRes = "{\"Class_Id\":\"1\",\"St_Term_Id\":\"0310\",\"Curr_Term_Id\":\"0510\",\"P_id\":\"02020000\",\"Address\":\"vdsv\",\"Phone\":\"01236547892\",\"Sex\":\"Male\",\"National_Id\":\"01236547892365\",\"Name\":\"fofo\",\"Password\":\"123456\"}";
+        String trueRes = "{\"Class_Id\":\"1\",\"ST_Term_Id\":\"0310\",\"Curr_term_id\":\"0510\",\"P_id\":\"02020000\",\"Address\":\"vdsv\",\"Phone\":\"01236547892\",\"Sex\":\"Male\",\"National_Id\":\"01236547892365\",\"Name\":\"fofo\",\"Password\":\"123456\"}";
         assertEquals(trueRes,res);
     }
     @Test
     public void test2(){
         ProfileService ps = new ProfileService();
         String res = ps.run("01010001");
-        String trueRes = "{\"Class_Id\":\"1\",\"St_Term_Id\":\"0310\",\"Curr_Term_Id\":\"0510\",\"P_id\":\"02020000\",\"Address\":\"vdzs\",\"Phone\":\"51198\",\"Sex\":\"Male\",\"National_Id\":\"516519\",\"Name\":\"toto\",\"Password\":\"123456\"}";
+        String trueRes = "{\"Class_Id\":\"1\",\"ST_Term_Id\":\"0310\",\"Curr_term_id\":\"0510\",\"P_id\":\"02020000\",\"Address\":\"vdzs\",\"Phone\":\"51198\",\"Sex\":\"Male\",\"National_Id\":\"516519\",\"Name\":\"toto\",\"Password\":\"123456\"}";
         assertEquals(trueRes,res);
     }
     @Test

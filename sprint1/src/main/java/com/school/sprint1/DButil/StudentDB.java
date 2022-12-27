@@ -133,4 +133,15 @@ public class StudentDB {
         }
         return student;
     }
+    public String getClass(String ID) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("select Class_Id from STUDENT where St_Id = " + ID);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            return  resultSet.getString(1);
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+    }
 }

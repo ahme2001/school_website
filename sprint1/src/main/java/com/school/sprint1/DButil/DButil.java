@@ -14,7 +14,11 @@ public class DButil {
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/SCHOOL?useSSL=false";
         String user = "root";
+<<<<<<< HEAD:server/src/main/java/com/school/sprint1/DButil/DButil.java
+        String password = "welcome123";
+=======
         String password = "Michael82468246";
+>>>>>>> c82507a6084dc1bc83fa9107da0626d2ea6f1658:sprint1/src/main/java/com/school/sprint1/DButil/DButil.java
 
         try {
             Class.forName(driver);
