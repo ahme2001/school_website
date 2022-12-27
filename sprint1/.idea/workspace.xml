@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

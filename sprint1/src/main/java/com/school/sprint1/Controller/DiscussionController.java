@@ -23,7 +23,7 @@ public class DiscussionController {
         boolean res = DiscussionService.addPost(input);
         return res;
     }
-    @PostMapping("/discussion/post")
+    @PostMapping("/discussion/show")
 //    {"id":"\"01010000\"","content":"jkdjfzc ?","date":"2022/12/25"}
 //    {"id":"\"0101000\"","content":"brod aho","parentPost":"0","date":"2022/12/25"}
     public String ShowPost(@RequestBody String input){

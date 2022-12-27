@@ -1,0 +1,28 @@
+posts = [{
+    id:"",
+    Name:"Michael",
+    postId:"5",
+    post:"What is your name?",
+    date : "25/12/2022",
+    number:2,
+    reply : {
+       id:["19","15"],
+       name:["Salama","3iad"],
+       content:["I fine thank you","I am not fine"]
+    }
+  },
+  {
+    id:"",
+    Name:"Michael",
+    postId:"5",
+    post:"What is your name?",
+    date : "25/12/2022",
+    number:2,
+    reply : {
+       id:["19","15"],
+       name:["Salama","3iad"],
+       content:["I fine thank you","I am not fine"]
+    }
+  }
+  ]
+  [{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"},{"date":"225/12/2022","number":0,"post":"a7aa1","id":"01010000","postId":"9","reply":"{\"name\":[\"mohamed\",\"mohamed\",\"michael\",\"mohamed\",\"mohamed\"],\"id\":[\"01010000\",\"01010000\",\"03030000\",\"01010000\",\"01010000\"],\"content\":[\"brod aho1\",\"brod aho1\",\"hello world...\",\"brod aho1\",\"brod aho1\"]}","Name":"mohamed"}]
