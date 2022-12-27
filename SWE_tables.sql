@@ -117,7 +117,7 @@ choice3 varchar(1000) not null,
 choice4 varchar(1000) not null,
 Solution int NOT NULL ,
 primary key(Quiz_Id,Question_Id),
-foreign Key ( Quiz_Id) REFERENCES Quiz (Quiz_Id) on delete cascade on update cascade
+foreign Key ( Quiz_Id) REFERENCES QUIZ (Quiz_Id) on delete cascade on update cascade
 );
 
 CREATE TABLE DO_QUIZ (
@@ -157,3 +157,38 @@ Lec_6  nvarchar(30) ,
 PRIMARY KEY (Teacher_Id,Day) ,
 Foreign Key ( Teacher_Id) REFERENCES TEACHER (Teacher_Id) on delete cascade on update cascade
 );
+
+use SCHOOL;
+CREATE TABLE Discussion (
+post_id nCHAR(14) NOT NULL ,
+parent_post_id nCHAR(14),
+content Text ,
+post_date nCHAR(14),
+person_id nCHAR(14),
+class_id nCHAR(14),
+PRIMARY KEY (Post_Id) ,
+foreign Key (person_id) REFERENCES PERSON (Id) on delete cascade on update cascade ,
+foreign Key (class_id) REFERENCES CLASS (Class_Id) on delete cascade on update cascade ,
+foreign Key (parent_post_id) REFERENCES Discussion (post_id) on delete cascade on update cascade
+);
+
+-- 
+-- SELECT St_Id, Name  FROM STUDENT join PERSON ON St_Id = Id WHERE Curr_Term_Id  LIKE '051%';
+-- 
+-- 
+INSERT INto PERSON values ("01010000","fowa","01025369874","mohamed","12345698725896","Male","123456");
+INSERT INto PERSON values ("01010001","fowa","01025369874","ahmed","12345698725897","Male","123456");
+INSERT INto PERSON values ("02020000","fowa","01025369874","aiad","12345698725898","Male","123456");
+INSERT INto PERSON values ("03030000","fowa","01025369874","michael","12345698725899","Male","123456");
+INSERT INto PERSON values ("04040000","fowa","01025369874","mostafa","12345698725895","Male","123456");
+
+INSERT INto STUDENT values ("01010000","0203","0310","0510","02020000");
+INSERT INto STUDENT values ("01010001","0203","0310","0510","02020000");
+INSERT INto PARENT values ("02020000","doctor");
+INSERT INto TEACHER values ("03030000","6","arabic");
+INSERT INto STAFF values ("04040000","manager");
+
+INSERT into CLASS values("0203","2/3","03030000");
+
+INSERT into Discussion values("0",null,"hello world...","2022/12/25","03030000","0203");
+INSERT into Discussion values("15",14,"hello world...","2022/12/25","03030000","0203");
