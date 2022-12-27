@@ -23,8 +23,14 @@ public class DiscussionService {
         return new DiscussionDB().addPost(values);
     }
     public String showPosts(String input){
-        
-        return "";
+        Gson gson = new Gson();
+        Type type = new TypeToken<Map<String, String>>(){}.getType();
+        Map<String, String> postData = gson.fromJson(input, type);
+        if(postData.get("classId") == null){
+            postData.put("classId", new StudentDB().getClass(postData.get("id")));
+        }
+        System.out.println(postData.get("classId"));
+        return new DiscussionDB().getPosts(postData.get("classId"));
     }
     private String postValueDatabase(Map<String,String> postData){
         String res = "\"" + postData.get("postId") + "\","
@@ -39,7 +45,6 @@ public class DiscussionService {
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, String>>(){}.getType();
         Map<String, String> postData = gson.fromJson(input, type);
-        System.out.println(postData.get("parentPost"));
         if(postData.get("parentPost") == null){
             postData.put("parentPost","null");
         }

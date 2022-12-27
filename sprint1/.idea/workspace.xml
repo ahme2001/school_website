@@ -8,7 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +43,10 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Sprint1Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

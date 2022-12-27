@@ -13,9 +13,9 @@ export class DiscussionStudentComponent implements OnInit {
       let id = localStorage.getItem("Id")
       
       let i ={
-        Id:id
+        id:id
       }
-      // this.sendRequestgetPosts(i)
+      this.sendRequestgetPosts(JSON.stringify(i))
       this.newReply = this.counter(this.posts.length)
       console.log(this.newReply);
   }
@@ -31,32 +31,33 @@ export class DiscussionStudentComponent implements OnInit {
     content: "",
     date: ""
   }
-  posts = [{
-    id: "0101000",
-    Name: "Michael",
-    postId: "4",
-    post: "What is your name?",
-    date: "25/12/2022",
-    number: 2,
-    reply: {
-      id: ["0101000", "15"],
-      name: ["Salama", "3iad"],
-      content: ["I fine thank you", "I am not fine"]
-    }
-  },
-  {
-    id: "",
-    Name: "Michael",
-    postId: "6",
-    post: "What is your name?",
-    date: "25/12/2022",
-    number: 2,
-    reply: {
-      id: ["0101000", "15"],
-      name: ["Salama", "3iad"],
-      content: ["I fine thank you", "I am not fine"]
-    }
-  }
+  posts = [
+  //   {
+  //   id: "0101000",
+  //   Name: "Michael",
+  //   postId: "4",
+  //   post: "What is your name?",
+  //   date: "25/12/2022",
+  //   number: 2,
+  //   reply: {
+  //     id: ["0101000", "15"],
+  //     name: ["Salama", "3iad"],
+  //     content: ["I fine thank you", "I am not fine"]
+  //   }
+  // },
+  // {
+  //   id: "",
+  //   Name: "Michael",
+  //   postId: "6",
+  //   post: "What is your name?",
+  //   date: "25/12/2022",
+  //   number: 2,
+  //   reply: {
+  //     id: ["0101000", "15"],
+  //     name: ["Salama", "3iad"],
+  //     content: ["I fine thank you", "I am not fine"]
+  //   }
+  // }
   ]
   reply = {
     id: "",
@@ -76,9 +77,12 @@ export class DiscussionStudentComponent implements OnInit {
       const now = new Date();
       this.reply.date = now.toLocaleDateString();
       this.reply.parentPost = this.posts[index].postId
-      // this.sendRequestNewReply(JSON.stringify(this.reply))
+      this.sendRequestNewReply(JSON.stringify(this.reply))
       console.log(JSON.stringify(this.reply))
-      // this.sendRequestgetPosts(localStorage.getItem("Id"))
+      let i ={
+        id:localStorage.getItem("Id")
+      }
+      this.sendRequestgetPosts(JSON.stringify(i))
       this.newReply = this.counter(this.posts.length)
       // window.location.reload()
     }
@@ -90,6 +94,10 @@ export class DiscussionStudentComponent implements OnInit {
   cancel(){
     this.showNewPost = false
     this.showPosts = true
+    let i ={
+      id:localStorage.getItem("Id")
+    }
+    this.sendRequestgetPosts(JSON.stringify(i))
  }
   submit() {
     if (this.post == "") {
@@ -126,14 +134,42 @@ export class DiscussionStudentComponent implements OnInit {
   }
 
   sendRequestgetPosts(x: string) {
+    this.posts=[]
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/discussion/show", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
-            this.posts = JSON.parse(this.answer)
-            console.log(this.answer);
+            let temp = JSON.parse(this.answer)
+            for(let i=0;i<temp.length;i++){
+              let x =  {
+                  id: "",
+                  Name: "",
+                  postId: "",
+                  post: "",
+                  date: "",
+                  number: 0,
+                  reply: {
+                    id: [],
+                    name: [],
+                    content: []
+                  }
+                }
+                x.id = temp[i].id
+                x.Name = temp[i].Name
+                x.postId = temp[i].postId
+                x.post = temp[i].post
+                x.date = temp[i].date
+                x.number = temp[i].number
+                x.reply = JSON.parse(temp[i].reply)
+                this.posts.push(x)
+            }
+
+            // this.reply = JSON.parse(this.posts.)
+            // console.log(this.answer);
+            // console.log(this.posts);
+            
         }
           , (error) => {
             console.log(error);

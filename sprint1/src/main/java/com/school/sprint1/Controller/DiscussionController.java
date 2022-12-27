@@ -27,6 +27,7 @@ public class DiscussionController {
 //    {"id":"\"01010000\"","content":"jkdjfzc ?","date":"2022/12/25"}
 //    {"id":"\"0101000\"","content":"brod aho","parentPost":"0","date":"2022/12/25"}
     public String ShowPost(@RequestBody String input){
+        System.out.println(input);
         String res = DiscussionService.showPosts(input);
         return res;
     }
