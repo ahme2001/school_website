@@ -12,3 +12,76 @@
     </div>
     <button type="submit" (click)="enter()" class="btn btn-primary float-end">Enter discussion</button>
 </div>
+
+
+<!-- show posts -->
+<div class="container" *ngIf="showPosts">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h1>Discussion</h1>
+			<div class="py-2">
+				<button type="submit" (click)="add()"  class="float-end btn btn-primary">Add new post</button>
+			</div>
+			<div class="post-content mt-5" *ngFor="let item of posts;let j=index">
+				<div class="post-container">
+					<div class="post-detail">
+						<div class="user-info">
+							<h4 *ngIf="!You(item.id)" class="profile-link">{{item.Name}}</h4>
+							<h4 *ngIf="You(item.id)" class="profile-link you">You</h4>
+							<p class="text-muted">posted at {{item.date}}</p>
+						</div>
+						<div class="line-divider"></div>
+						<div class="post-text">
+							<p>{{item.post}}</p>
+						</div>
+						<div class="line-divider"></div>
+						<div *ngFor='let inn of counter(item.number) ;let i = index' class="post-comment mx-5">
+							<h6 *ngIf="!You(item.reply.id[i])" class="mx-2 my-1">{{item.reply.name[i]}}</h6>
+							<h6 *ngIf="You(item.reply.id[i])" class="mx-2 my-1 you">You</h6>
+							<p class="profile-link">{{item.reply.content[i]}}</p>
+						</div>
+						<div class="post-comment">
+							<label for="add">
+								<h6 class="m-2"> You </h6>
+							</label>
+							<input [(ngModel)]="newReply[j]" name="add" type="text" class="form-control" placeholder="Post a reply">
+							<button type="submit" (click)="addReply(j)" class="mx-3 h-75 btn btn-primary">Add</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Create post -->
+
+<div class="container" *ngIf="showNewPost">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h1>Create post</h1>
+			<form action="" method="POST">
+				<div class="form-group">
+					<label for="description">
+						<h3>Post content :</h3>
+					</label>
+					<textarea [(ngModel)]="post" rows="5" class="form-control" name="description"></textarea>
+				</div>
+				<div class="error my-2" [style.display]="displayAlert">
+					<p>You can't post empty post</p>
+				</div>
+				<div class="done" [style.display]="displayDone">
+					<p>Post created successfully</p>
+				  </div>
+				<div class="my-2 form-group">
+					<button type="submit" (click)="submit()" class="btn btn-primary">Create</button>
+					<button class="btn btn-default" (click)="cancel()">Return to posts</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
