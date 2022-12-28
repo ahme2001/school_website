@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class StaffComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private _router:Router,private http :HttpClient) { 
-    this.sendRequestshowButtom("show")
+    this.sendRequestshowButtom()
   }
   selection = "student";
   displayStudDone = "block"
@@ -161,14 +161,11 @@ export class StaffComponent implements OnInit {
   displayAlert = "none"
 
   transferTerm(){
-    this.sendRequesttransfer("transfer")
-    console.log("aaaaaaaaaaaaaaa");
-    
+    this.sendRequesttransfer()
   }
-  sendRequestshowButtom(x: string) {
-    if (x != '') {
+  sendRequestshowButtom() {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/IsEnd", "",
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -185,12 +182,11 @@ export class StaffComponent implements OnInit {
             console.log(error);
           });
     }
-  }
+  
 
-  sendRequesttransfer(x: string) {
-    if (x != '') {
+  sendRequesttransfer() {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/update", "",
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -210,4 +206,4 @@ export class StaffComponent implements OnInit {
           });
     }
   }
-}
+
