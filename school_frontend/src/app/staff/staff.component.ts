@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class StaffComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private _router:Router,private http :HttpClient) { }
+  constructor(private formBuilder: FormBuilder,private _router:Router,private http :HttpClient) { 
+    this.sendRequestshowButtom("show")
+  }
   selection = "student";
   displayStudDone = "block"
   displayTeacDone = "none"
@@ -153,5 +155,59 @@ export class StaffComponent implements OnInit {
       this.StaffForm.reset();
     }
     this.submitted = false
+  }
+  displaybuttom = false
+  displayDone = "none"
+  displayAlert = "none"
+
+  transferTerm(){
+    this.sendRequesttransfer("transfer")
+    console.log("aaaaaaaaaaaaaaa");
+    
+  }
+  sendRequestshowButtom(x: string) {
+    if (x != '') {
+      const headers = new HttpHeaders({ 'Content-Type': "application/text" })
+      this.http.post("http://localhost:8070/School/login", x,
+        { headers: headers, responseType: 'text' })
+        .subscribe(response => {
+            this.answer = response;
+            console.log(this.answer);
+
+            if(this.answer == "ERROR"||this.answer =="false"){
+              this.displaybuttom = false
+            }
+            else{
+              this.displaybuttom = true
+            }
+        }
+          , (error) => {
+            console.log(error);
+          });
+    }
+  }
+
+  sendRequesttransfer(x: string) {
+    if (x != '') {
+      const headers = new HttpHeaders({ 'Content-Type': "application/text" })
+      this.http.post("http://localhost:8070/School/login", x,
+        { headers: headers, responseType: 'text' })
+        .subscribe(response => {
+            this.answer = response;
+            console.log(this.answer);
+
+            if(this.answer == "ERROR"||this.answer =="false"){
+              this.displayAlert = "block"
+              this.displayDone = "None"
+            }
+            else{
+              this.displayDone = "block"
+              this.displayAlert = "None"
+            }
+        }
+          , (error) => {
+            console.log(error);
+          });
+    }
   }
 }
