@@ -4,6 +4,8 @@ import com.school.sprint1.model.DO_QUIZ;
 import com.school.sprint1.model.Question;
 import com.school.sprint1.model.Quiz;
 import com.school.sprint1.gson.QuizQuestions;
+import org.springframework.stereotype.Repository;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+@Repository
 public class QuizDB {
     private Connection connection;
 

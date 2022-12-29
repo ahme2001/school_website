@@ -2,13 +2,15 @@ package com.school.sprint1.DButil;
 import com.google.gson.Gson;
 
 import com.school.sprint1.model.Teacher;
+import org.springframework.stereotype.Repository;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+@Repository
 public class TeacherDB {
     private Connection connection;
 
