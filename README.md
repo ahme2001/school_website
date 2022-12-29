@@ -9,9 +9,9 @@ Discussions are open to encourage the students to interact and understand the su
 There are 4 types of users in the app. school staff, Teachers, Students and parents.  
 
 ### Tech Stack: 
---> Front-end: AngularJs
---> Back-end: Spring Boot, Java
---> DataBase: MySQL
+* Front-end: AngularJs
+* Back-end: Spring Boot, Java
+* DataBase: MySQL
 
 ## Features:
 * Users login into the system via ID and password.
@@ -27,7 +27,6 @@ There are 4 types of users in the app. school staff, Teachers, Students and pare
 
 ## Screenshots:
 ### Adding Teachers
-![Adding teachers](https://github.com/seifgneedy/FSCHOOL/blob/master/Screenshots/2.PNG?raw=true)
 
 ## Thanks to:
 @m13salama
