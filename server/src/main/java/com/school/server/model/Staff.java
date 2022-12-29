@@ -3,16 +3,8 @@ package com.school.server.model;
 import com.school.server.DButil.StaffDB;
 
 public class Staff extends Person {
-    private String S_id;
-    private String Job;
-
-    public Staff(String s_id, String job) {
-        S_id = s_id;
-        Job = job;
-    }
-
-    public Staff() {
-    }
+    String S_id;
+    String Job;
 
     public String getS_id() {
         return S_id;

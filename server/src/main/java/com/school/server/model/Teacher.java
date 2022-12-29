@@ -1,8 +1,4 @@
 package com.school.server.model;
-
-
-import com.school.server.DButil.ParentDB;
-
 import com.school.server.DButil.TeacherDB;
 
 public class Teacher extends Person{

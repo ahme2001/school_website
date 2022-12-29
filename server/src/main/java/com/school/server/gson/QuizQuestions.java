@@ -1,12 +1,9 @@
 package com.school.server.gson;
 
-
-import java.util.Arrays;
-import java.util.Date;
-
-
 public class QuizQuestions {
     private String classId ;
+    private String teacher_Id ;
+
     private String endDate;
     private String Qname;
     private String[] questions;
@@ -51,4 +48,7 @@ public class QuizQuestions {
         return Qname;
     }
 
+    public String getTeacher_Id() {
+        return teacher_Id;
+    }
 }

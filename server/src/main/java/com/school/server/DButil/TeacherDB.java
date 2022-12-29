@@ -2,10 +2,7 @@ package com.school.server.DButil;
 import com.google.gson.Gson;
 
 import com.school.server.model.Teacher;
-
 import org.springframework.stereotype.Repository;
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

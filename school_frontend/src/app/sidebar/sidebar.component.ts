@@ -12,12 +12,8 @@ export class SidebarComponent implements OnInit {
   isStaff = false;
   constructor() {
     let x = localStorage.getItem("type")
-    console.log(x);
-
     if(x.match("student") !== null){
       this.isStudent = true
-      console.log("usfusfus");
-
     }
     else if(x.match("parent") !== null){
       this.isParent = true

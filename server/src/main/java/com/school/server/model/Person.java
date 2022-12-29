@@ -1,4 +1,3 @@
-
 package com.school.server.model;
 
 public abstract class Person {
@@ -78,3 +77,4 @@ public abstract class Person {
     }
 
 }
+

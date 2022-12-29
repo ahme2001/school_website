@@ -1,5 +1,4 @@
 package com.school.server.DButil;
-
 import com.school.server.model.ClassTable;
 
 import org.springframework.stereotype.Repository;

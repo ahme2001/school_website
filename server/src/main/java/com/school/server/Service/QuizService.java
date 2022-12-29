@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.school.server.gson.QuizQuestions;
 import com.school.server.gson.QuizRes;
 
+import com.school.server.gson.TeacherQuizzes;
 import com.school.server.model.Quiz;
 
 
@@ -61,4 +62,20 @@ public class QuizService {
         quizDB.updateDoQuiz(qId,sId,grade);
         return new Gson().toJson(res);
     }
+
+    public String getPrevResult(String StId){
+        return quizDB.getPrevResults(StId);
+    }
+    public String getClassQuizzes(String input){
+        Gson gson  = new Gson();
+        TeacherQuizzes tq =  gson.fromJson(input, TeacherQuizzes.class);
+        String TId = tq.getTeacher_Id();
+        String CId = tq.getClassId();
+        return quizDB.getClassQuizzes(TId,CId);
+    }
+
+    public String getQuizResults(String QId){
+        return quizDB.getQuizResults(QId);
+    }
 }
+

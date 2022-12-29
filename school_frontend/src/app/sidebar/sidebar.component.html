@@ -10,7 +10,9 @@
     <li *ngIf="isStaff"><a href="create_account">Create Account</a></li>
     <li *ngIf="isStaff"><a href="set_fees">Set Fees</a></li>
     <li *ngIf="isTeacher"><a href="new_Quiz">Add new Quiz</a></li>
+    <li *ngIf="isTeacher"><a href="quiz_grade">Get Quiz Result</a></li>
     <li *ngIf="isStudent"><a href="Quiz">Quizzes</a></li>
+    <li *ngIf="isStudent"><a href="quiz_done">Quizzes Done</a></li>
     <li *ngIf="isStudent||isTeacher"><a href="show_schedule">Schedule</a></li>
 
     <li *ngIf="isStudent"><a href="DiscussionS">Discussion</a></li>

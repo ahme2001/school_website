@@ -3,16 +3,8 @@ package com.school.server.model;
 import com.school.server.DButil.ParentDB;
 
 public class Parent extends Person{
-    private String P_id;
-    private String Job;
-
-    public Parent(String p_id, String job) {
-        P_id = p_id;
-        Job = job;
-    }
-
-    public Parent() {
-    }
+    String P_id;
+    String Job;
 
     public String getP_id() {
         return P_id;

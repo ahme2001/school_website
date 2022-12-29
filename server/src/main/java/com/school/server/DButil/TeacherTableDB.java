@@ -1,13 +1,11 @@
 package com.school.server.DButil;
 
-
 import com.school.server.gson.Day_Lecture;
 import com.school.server.gson.Lectures;
 import com.school.server.gson.TeacherTableSetting;
 import com.school.server.model.TeacherTable;
 
 import org.springframework.stereotype.Repository;
-
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
