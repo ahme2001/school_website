@@ -29,8 +29,8 @@ There are 4 types of users in the app. school staff, Teachers, Students and pare
 ### Adding Users
 
 ## Thanks to:
-* @m13salama
-* @michaelsamir75
-* @mohamedaiad
-* @ahme2001
-* @mohamed_euler
+* [mohamed salama](https://www.github.com/m13salama)
+* [michael samir](https://www.github.com/michaelsamir75)
+* [mohamed aiad](https://www.github.com/mohamedaiad)
+* [ahmed abdallah](https://www.github.com/ahme2001)
+* [mohamed_mostafa](https://www.github.com/mohamed_euler)
