@@ -1,6 +1,8 @@
 package com.school.server.DButil;
 import com.school.server.model.Student;
 
+import org.springframework.stereotype.Repository;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
+@Repository
 public class StudentDB {
     private Connection connection;
 

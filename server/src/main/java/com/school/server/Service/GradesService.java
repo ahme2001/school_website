@@ -4,6 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.school.server.DButil.StaffDB;
 import com.school.server.DButil.StudentDB;
+
+import com.school.server.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;
@@ -13,16 +17,23 @@ import java.util.*;
 @Service
 public class GradesService {
 
+    @Autowired
+    private StudentDB studentDB;
+
+    @Autowired
+    private StaffDB staffDB;
+
     public String getIds(String Term){
         if(Term.length() == 0) return "ERROR";
-        Map<String,String> mapStudents = new StudentDB().getStudents(Term);
+        Map<String,String> mapStudents = studentDB.getStudents(Term);
         if(mapStudents == null || mapStudents.size()==0) return "ERROR";
         String res = getGson(mapStudents);
         return  res;
     }
     public String getTermRange(String ID){
         Gson gson = new Gson();
-        Map<String,String> mapStudents = new StudentDB().getTermRange(ID);
+        Map<String, String> termRange = studentDB.getTermRange(ID);
+        Map<String,String> mapStudents = termRange;
         if(mapStudents == null || mapStudents.size()==0) return "ERROR";
         mapStudents.put("startyear",mapStudents.get("startyear").substring(0,2));
         mapStudents.put("currentyear",mapStudents.get("currentyear").substring(0,2));
@@ -35,7 +46,7 @@ public class GradesService {
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, String>>(){}.getType();
         Map<String, String> userData = gson.fromJson(input, type);
-        Map<String, String> grades = new StudentDB().getTermGrades(userData.get("id"), userData.get("term"));
+        Map<String, String> grades = studentDB.getTermGrades(userData.get("id"), userData.get("term"));
 
         if(grades == null || grades.size()==0) return "ERROR";
 
@@ -48,7 +59,6 @@ public class GradesService {
         return res;
     }
     private boolean getValues(String input){
-        String subject;
         Gson gson = new Gson();
         Map<String,String> values = new HashMap<>();
         Type type = new TypeToken<Map<String, Object>>(){}.getType();
@@ -60,7 +70,7 @@ public class GradesService {
             Map<String, String> studentGrade = (Map<String, String>) arr.get(i);
             values.put("St_Id", studentGrade.get("id"));
             values.put("Exam_grade", studentGrade.get("grade"));
-            Map<String,String> momo = new StudentDB().getTermRange(studentGrade.get("id"));
+            Map<String,String> momo = studentDB.getTermRange(studentGrade.get("id"));
             values.put("Term_id",momo.get("currentyear"));
             values.put("yearWorks",(String) userData.get(""));
             values.put("gradeflag","1");
@@ -69,7 +79,7 @@ public class GradesService {
             else state=0;
             values.put("state", Integer.toString(state));
             String sqlValues = valuesToString(values);
-            if (! new StaffDB().addGrade(sqlValues)) return false;
+            if (! staffDB.addGrade(sqlValues)) return false;
         }
         return true;
     }
@@ -81,7 +91,6 @@ public class GradesService {
                 values.get("Exam_grade") + "," +
                 values.get("gradeflag") + "," +
                 values.get("state") + ")";
-        System.out.println(res);
         return  res;
 
     }

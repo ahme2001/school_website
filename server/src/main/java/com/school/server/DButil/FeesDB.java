@@ -1,10 +1,14 @@
 package com.school.server.DButil;
 
+import org.springframework.stereotype.Repository;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
+@Repository
 public class FeesDB {
 
     private Connection connection;

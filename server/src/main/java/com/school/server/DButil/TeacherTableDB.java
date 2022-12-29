@@ -5,11 +5,15 @@ import com.school.server.gson.Lectures;
 import com.school.server.gson.TeacherTableSetting;
 import com.school.server.model.TeacherTable;
 
+import org.springframework.stereotype.Repository;
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Repository
 public class TeacherTableDB {
 
     private Connection connection;

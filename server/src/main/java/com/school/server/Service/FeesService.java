@@ -8,6 +8,9 @@ import com.school.server.gson.ParentInfo;
 import com.school.server.gson.StudentName_fees;
 import com.school.server.gson.Year_Fees;
 import com.school.server.model.Student;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.Vector;
@@ -15,13 +18,26 @@ import java.util.Vector;
 @Service
 public class FeesService {
 
+
+    @Autowired
+    private FeesDB feesDB;
+
+    @Autowired
+    private StudentDB studentDB;
+
+    @Autowired
+    private PersonDB personDB;
+
+
     public boolean setYearFees(String input){
         Year_Fees year_fees = new Gson().fromJson(input,Year_Fees.class);
         String year = year_fees.getYear();
         String fees = year_fees.getFees();
 
         // insert into the database
+
         FeesDB feesDB = new FeesDB();
+
         return feesDB.insertFeesYear(year,fees);
     }
 
@@ -29,12 +45,16 @@ public class FeesService {
         ParentInfo parentInfo = new Gson().fromJson(input,ParentInfo.class);
 
         // get children IDs
+
         StudentDB studentDB = new StudentDB();
+
         Vector<String> allChildrenIds = studentDB.getAllChildrenIds(parentInfo.getId());
         if(allChildrenIds == null) return null;
 
         // get children Names
+
         PersonDB personDB = new PersonDB();
+
         Vector<String> allChildrenNames = personDB.getAllChildrenName(allChildrenIds);
 
         // get children fees
@@ -43,8 +63,10 @@ public class FeesService {
     }
 
     private Vector<String> getAllStudentFees(Vector<String> childrenIds){
+
         StudentDB studentDB = new StudentDB();
         FeesDB feesDB = new FeesDB();
+
         Vector<String> childrenFees = new Vector<>();
 
         for (String childrenId : childrenIds) {
