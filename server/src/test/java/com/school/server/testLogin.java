@@ -1,49 +1,92 @@
 package com.school.server;
 
-import com.school.server.DButil.PersonDB;
 import com.school.server.Service.loginService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class testLogin {
 
-    @Autowired
-    private loginService loginService;
-
-    @MockBean
-    private PersonDB personDB;
-
-
     @Test
-    public void testTruePass(){
-        // Mockup
-        Mockito.when(personDB.getPass("20010001")).thenReturn("123");
-
-        // test the unit login service
+    public void test1(){
+        loginService ls = new loginService();
         String input = "{'id':'20010001','pass':'123'}";
-        boolean res = loginService.run(input);
+        boolean res = ls.run(input);
         assertEquals(true,res);
     }
 
     @Test
-    public void testWrongPass(){
-        Mockito.when(personDB.getPass("20010011")).thenReturn("0126");
+    public void test2(){
+        loginService ls = new loginService();
         String input = "{'id':'20010011','pass':'123'}";
-        boolean res = loginService.run(input);
+        boolean res = ls.run(input);
+        assertEquals(false,res);
+    }
+
+
+    @Test
+    public void test3(){
+        loginService ls = new loginService();
+        String input = "{'id':'20010002','pass':'pass'}";
+        boolean res = ls.run(input);
+        assertEquals(true,res);
+    }
+
+    @Test
+    public void test4(){
+        loginService ls = new loginService();
+        String input = "{'id':'20020003','pass':'test'}";
+        boolean res = ls.run(input);
+        assertEquals(true,res);
+    }
+
+    @Test
+    public void test5(){
+        loginService ls = new loginService();
+        String input = "{'id':'20030004','pass':'MpnA012'}";
+        boolean res = ls.run(input);
+        assertEquals(true,res);
+    }
+
+    @Test
+    public void test6(){
+        loginService ls = new loginService();
+        String input = "{'id':'20040005','pass':'GHDGFDGFDHBFGH5'}";
+        boolean res = ls.run(input);
+        assertEquals(true,res);
+    }
+
+    @Test
+    public void test7(){
+        loginService ls = new loginService();
+        String input = "{'id':'20110005','pass':'GHDGFDGFDHBFGH5'}";
+        boolean res = ls.run(input);
         assertEquals(false,res);
     }
 
     @Test
-    public void testEnterEmptyPass(){
-        Mockito.when(personDB.getPass("20010001")).thenReturn("123");
-        String input = "{'id':'20010001','pass':''}";
-        boolean res = loginService.run(input);
+    public void test8(){
+        loginService ls = new loginService();
+        String input = "{'id':'20010005','pass':'theID'}";
+        boolean res = ls.run(input);
+        assertEquals(false,res);
+    }
+
+    @Test
+    public void test9(){
+        loginService ls = new loginService();
+        String input = "{'id':'20010006','pass':'g,t-+*v12TN'}";
+        boolean res = ls.run(input);
+        assertEquals(true,res);
+    }
+
+    @Test
+    public void test10(){
+        loginService ls = new loginService();
+        String input = "{'id':'20010006','pass':'g,t+*v12TN'}";
+        boolean res = ls.run(input);
         assertEquals(false,res);
     }
 

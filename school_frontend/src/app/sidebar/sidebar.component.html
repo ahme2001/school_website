@@ -8,9 +8,11 @@
     <li *ngIf="isStudent"><a href="show_examTable">Exam Table</a></li>
     <li *ngIf="isStaff"><a href="set_schedule">Set Schedule</a></li>
     <li *ngIf="isStaff"><a href="create_account">Create Account</a></li>
+    <li *ngIf="isStaff"><a href="set_fees">Set Fees</a></li>
     <li *ngIf="isTeacher"><a href="new_Quiz">Add new Quiz</a></li>
     <li *ngIf="isStudent"><a href="Quiz">Quizzes</a></li>
     <li *ngIf="isStudent||isTeacher"><a href="show_schedule">Schedule</a></li>
+    <li *ngIf="isParent"><a href="show_fees">Fees</a></li>
     <br />
   </ul>
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
