@@ -8,14 +8,14 @@ It eases now to make online quizzes and submit homework on the site.
 Discussions are open to encourage the students to interact and understand the subjects well.
 There are 4 types of users in the app. school staff, Teachers, Students and parents.  
 
-### Tech Stack: 
+## Tech Stack: 
 * Front-end: AngularJs
 * Back-end: Spring Boot, Java
 * DataBase: MySQL
 
 ## Features:
 * Users login into the system via ID and password.
-* USers see their profile.
+* Users see their profile.
 * School staff add students, teachers, and other school staff to the system.
 * School staff assign teachers and students to courses.
 * Teachers and students can view their timetables.
@@ -26,11 +26,11 @@ There are 4 types of users in the app. school staff, Teachers, Students and pare
 * Parents can see the fees of their children.
 
 ## Screenshots:
-### Adding Teachers
+### Adding Users
 
 ## Thanks to:
-@m13salama
-@michaelsamir
-@mohamedaiad
-@ahmed2001
-@mohamedeuler
+* @m13salama
+* @michaelsamir75
+* @mohamedaiad
+* @ahme2001
+* @mohamed_euler
