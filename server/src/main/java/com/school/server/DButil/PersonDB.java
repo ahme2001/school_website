@@ -1,12 +1,15 @@
 package com.school.server.DButil;
 
 import com.school.server.model.Person;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
+@Repository
 public class PersonDB {
     private Connection connection;
 
@@ -54,5 +57,24 @@ public class PersonDB {
             return false;
         }
         return true;
+    }
+
+    public Vector<String> getAllChildrenName(Vector<String> childrenIds){
+        Vector<String> childrenNames = new Vector<>();
+        for(int i=0;i<childrenIds.size();i++){
+            try {
+                PreparedStatement statement = connection.prepareStatement("select Name from PERSON where Id = " + childrenIds.get(i));
+                ResultSet resultSet = statement.executeQuery();
+                while (resultSet.next()){
+                    String name = resultSet.getString(1);
+                    childrenNames.add(name);
+                }
+
+            } catch (SQLException e) {
+                System.out.println(e);
+                return null;
+            }
+        }
+        return childrenNames;
     }
 }

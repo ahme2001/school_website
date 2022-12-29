@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+
 @Repository
 public class QuizDB {
     private Connection connection;
@@ -114,7 +115,7 @@ public class QuizDB {
                 Name.add(resultSet.getString(2));
             }
         } catch (SQLException e) {
-            System.out.println("2222");
+            System.out.println(e);
             return "can't found";
         }
 

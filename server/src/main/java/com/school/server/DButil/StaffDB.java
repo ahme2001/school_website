@@ -1,12 +1,14 @@
 package com.school.server.DButil;
 import com.school.server.model.Staff;
-
+import org.springframework.stereotype.Repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
+
+@Repository
 public class StaffDB {
     private Connection connection;
 

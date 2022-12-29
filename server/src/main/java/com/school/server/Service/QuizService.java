@@ -4,20 +4,25 @@ import com.school.server.DButil.TeacherDB;
 import com.google.gson.Gson;
 import com.school.server.gson.QuizQuestions;
 import com.school.server.gson.QuizRes;
+
 import com.school.server.gson.TeacherQuizzes;
+import com.school.server.model.Quiz;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
+
 import java.sql.Connection;
 import java.util.HashMap;
 
 @Service
 public class QuizService {
-    private Connection connection;
     @Autowired
-    private QuizDB quizDB = new QuizDB();
-    @Autowired
-    private TeacherDB teacherDB = new TeacherDB();
+    private QuizDB quizDB;
 
+    @Autowired
+    private TeacherDB teacherDB;
 
     public String getTeacherInfo(String tId){
         return teacherDB.getClass(tId);

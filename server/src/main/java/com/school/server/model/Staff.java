@@ -52,4 +52,12 @@ public class Staff extends Person {
             c = "0" + c;
         return "0404" + c;
     }
+
+    public String generateStaffId(StaffDB staffDB){
+        int count = staffDB.getCount();
+        String c = Integer.toString(count);
+        while (c.length() < 4)
+            c = "0" + c;
+        return "0404" + c;
+    }
 }

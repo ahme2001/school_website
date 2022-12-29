@@ -41,10 +41,19 @@ public class Parent extends Person{
         return "\"" + this.P_id + "\"," +
                 "\"" + this.Job + "\"" ;
     }
+
     @Override
     public String generateId() {
         ParentDB Pdb = new ParentDB();
         int count = Pdb.getCount();
+        String c = Integer.toString(count);
+        while(c.length() < 4)
+            c = "0"+c;
+        return "0202" + c;
+    }
+
+    public String generateParentId(ParentDB parentDB){
+        int count = parentDB.getCount();
         String c = Integer.toString(count);
         while(c.length() < 4)
             c = "0"+c;

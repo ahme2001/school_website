@@ -1,9 +1,18 @@
 package com.school.server.gson;
 
 public class SubjectsInfo {
-    String subject;
-    String id;
-    String date;
+    private String subject;
+    private String id;
+    private String date;
+
+    public SubjectsInfo(String subject, String id, String date) {
+        this.subject = subject;
+        this.id = id;
+        this.date = date;
+    }
+
+    public SubjectsInfo() {
+    }
 
     public String getSubject() {
         return subject;

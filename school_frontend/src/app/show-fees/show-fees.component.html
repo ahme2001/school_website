@@ -1,0 +1,17 @@
+<app-sidebar></app-sidebar>
+<div class="row col-5"  style="text-align: center;">
+  <table class="table mt-5 ms-5">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Fees</th>
+      </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let item of children">
+            <td >{{item.name}}</td>
+            <td >{{item.fees}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

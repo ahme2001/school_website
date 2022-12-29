@@ -63,7 +63,6 @@ export class NewQuizComponent implements OnInit {
           }
           console.log(this.classes);
 
-
         }
           , (error) => {
             console.log(error);

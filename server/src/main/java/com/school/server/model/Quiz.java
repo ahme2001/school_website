@@ -1,6 +1,12 @@
 package com.school.server.model;
 
 import com.school.server.DButil.QuizDB;
+<<<<<<< HEAD:server/src/main/java/com/school/server/model/Quiz.java
+=======
+
+import java.util.Date;
+>>>>>>> phase_3:sprint1/src/main/java/com/school/sprint1/model/Quiz.java
+
 
 public class Quiz {
     private String Quiz_Id ;
