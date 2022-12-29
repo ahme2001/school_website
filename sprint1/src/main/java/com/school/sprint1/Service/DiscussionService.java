@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.school.sprint1.DButil.DiscussionDB;
 import com.school.sprint1.DButil.StudentDB;
 import com.school.sprint1.DButil.TeacherDB;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;
@@ -12,25 +13,34 @@ import java.util.Map;
 
 @Service
 public class DiscussionService {
+    @Autowired
+    private TeacherDB teacherDB;
+
+    @Autowired
+    private DiscussionDB discussionDB;
+
+    @Autowired
+    private StudentDB studentDB;
+
     public String getTeacherClasses(String Id){
-        return new TeacherDB().getClass(Id);
+        return teacherDB.getClass(Id);
     }
 
     public boolean addPost(String input){
         if(input.length() == 0) return false;
         Map<String, String> postData = getPostInfo(input);
         String values = postValueDatabase(postData);
-        return new DiscussionDB().addPost(values);
+        return discussionDB.addPost(values);
     }
     public String showPosts(String input){
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, String>>(){}.getType();
         Map<String, String> postData = gson.fromJson(input, type);
         if(postData.get("classId") == null){
-            postData.put("classId", new StudentDB().getClass(postData.get("id")));
+            postData.put("classId", studentDB.getClass(postData.get("id")));
         }
         System.out.println(postData.get("classId"));
-        return new DiscussionDB().getPosts(postData.get("classId"));
+        return discussionDB.getPosts(postData.get("classId"));
     }
     private String postValueDatabase(Map<String,String> postData){
         String res = "\"" + postData.get("postId") + "\","
@@ -49,9 +59,9 @@ public class DiscussionService {
             postData.put("parentPost","null");
         }
         if(postData.get("classId") == null){
-            postData.put("classId", new StudentDB().getClass(postData.get("id")));
+            postData.put("classId", studentDB.getClass(postData.get("id")));
         }
-        postData.put("postId", Integer.toString(new DiscussionDB().getCount()));
+        postData.put("postId", Integer.toString(discussionDB.getCount()));
         System.out.println(postData);
         return postData;
     }

@@ -10,6 +10,16 @@ public class Student extends Person{
     String Curr_term_id;
     String P_id;
     String parent_national_id;
+
+    public Student(String st_id, String class_Id, String ST_Term_Id, String curr_term_id, String p_id) {
+        this.St_id = st_id;
+        this.Class_Id = class_Id;
+        this.ST_Term_Id = ST_Term_Id;
+        this.Curr_term_id = curr_term_id;
+        this.P_id = p_id;
+    }
+    public Student() {
+    }
     public String getSt_id() {
         return St_id;
     }

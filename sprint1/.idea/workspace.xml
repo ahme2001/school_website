@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/DiscussionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/TeacherDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/TeacherDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/school/sprint1/DButil/DButil.class" afterDir="false" />
@@ -48,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DiscussionTest">
     <configuration name="Sprint1Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.school.sprint1.Sprint1Application" />
       <module name="sprint1" />
@@ -62,9 +65,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DiscussionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.DiscussionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscussionTest.tesTGetTeacherClasses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.DiscussionTest" />
+      <option name="METHOD_NAME" value="tesTGetTeacherClasses" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DiscussionTest" />
         <item itemvalue="Application.Sprint1Application" />
+        <item itemvalue="JUnit.DiscussionTest.tesTGetTeacherClasses" />
       </list>
     </recent_temporary>
   </component>
@@ -78,5 +114,10 @@
       <updated>1671216680514</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sprint1$DiscussionTest.ic" NAME="DiscussionTest Coverage Results" MODIFIED="1672337728323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.school.sprint1.*</FILTER>
+    </SUITE>
   </component>
 </project>

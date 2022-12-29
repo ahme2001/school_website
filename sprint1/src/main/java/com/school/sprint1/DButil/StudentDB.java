@@ -1,6 +1,7 @@
 package com.school.sprint1.DButil;
 import com.school.sprint1.model.Student;
 import com.google.gson.Gson;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
+@Repository
 public class StudentDB {
     private Connection connection;
 

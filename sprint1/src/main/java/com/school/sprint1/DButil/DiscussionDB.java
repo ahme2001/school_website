@@ -1,6 +1,7 @@
 package com.school.sprint1.DButil;
 
 import com.google.gson.Gson;
+import org.springframework.stereotype.Repository;
 import org.yaml.snakeyaml.events.Event;
 
 import javax.naming.Name;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Repository
 public class DiscussionDB {
     private Connection connection;
 
