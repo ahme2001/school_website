@@ -1,8 +1,6 @@
 package com.school.server;
 
-<<<<<<< HEAD:server/src/test/java/com/school/server/testSchedule.java
 import com.school.server.Service.ScheduleService;
-=======
 import com.school.server.DButil.ClassTableDB;
 import com.school.server.DButil.StudentDB;
 import com.school.server.DButil.TeacherDB;
@@ -12,7 +10,6 @@ import com.school.server.model.ClassTable;
 import com.school.server.model.Student;
 import com.school.server.model.Teacher;
 import com.school.server.model.TeacherTable;
->>>>>>> phase_3:sprint1/src/test/java/com/school/sprint1/testSchedule.java
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;

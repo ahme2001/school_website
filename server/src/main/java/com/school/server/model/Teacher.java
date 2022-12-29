@@ -59,6 +59,16 @@ public class Teacher extends Person{
                 "\"" + this.Sub + "\"" ;
     }
 
+    @Override
+    public String generateId() {
+        TeacherDB Tdb = new TeacherDB();
+        int count = Tdb.getCount();
+        String c = Integer.toString(count);
+        while(c.length() < 4)
+            c = "0"+c;
+        return "0303" + c;
+    }
+
     public String generateTeacherId(TeacherDB teacherDB){
         int count = teacherDB.getCount();
         String c = Integer.toString(count);

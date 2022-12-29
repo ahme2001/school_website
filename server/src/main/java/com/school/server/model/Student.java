@@ -51,6 +51,11 @@ public class Student extends Person{
         this.P_id = p_id;
     }
 
+    public void setP_id() {
+        String p_id = new ParentDB().getID(this.parent_national_id);
+        this.P_id = p_id;
+    }
+
     public String getST_Term_Id() {
         return ST_Term_Id;
     }
@@ -96,6 +101,21 @@ public class Student extends Person{
         "\"" + this.ST_Term_Id + "\"," +
         "\"" + this.Curr_term_id + "\"," +
         "\"" + this.P_id + "\"" ;
+    }
+
+    @Override
+    public String generateId() {
+        String s_term = this.ST_Term_Id;
+        StudentDB sdb = new StudentDB();
+        int count = sdb.getCount(s_term);
+        String c = Integer.toString(count);
+        while(c.length() < 4)
+            c = "0"+c;
+        while(s_term.length() < 2)
+            s_term = "0"+s_term;
+
+        String ID = s_term + "01" + c;
+        return ID;
     }
 
     public String generateStudentId(StudentDB studentDB){
