@@ -1,0 +1,63 @@
+<app-sidebar></app-sidebar>
+<div class="row">
+  <div class="text-center w-50 m-auto ">
+    <p class="choose col-6">Choose Class:</p>
+    <select [(ngModel)]="chosenClass" (change)="chooseClass()" class="m-auto col-6" name="classes" id="">
+        <option  *ngFor="let item of classes" value="{{item.Id}}">{{item.Name}} </option>
+    </select>
+  </div>
+  <div *ngIf="getquiz" class="text-center w-50 m-auto ">
+    <p class="choose col-6">Choose Quiz:</p>
+    <select [(ngModel)]="chosenQuiz" (change)="chooseQuiz()" class="m-auto col-6" name="quizzes" id="">
+        <option  *ngFor="let item of Quizzes" value="{{item.QId}}">{{item.QName}}</option>
+    </select>
+  </div>
+  <br><br><br><br>
+  <hr>
+  <div *ngIf="getgrade">
+    <div>
+      <table class="text-center w-50 m-auto table table-striped">
+        <thead>
+          <tr>
+            <th colspan="4">Students Solve Quiz </th>
+          </tr>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Submission Time</th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let item of StudentsDone" >
+                <th class="col-2">{{item.DoneId}}</th>
+                <td class="col-1">{{item.DoneName}}</td>
+                <th class="col-2">{{item.Grade}}</th>
+                <td class="col-1">{{item.SubmissionTime}}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <div>
+      <table class="text-center w-50 m-auto table table-striped">
+        <thead>
+          <tr>
+            <th colspan="2">Students Don't Solve Quiz</th>
+          </tr>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let item of StudentsNotDone" >
+                <th class="col-2">{{item.LateId}}</th>
+                <td class="col-1">{{item.LateName}}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
