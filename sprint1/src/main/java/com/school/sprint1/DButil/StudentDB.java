@@ -1,5 +1,6 @@
 package com.school.sprint1.DButil;
 import com.school.sprint1.model.Student;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-
+@Repository
 public class StudentDB {
     private Connection connection;
     public StudentDB() {
@@ -172,7 +173,6 @@ public class StudentDB {
                 }
             }
         }catch (SQLException e) {
-            System.out.println("11111   "+ e);
             return false;
         }
         return true;

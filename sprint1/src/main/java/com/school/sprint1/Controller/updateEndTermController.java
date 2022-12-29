@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/School")
 public class updateEndTermController {
     @Autowired
-    private com.school.sprint1.Service.updateEndTerm updateEndTerm;
+    private com.school.sprint1.Service.UpdateEndTermServer updateEndTerm;
     @PostMapping("IsEnd")
     public boolean  getInfo(){
         return updateEndTerm.IsEnd();

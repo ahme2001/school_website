@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sprint1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sprint1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/updateEndTermController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/updateEndTermController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/updateEndTerm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/UpdateEndTermServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testUpdateStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testUpdateStudent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +20,18 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -31,6 +46,79 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
+  <component name="RunManager" selected="JUnit.testUpdateStudent">
+    <configuration name="TestUpdateEndTerm.testIsEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.TestUpdateEndTerm" />
+      <option name="METHOD_NAME" value="testIsEnd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testUpdateStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testUpdateStudent" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testUpdateStudent.testGetTeacherInfoWithValidId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testUpdateStudent" />
+      <option name="METHOD_NAME" value="testGetTeacherInfoWithValidId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testUpdateStudent.testIsEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.school.sprint1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.school.sprint1" />
+      <option name="MAIN_CLASS_NAME" value="com.school.sprint1.testUpdateStudent" />
+      <option name="METHOD_NAME" value="testIsEnd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.testUpdateStudent" />
+        <item itemvalue="JUnit.testUpdateStudent.testIsEnd" />
+        <item itemvalue="JUnit.testUpdateStudent.testGetTeacherInfoWithValidId" />
+        <item itemvalue="JUnit.TestUpdateEndTerm.testIsEnd" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,5 +129,16 @@
       <updated>1671216680514</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,31 +1,33 @@
 package com.school.sprint1;
-import com.google.gson.Gson;
-import com.school.sprint1.DButil.QuizDB;
 import com.school.sprint1.DButil.StudentDB;
-import com.school.sprint1.DButil.TeacherDB;
-import com.school.sprint1.Service.QuizService;
-import com.school.sprint1.Service.updateEndTerm;
+import com.school.sprint1.Service.UpdateEndTermServer;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 
 public class testUpdateStudent {
     @Autowired
-    private updateEndTerm endTerm  ;
+    private UpdateEndTermServer endTerm  ;
 
     @MockBean
     private StudentDB studentDB ;
-
     @Test
-    public void testGetTeacherInfoWithValidId(){
+    public void testValidIsEnd(){
+        // Mockup
+        Mockito.when(studentDB.IsEnd()).thenReturn(true);
+        // test
+        boolean output = endTerm.IsEnd();
+        assertEquals(true,output);
+    }
+    @Test
+    public void testValidUpdateTerm(){
         Mockito.when(studentDB.updateEndTerm()).thenReturn(true);
         Mockito.when(studentDB.checkToUpdate(Mockito.any(),Mockito.any())).thenReturn(true);
         Mockito.when(studentDB.updateStudentInfo(Mockito.any(),Mockito.any(),Mockito.any())).thenReturn(true);
@@ -36,6 +38,24 @@ public class testUpdateStudent {
         assertEquals(true,output);
     }
 
+    @Test
+    public void testInvalidIsEnd(){
+        // Mockup
+        Mockito.when(studentDB.IsEnd()).thenReturn(false);
+        // test
+        boolean output = endTerm.IsEnd();
+        assertEquals(false,output);
+    }
+    @Test
+    public void testInvalidUpdateTerm(){
+        Mockito.when(studentDB.updateEndTerm()).thenReturn(false);
+        Mockito.when(studentDB.checkToUpdate(Mockito.any(),Mockito.any())).thenReturn(false);
+        Mockito.when(studentDB.updateStudentInfo(Mockito.any(),Mockito.any(),Mockito.any())).thenReturn(false);
 
+        // test
+        boolean output = endTerm.updateTerm();
+        System.out.println(output);
+        assertEquals(false,output);
+    }
 
 }
