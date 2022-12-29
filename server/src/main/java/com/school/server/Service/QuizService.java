@@ -5,6 +5,9 @@ import com.google.gson.Gson;
 import com.school.server.gson.QuizQuestions;
 import com.school.server.gson.QuizRes;
 
+import com.school.server.model.Quiz;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;

@@ -1,6 +1,8 @@
 package com.school.server.DButil;
 import com.school.server.model.Student;
 
+import com.google.gson.Gson;
+
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -134,6 +136,18 @@ public class StudentDB {
             return null;
         }
         return student;
+    }
+
+    public String getClass(String ID) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("select Class_Id from STUDENT where St_Id = " + ID);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            return resultSet.getString(1);
+        }catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
     }
 
     public Vector<String> getAllChildrenIds(String P_Id){

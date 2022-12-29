@@ -11,7 +11,7 @@ public class GradesTest {
     public void test1(){
         GradesService gs = new GradesService();
         String res = gs.getIds("051");
-        String trueRes = "[\"{\\\"grade\\\":\\\"\\\",\\\"name\\\":\\\"toto\\\",\\\"id\\\":\\\"01010001\\\"}\",\"{\\\"grade\\\":\\\"\\\",\\\"name\\\":\\\"fofo\\\",\\\"id\\\":\\\"01010000\\\"}\"]";
+        String trueRes = "[\"{\\\"grade\\\":\\\"\\\",\\\"name\\\":\\\"Ahmed\\\",\\\"id\\\":\\\"01010001\\\"}\",\"{\\\"grade\\\":\\\"\\\",\\\"name\\\":\\\"Michael\\\",\\\"id\\\":\\\"01010000\\\"}\"]";
         assertEquals(trueRes,res);
     }
     @Test
@@ -103,7 +103,7 @@ public class GradesTest {
     public void test13(){
         GradesService gs = new GradesService();
         String res = gs.showGrades("{\"id\":\"01010000\",\"term\":\"0510\"}");
-        String trueRes = "[\"{\\\"subject\\\":\\\"arabic\\\",\\\"grade\\\":\\\"40\\\"}\",\"{\\\"subject\\\":\\\"activities\\\",\\\"grade\\\":\\\"89\\\"}\",\"{\\\"subject\\\":\\\"science\\\",\\\"grade\\\":\\\"30\\\"}\",\"{\\\"subject\\\":\\\"english\\\",\\\"grade\\\":\\\"60\\\"}\",\"{\\\"subject\\\":\\\"algebra\\\",\\\"grade\\\":\\\"100\\\"}\",\"{\\\"subject\\\":\\\"geometry\\\",\\\"grade\\\":\\\"55\\\"}\",\"{\\\"subject\\\":\\\"math\\\",\\\"grade\\\":\\\"20\\\"}\",\"{\\\"subject\\\":\\\"social studies\\\",\\\"grade\\\":\\\"90\\\"}\"]";
+        String trueRes = "[\"{\\\"subject\\\":\\\"arabic\\\",\\\"grade\\\":\\\"50\\\"}\",\"{\\\"subject\\\":\\\"activities\\\",\\\"grade\\\":\\\"89\\\"}\",\"{\\\"subject\\\":\\\"science\\\",\\\"grade\\\":\\\"30\\\"}\",\"{\\\"subject\\\":\\\"english\\\",\\\"grade\\\":\\\"60\\\"}\",\"{\\\"subject\\\":\\\"algebra\\\",\\\"grade\\\":\\\"100\\\"}\",\"{\\\"subject\\\":\\\"geometry\\\",\\\"grade\\\":\\\"55\\\"}\",\"{\\\"subject\\\":\\\"math\\\",\\\"grade\\\":\\\"20\\\"}\",\"{\\\"subject\\\":\\\"social studies\\\",\\\"grade\\\":\\\"90\\\"}\",\"{\\\"subject\\\":\\\"french\\\",\\\"grade\\\":\\\"40\\\"}\"]";
         assertEquals(trueRes,res);
     }
     @Test

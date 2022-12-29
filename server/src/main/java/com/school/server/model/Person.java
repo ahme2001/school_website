@@ -1,3 +1,4 @@
+
 package com.school.server.model;
 
 public abstract class Person {
@@ -71,12 +72,9 @@ public abstract class Person {
                 "\"" + this.Password + "\"";
     }
     public abstract String ToStringSpecific();
-
     public abstract String generateId();
-
     public  String generatePassword(){
         return "@"+this.National_Id;
     }
 
 }
-

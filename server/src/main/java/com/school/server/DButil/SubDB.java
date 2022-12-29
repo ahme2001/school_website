@@ -1,8 +1,12 @@
 package com.school.server.DButil;
 
+
 import com.school.server.gson.SubjectsInfo;
+import com.school.server.model.Sub;
+
 
 import org.springframework.stereotype.Repository;
+
 
 
 import java.sql.Connection;

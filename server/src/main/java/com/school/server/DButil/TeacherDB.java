@@ -52,7 +52,7 @@ public class TeacherDB {
         ArrayList<String> Ids=new ArrayList<>();
         ArrayList<String> Ns =new ArrayList<>();
         try {
-            PreparedStatement statement = connection.prepareStatement("select CLASS.Class_Id,CLASS.Name from CLASS,TEACH,TEACHER where CLASS.Class_Id = Teach.Class_Id and Teach.Teacher_Id = TEACHER.Teacher_Id and TEACHER.Teacher_Id = "+tId);
+            PreparedStatement statement = connection.prepareStatement("select CLASS.Class_Id,CLASS.Name from CLASS,Teach,TEACHER where CLASS.Class_Id = Teach.Class_Id and Teach.Teacher_Id = TEACHER.Teacher_Id and TEACHER.Teacher_Id = "+tId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 Ids.add(resultSet.getString(1));

@@ -1,7 +1,11 @@
 server.port = 8070
 spring.datasource.url=jdbc:mysql://localhost:3306/SCHOOL
 spring.datasource.username=root
+<<<<<<< HEAD
 spring.datasource.password=welcome123
+=======
+spring.datasource.password=TIGER
+>>>>>>> phase_3
 spring.jpa.generate-ddl=true
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect

@@ -4,12 +4,14 @@ import com.school.server.DButil.ParentDB;
 import com.school.server.DButil.StudentDB;
 
 public class Student extends Person{
+
     private String St_id;
     private String Class_Id;
     private String ST_Term_Id;
     private String Curr_term_id;
     private String P_id;
     private String parent_national_id;
+
 
     public Student(String st_id, String class_Id, String ST_Term_Id, String curr_term_id, String p_id) {
         this.St_id = st_id;
