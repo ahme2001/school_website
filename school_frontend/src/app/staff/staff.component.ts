@@ -168,7 +168,7 @@ export class StaffComponent implements OnInit {
   sendRequestshowButtom(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/IsEnd", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
@@ -190,7 +190,7 @@ export class StaffComponent implements OnInit {
   sendRequesttransfer(x: string) {
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
-      this.http.post("http://localhost:8070/School/login", x,
+      this.http.post("http://localhost:8070/School/update", x,
         { headers: headers, responseType: 'text' })
         .subscribe(response => {
             this.answer = response;
