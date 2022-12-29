@@ -14,12 +14,13 @@ import java.util.HashMap;
 public class QuizService {
     private Connection connection;
     @Autowired
-    private QuizDB quizDB;
+    private QuizDB quizDB = new QuizDB();
     @Autowired
-    private TeacherDB teacherDB;
+    private TeacherDB teacherDB = new TeacherDB();
 
 
     public String getTeacherInfo(String tId){
+        System.out.println(tId);
         return teacherDB.getClass(tId);
     }
 

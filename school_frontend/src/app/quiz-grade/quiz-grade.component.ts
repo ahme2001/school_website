@@ -88,7 +88,7 @@ export class QuizGradeComponent implements OnInit {
             console.log(this.answer)
             this.quiz = JSON.parse(this.answer)
             console.log(this.quiz)
-            for (let i = 0; i < this.class.Id.length; i++) {
+            for (let i = 0; i < this.quiz.QId.length; i++) {
               let c = {
                 "QId": "",
                 "QName": "",

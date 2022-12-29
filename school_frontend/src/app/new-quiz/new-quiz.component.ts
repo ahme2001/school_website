@@ -36,7 +36,8 @@ export class NewQuizComponent implements OnInit {
     "Name": []
   }
   constructor(private _router: Router, private http: HttpClient) {
-    let id = localStorage.getItem("Id")
+    let id = localStorage.getItem("Id").replace("\"","").replace("\"","")
+    console.log(id)
     this.teacherid = id;
     this.sendRequestClass(id)
   }
