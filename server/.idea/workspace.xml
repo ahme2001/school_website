@@ -5,72 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d2e19d3-11fc-4936-8fee-f46bcf7b654c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sprint1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sprint1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/CreateAccController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/DiscussionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/ExamTableController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/GradesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/QuizController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/ScheduleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/loginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Controller/profileController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/ClassTableDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DButil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/DiscussionDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/EnrollmentDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/ParentDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/PersonDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/QuizDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StaffDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/StudentDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/SubDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/TeacherDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/TeacherTableDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/DButil/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/CreateAccountService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/DiscussionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/ExamTableService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/GradesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/ProfileService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/QuizService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/ScheduleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Service/loginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/Sprint1Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/ClassTableSetting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/Day_Lecture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/ExamTableInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/ExamTableStudentInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/Lectures.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/QuizQuestions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/QuizRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/SubjectsInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/TeacherTableSetting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/Year_Code.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/loginInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/loginPersonInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/scheduleInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/gson/schedulePersonInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/ClassTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/DO_QUIZ.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Enrollment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Parent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Question.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Quiz.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Staff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Sub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/Teacher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/sprint1/model/TeacherTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/CreateAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/CreateAccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/DiscussionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/DiscussionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/GradesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/GradesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/profileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/profileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testExamTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testExamTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testQuiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/sprint1/testSchedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-fees/set-fees.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-fees/set-fees.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-fees/set-fees.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-fees/set-fees.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-fees/show-fees.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-fees/show-fees.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-fees/show-fees.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/show-fees/show-fees.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/FeesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/FeesDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Service/FeesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/ParentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/StudentFeesInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/StudentName_fees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/Year_Fees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Fees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/school/server/FeesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/staff/staff.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/staff/staff.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/staff/staff.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/staff/staff.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/GradesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/GradesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/profileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/profileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/ClassTableDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/ClassTableDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/EnrollmentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/EnrollmentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/ParentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/ParentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/PersonDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/PersonDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/QuizDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/QuizDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/StaffDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/StaffDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/StudentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/StudentDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/SubDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/SubDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/TeacherDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/TeacherDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/TeacherTableDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/TeacherTableDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Service/ExamTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Service/ExamTableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Service/GradesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Service/GradesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Service/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Service/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Service/QuizService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Service/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Service/ScheduleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Service/loginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Service/loginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/gson/QuizQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/QuizQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/gson/SubjectsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/SubjectsInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/gson/Year_Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/Year_Code.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/DO_QUIZ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/DO_QUIZ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Parent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/profileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/profileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/testSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/testSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,15 +95,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
-  }
-}</component>
   <component name="RunManager" selected="JUnit.DiscussionTest (1)">
     <configuration name="Sprint1Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.school.sprint1.Sprint1Application" />

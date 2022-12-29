@@ -1,7 +1,9 @@
 package com.school.server.gson;
 
+
 import java.util.Arrays;
 import java.util.Date;
+
 
 public class QuizQuestions {
     private String classId ;

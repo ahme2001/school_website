@@ -3,8 +3,16 @@ package com.school.server.model;
 import com.school.server.DButil.StaffDB;
 
 public class Staff extends Person {
-    String S_id;
-    String Job;
+    private String S_id;
+    private String Job;
+
+    public Staff(String s_id, String job) {
+        S_id = s_id;
+        Job = job;
+    }
+
+    public Staff() {
+    }
 
     public String getS_id() {
         return S_id;
@@ -47,6 +55,14 @@ public class Staff extends Person {
     public String generateId() {
         StaffDB Sdb = new StaffDB();
         int count = Sdb.getCount();
+        String c = Integer.toString(count);
+        while (c.length() < 4)
+            c = "0" + c;
+        return "0404" + c;
+    }
+
+    public String generateStaffId(StaffDB staffDB){
+        int count = staffDB.getCount();
         String c = Integer.toString(count);
         while (c.length() < 4)
             c = "0" + c;

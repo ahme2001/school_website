@@ -11,10 +11,18 @@ import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 import { SetGradesComponent } from './set-grades/set-grades.component';
 import { ShowGradesComponent } from './show-grades/show-grades.component';
+<<<<<<< HEAD
 import { DiscussionStudentComponent } from './discussion-student/discussion-student.component';
 import { DiscussionTeacherComponent } from './discussion-teacher/discussion-teacher.component';
+=======
+import { ShowFeesComponent } from './show-fees/show-fees.component';
+import { SetFeesComponent } from './set-fees/set-fees.component';
+
+>>>>>>> phase_3
 
 const routes: Routes = [
+  {path:'set_fees',component:SetFeesComponent},
+  {path:'show_fees',component:ShowFeesComponent},
   {path:'show_grades',component:ShowGradesComponent},
   {path:'set_grades',component:SetGradesComponent},
   {path:'set_examsTable',component:SetExamTableComponent},

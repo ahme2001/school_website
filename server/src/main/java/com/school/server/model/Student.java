@@ -4,12 +4,14 @@ import com.school.server.DButil.ParentDB;
 import com.school.server.DButil.StudentDB;
 
 public class Student extends Person{
-    String St_id;
-    String Class_Id;
-    String ST_Term_Id;
-    String Curr_term_id;
-    String P_id;
-    String parent_national_id;
+
+    private String St_id;
+    private String Class_Id;
+    private String ST_Term_Id;
+    private String Curr_term_id;
+    private String P_id;
+    private String parent_national_id;
+
 
     public Student(String st_id, String class_Id, String ST_Term_Id, String curr_term_id, String p_id) {
         this.St_id = st_id;
@@ -18,8 +20,10 @@ public class Student extends Person{
         this.Curr_term_id = curr_term_id;
         this.P_id = p_id;
     }
+
     public Student() {
     }
+
     public String getSt_id() {
         return St_id;
     }
@@ -36,27 +40,16 @@ public class Student extends Person{
         Class_Id = class_Id;
     }
 
-    public String getSt_term_is() {
-        return ST_Term_Id;
-    }
-
-    public void setSt_term_is(String st_term_id) {
-        ST_Term_Id = st_term_id;
-    }
-
-    public String getCurrent_term_is() {
-        return Curr_term_id;
-    }
-
-    public void setCurrent_term_is(String current_term_id) {
-        Curr_term_id = current_term_id;
-    }
-
     public String getP_id() {
         return P_id;
     }
 
     public void setP_id(String p_id){
+        this.P_id = p_id;
+    }
+
+    public void setP_id(ParentDB parentDB) {
+        String p_id = parentDB.getID(this.parent_national_id);
         this.P_id = p_id;
     }
 
@@ -111,6 +104,7 @@ public class Student extends Person{
         "\"" + this.Curr_term_id + "\"," +
         "\"" + this.P_id + "\"" ;
     }
+
     @Override
     public String generateId() {
         String s_term = this.ST_Term_Id;
@@ -126,4 +120,16 @@ public class Student extends Person{
         return ID;
     }
 
+    public String generateStudentId(StudentDB studentDB){
+        String s_term = this.ST_Term_Id;
+        int count = studentDB.getCount(s_term);
+        String c = Integer.toString(count);
+        while(c.length() < 4)
+            c = "0"+c;
+        while(s_term.length() < 2)
+            s_term = "0"+s_term;
+
+        String ID = s_term + "01" + c;
+        return ID;
+    }
 }
