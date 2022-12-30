@@ -3,14 +3,30 @@ package com.school.server.Service;
 import com.google.gson.Gson;
 import com.school.server.DButil.*;
 import com.school.server.model.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProfileService {
+
+    @Autowired
+    private StudentDB studentDB;
+
+    @Autowired
+    private ParentDB parentDB;
+
+    @Autowired
+    private TeacherDB teacherDB;
+
+    @Autowired
+    private StaffDB staffDB;
+
+
     public String run(String ID){
         if(ID.length() != 8) return "Error ID";
-        String person = getPerson(ID);
-        return person;
+        return getPerson(ID);
     }
     private String getPerson(String ID){
         String identifier="";
@@ -20,23 +36,19 @@ public class ProfileService {
         Gson gson = new Gson();
 
         if(identifier.compareTo("01") == 0){
-            StudentDB DB = new StudentDB();
-            Student student = DB.getInfo(ID);
+            Student student = studentDB.getInfo(ID);
             if(student == null) return "ID not found in the database";
             return gson.toJson(student);
         }else if(identifier.compareTo("02") == 0){
-            ParentDB DB = new ParentDB();
-            Parent parent = DB.getInfo(ID);
+            Parent parent = parentDB.getInfo(ID);
             if(parent == null) return "ID not found in the database";
             return gson.toJson(parent);
         }else if(identifier.compareTo("03") == 0){
-            TeacherDB DB = new TeacherDB();
-            Teacher teacher = DB.getInfo(ID);
+            Teacher teacher = teacherDB.getInfo(ID);
             if(teacher == null) return "ID not found in the database";
             return gson.toJson(teacher);
         }else if(identifier.compareTo("04") == 0){
-            StaffDB DB = new StaffDB();
-            Staff staff = DB.getInfo(ID);
+            Staff staff = staffDB.getInfo(ID);
             if(staff == null) return "ID not found in the database";
             return gson.toJson(staff);
         }

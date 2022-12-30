@@ -2,6 +2,7 @@ package com.school.server.DButil;
 import com.google.gson.Gson;
 
 import com.school.server.model.Teacher;
+import org.springframework.stereotype.Repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Repository
 public class TeacherDB {
     private Connection connection;
 
@@ -47,7 +49,7 @@ public class TeacherDB {
         ArrayList<String> Ids=new ArrayList<>();
         ArrayList<String> Ns =new ArrayList<>();
         try {
-            PreparedStatement statement = connection.prepareStatement("select CLASS.Class_Id,CLASS.Name from CLASS,TEACH,TEACHER where CLASS.Class_Id = Teach.Class_Id and Teach.Teacher_Id = TEACHER.Teacher_Id and TEACHER.Teacher_Id = "+tId);
+            PreparedStatement statement = connection.prepareStatement("select CLASS.Class_Id,CLASS.Name from CLASS,Teach,TEACHER where CLASS.Class_Id = Teach.Class_Id and Teach.Teacher_Id = TEACHER.Teacher_Id and TEACHER.Teacher_Id = "+tId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 Ids.add(resultSet.getString(1));

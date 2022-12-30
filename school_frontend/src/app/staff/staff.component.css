@@ -4,3 +4,31 @@ margin-top: 1vh;
 small{
   color: red;
 }
+
+.term{
+  width: 75%;
+  float: right;
+  margin: auto;
+}
+.error{
+	background-color: rgba(207, 79, 79,0.6);
+	color: black;
+	margin: auto;
+	padding: 2px;
+	width: 75%;
+	border-radius: 3px;
+	border: solid red;
+	font-size: 13px;
+	text-align: center;
+}
+.done{
+	background-color: rgba(48, 172, 163, 0.6);
+	color: black;
+	margin: auto;
+	padding: 2px;
+	width: 75%;
+	border-radius: 3px;
+	border: solid green;
+	font-size: 13px;
+	text-align: center;
+}

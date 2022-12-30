@@ -18,18 +18,8 @@ public class AesEncryption {
     private Key key;
     private Cipher cipher;
     @Value("${aes.encryption.key}")
-    private String encryptionKey = "thisIsYourSchool";
+    private final String encryptionKey = "thisIsYourSchool";
 
-//    public static void main(String args[]) throws Exception {
-//        AesEncryption aes = new AesEncryption();
-//        System.out.println(aes.encryptionKey);
-//        Key key = aes.generateKey();
-//        String encriptValue = aes.encrypt("YOUR_SECRETE_KEY",key);
-//        System.out.println(encriptValue);
-//        String d = aes.decrypt(encriptValue,key);
-//        System.out.println(d);
-//
-//    }
 
     public AesEncryption() {
         key = this.generateKey();
@@ -48,15 +38,8 @@ public class AesEncryption {
             cipher.init(Cipher.ENCRYPT_MODE, key);
             byte[] encValue = cipher.doFinal(valueToEnc.getBytes());
             encryptedByteValue = new Base64().encode(encValue);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchPaddingException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalBlockSizeException e) {
-            throw new RuntimeException(e);
-        } catch (BadPaddingException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidKeyException e) {
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException |
+                 BadPaddingException e) {
             throw new RuntimeException(e);
         }
         return new String(encryptedByteValue);
@@ -69,15 +52,8 @@ public class AesEncryption {
             cipher.init(Cipher.DECRYPT_MODE, key);
             byte[] decodedBytes = new Base64().decode(encryptedValue.getBytes());
             enctVal = cipher.doFinal(decodedBytes);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchPaddingException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalBlockSizeException e) {
-            throw new RuntimeException(e);
-        } catch (BadPaddingException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidKeyException e) {
+        } catch (NoSuchAlgorithmException | BadPaddingException | NoSuchPaddingException | IllegalBlockSizeException |
+                 InvalidKeyException e) {
             throw new RuntimeException(e);
         }
         return new String(enctVal);

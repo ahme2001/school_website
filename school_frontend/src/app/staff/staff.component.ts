@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class StaffComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private _router:Router,private http :HttpClient) { }
+  constructor(private formBuilder: FormBuilder,private _router:Router,private http :HttpClient) { 
+    this.sendRequestshowButtom("show")
+  }
   selection = "student";
   displayStudDone = "block"
   displayTeacDone = "none"
@@ -31,7 +33,6 @@ export class StaffComponent implements OnInit {
 
   ngOnInit(): void {
     this.StudentForm = new FormGroup({
-      // select: new FormControl("Student"),
       Name: new FormControl(null,Validators.required),
       Phone: new FormControl(null,[Validators.minLength(11),Validators.maxLength(11)]),
       National_Id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
@@ -48,7 +49,6 @@ export class StaffComponent implements OnInit {
       parent_sex: new FormControl(null,Validators.required),
     });
     this.TeacherForm = new FormGroup({
-      // select: new FormControl("Teacher"),
       Name: new FormControl(null,Validators.required),
       Phone: new FormControl(null,[Validators.minLength(11),Validators.maxLength(11)]),
       National_Id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
@@ -59,7 +59,6 @@ export class StaffComponent implements OnInit {
       Experience: new FormControl(null,Validators.required)
     });
     this.StaffForm = new FormGroup({
-      // select: new FormControl("Staff"),
       Name: new FormControl(null,Validators.required),
       Phone: new FormControl(null,[Validators.minLength(11),Validators.maxLength(11)]),
       National_Id: new FormControl(null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]),
@@ -131,27 +130,77 @@ export class StaffComponent implements OnInit {
       this.parent.Address = this.StudentForm.value.Address
       this.URL = "http://localhost:8070/School/create/parent";
       var temp = JSON.stringify(this.parent);
-      console.log(temp)
       this.sendRequestCreateAccount(temp);
       var temp = JSON.stringify(this.StudentForm.value);
       await this.sleep(1000);
-      console.log(temp)
       this.URL = "http://localhost:8070/School/create/student";
       this.sendRequestCreateAccount(temp);
-      // this.StudentForm.reset();
+      this.StudentForm.reset();
     }else if (this.selection == "Teacher"){
       var temp = JSON.stringify(this.TeacherForm.value);
-      console.log(temp)
       this.URL = "http://localhost:8070/School/create/teacher";
       this.sendRequestCreateAccount(temp);
       this.TeacherForm.reset();
     }else{
       var temp = JSON.stringify(this.StaffForm.value);
-      console.log(temp)
       this.URL = "http://localhost:8070/School/create/staff";
       this.sendRequestCreateAccount(temp);
       this.StaffForm.reset();
     }
     this.submitted = false
+  }
+  displaybuttom = false
+  displayDone = "none"
+  displayAlert = "none"
+
+  transferTerm(){
+    this.sendRequesttransfer("transfer")
+    console.log("aaaaaaaaaaaaaaa");
+    
+  }
+  sendRequestshowButtom(x: string) {
+    if (x != '') {
+      const headers = new HttpHeaders({ 'Content-Type': "application/text" })
+      this.http.post("http://localhost:8070/School/IsEnd", x,
+        { headers: headers, responseType: 'text' })
+        .subscribe(response => {
+            this.answer = response;
+            console.log(this.answer);
+
+            if(this.answer == "ERROR"||this.answer =="false"){
+              this.displaybuttom = false
+            }
+            else{
+              this.displaybuttom = true
+            }
+        }
+          , (error) => {
+            console.log(error);
+          });
+    }
+  }
+
+  sendRequesttransfer(x: string) {
+    if (x != '') {
+      const headers = new HttpHeaders({ 'Content-Type': "application/text" })
+      this.http.post("http://localhost:8070/School/update", x,
+        { headers: headers, responseType: 'text' })
+        .subscribe(response => {
+            this.answer = response;
+            console.log(this.answer);
+
+            if(this.answer == "ERROR"||this.answer =="false"){
+              this.displayAlert = "block"
+              this.displayDone = "None"
+            }
+            else{
+              this.displayDone = "block"
+              this.displayAlert = "None"
+            }
+        }
+          , (error) => {
+            console.log(error);
+          });
+    }
   }
 }
