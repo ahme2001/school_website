@@ -3,10 +3,10 @@
   <div id="create_account" class="col-9">
     <div [style.display]="displayStudDone">
       <form [formGroup]="StudentForm" (ngSubmit)="onSubmit()">
-        <div class="container col-lg-50 my-2" >
+        <div class="container col-lg-50 my-2">
           <div class="card">
             <div class="row">
-              <h1 class="text-center" style="color:#00539CFF ;">Create Account</h1>
+              <h2 class="text-center" style="color:#00539CFF ;">Create Account</h2>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label for="Name">Full Name
                   <small *ngIf="(submitted || std['Name'].touched) && std['Name'].invalid">
@@ -19,12 +19,12 @@
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label for="Phone">Phone
-                    <small *ngIf="std['Phone'].errors && std['Phone'].errors['minlength']">
-                      * enter only 11 numbers *
-                    </small>
-                    <small *ngIf="std['Phone'].errors && std['Phone'].errors['maxlength']">
-                      * enter only 11 numbers *
-                    </small>
+                  <small *ngIf="std['Phone'].errors && std['Phone'].errors['minlength']">
+                    * enter only 11 numbers *
+                  </small>
+                  <small *ngIf="std['Phone'].errors && std['Phone'].errors['maxlength']">
+                    * enter only 11 numbers *
+                  </small>
                 </label>
                 <input type="tel" formControlName="Phone" placeholder="enter phone number" class="form-control">
               </div>
@@ -42,7 +42,8 @@
                     </small>
                   </small>
                 </label>
-                <input type="tel" formControlName="National_Id" placeholder="enter national id or passport id" class="form-control" required>
+                <input type="tel" formControlName="National_Id" placeholder="enter national id or passport id"
+                  class="form-control" required>
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label>Address</label>
@@ -56,7 +57,8 @@
                     </small>
                   </small>
                 </label>
-                <input type="date" formControlName="birth_date" placeholder="enter birth date" class="form-control" required>
+                <input type="date" formControlName="birth_date" placeholder="enter birth date" class="form-control"
+                  required>
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label for="Sex" class="col-4">Gender
@@ -68,111 +70,127 @@
                 </label>
                 <div>
                   <input type="radio" id="male" value="M" formControlName="Sex" class="form-check-input col-2">
-                  <label for="male" class="form-check-label"> <pre style="font-size: 100%;"> Male </pre></label>
+                  <label for="male" class="form-check-label">
+                    <pre style="font-size: 100%;"> Male </pre>
+                  </label>
                   <input type="radio" id="female" value="F" formControlName="Sex" class="form-check-input">
-                  <label for="female" class="form-check-label"><pre style="font-size: 100%;"> Female</pre></label>
+                  <label for="female" class="form-check-label">
+                    <pre style="font-size: 100%;"> Female</pre>
+                  </label>
                 </div>
               </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label>Class id
-                    <small *ngIf="(submitted || std['Class_Id'].touched) && std['Class_Id'].invalid">
-                      <small *ngIf="std['Class_Id'].errors && std['Class_Id'].errors['required']">
-                        * required *
-                      </small>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label>Class id
+                  <small *ngIf="(submitted || std['Class_Id'].touched) && std['Class_Id'].invalid">
+                    <small *ngIf="std['Class_Id'].errors && std['Class_Id'].errors['required']">
+                      * required *
                     </small>
-                  </label>
-                  <input type="text" formControlName="Class_Id" placeholder="enter student class" class="form-control" required>
-                </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label>Start term id
-                    <small *ngIf="(submitted || std['St_Term_Id'].touched) && std['St_Term_Id'].invalid">
-                      <small *ngIf="std['St_Term_Id'].errors && std['St_Term_Id'].errors['required']">
-                        * required *
-                      </small>
+                  </small>
+                </label>
+                <input type="text" formControlName="Class_Id" placeholder="enter student class" class="form-control"
+                  required>
+              </div>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label>Start term id
+                  <small *ngIf="(submitted || std['St_Term_Id'].touched) && std['St_Term_Id'].invalid">
+                    <small *ngIf="std['St_Term_Id'].errors && std['St_Term_Id'].errors['required']">
+                      * required *
                     </small>
-                  </label>
-                  <input type="text" formControlName="St_Term_Id" placeholder="enter student class" class="form-control" required>
-                </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label>Current term id
-                    <small *ngIf="(submitted || std['Curr_Term_Id'].touched) && std['Curr_Term_Id'].invalid">
-                      <small *ngIf="std['Curr_Term_Id'].errors && std['Curr_Term_Id'].errors['required']">
-                        * required *
-                      </small>
+                  </small>
+                </label>
+                <input type="text" formControlName="St_Term_Id" placeholder="enter student class" class="form-control"
+                  required>
+              </div>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label>Current term id
+                  <small *ngIf="(submitted || std['Curr_Term_Id'].touched) && std['Curr_Term_Id'].invalid">
+                    <small *ngIf="std['Curr_Term_Id'].errors && std['Curr_Term_Id'].errors['required']">
+                      * required *
                     </small>
-                  </label>
-                  <input type="text" formControlName="Curr_Term_Id" placeholder="enter student class" class="form-control" required>
-                </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label>Parent Name
-                    <small *ngIf="(submitted || std['parent_name'].touched) && std['parent_name'].invalid">
-                      <small *ngIf="std['parent_name'].errors && std['parent_name'].errors['required']">
-                        * required *
-                      </small>
+                  </small>
+                </label>
+                <input type="text" formControlName="Curr_Term_Id" placeholder="enter student class" class="form-control"
+                  required>
+              </div>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label>Parent Name
+                  <small *ngIf="(submitted || std['parent_name'].touched) && std['parent_name'].invalid">
+                    <small *ngIf="std['parent_name'].errors && std['parent_name'].errors['required']">
+                      * required *
                     </small>
-                  </label>
-                  <input type="text" formControlName="parent_name" placeholder="enter parent name" class="form-control" required>
-                </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label>Parent National Id
-                    <small *ngIf="(submitted || std['parent_national_id'].touched) && std['parent_national_id'].invalid">
-                      <small *ngIf="std['parent_national_id'].errors && std['parent_national_id'].errors['required']">
-                        * required *
-                      </small>
-                      <small *ngIf="std['parent_national_id'].errors && std['parent_national_id'].errors['minlength']">
-                        * enter only 14 numbers *
-                      </small>
-                      <small *ngIf="std['parent_national_id'].errors && std['parent_national_id'].errors['maxlength']">
-                        * enter only 14 numbers *
-                      </small>
+                  </small>
+                </label>
+                <input type="text" formControlName="parent_name" placeholder="enter parent name" class="form-control"
+                  required>
+              </div>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label>Parent National Id
+                  <small *ngIf="(submitted || std['parent_national_id'].touched) && std['parent_national_id'].invalid">
+                    <small *ngIf="std['parent_national_id'].errors && std['parent_national_id'].errors['required']">
+                      * required *
                     </small>
-                  </label>
-                  <input type="text" formControlName="parent_national_id" placeholder="enter parent national id" class="form-control" required>
-                </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label for="parent_phone">Parent Phone
-                    <small *ngIf="(submitted || std['parent_phone'].touched) && std['parent_phone'].invalid">
-                      <small *ngIf="std['parent_phone'].errors && std['parent_phone'].errors['required']">
-                        * required *
-                      </small>
-                      <small *ngIf="std['parent_phone'].errors && std['parent_phone'].errors['minlength']">
-                        * enter only 11 numbers *
-                      </small>
-                      <small *ngIf="std['parent_phone'].errors && std['parent_phone'].errors['maxlength']">
-                        * enter only 11 numbers *
-                      </small>
+                    <small *ngIf="std['parent_national_id'].errors && std['parent_national_id'].errors['minlength']">
+                      * enter only 14 numbers *
                     </small>
-                  </label>
-                  <input type="tel" formControlName="parent_phone" placeholder="enter parent phone" class="form-control" required>
-                </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label>Parent Job
-                    <small *ngIf="(submitted || std['parent_job'].touched) && std['parent_job'].invalid">
-                      <small *ngIf="std['parent_job'].errors && std['parent_job'].errors['required']">
-                        * required *
-                      </small>
+                    <small *ngIf="std['parent_national_id'].errors && std['parent_national_id'].errors['maxlength']">
+                      * enter only 14 numbers *
                     </small>
-                  </label>
-                  <input type="text" formControlName="parent_job" placeholder="enter parent Job" class="form-control" required>
-                </div>
-                <div class="col-5 ms-5 mt-3 ps-3">
-                  <label for="parent_sex" class="col-4">Gender
-                    <small *ngIf="(submitted || std['parent_sex'].touched) && std['parent_sex'].invalid">
-                      <small *ngIf="std['parent_sex'].errors && std['parent_sex'].errors['required']">
-                        * required *
-                      </small>
+                  </small>
+                </label>
+                <input type="text" formControlName="parent_national_id" placeholder="enter parent national id"
+                  class="form-control" required>
+              </div>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label for="parent_phone">Parent Phone
+                  <small *ngIf="(submitted || std['parent_phone'].touched) && std['parent_phone'].invalid">
+                    <small *ngIf="std['parent_phone'].errors && std['parent_phone'].errors['required']">
+                      * required *
                     </small>
+                    <small *ngIf="std['parent_phone'].errors && std['parent_phone'].errors['minlength']">
+                      * enter only 11 numbers *
+                    </small>
+                    <small *ngIf="std['parent_phone'].errors && std['parent_phone'].errors['maxlength']">
+                      * enter only 11 numbers *
+                    </small>
+                  </small>
+                </label>
+                <input type="tel" formControlName="parent_phone" placeholder="enter parent phone" class="form-control"
+                  required>
+              </div>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label>Parent Job
+                  <small *ngIf="(submitted || std['parent_job'].touched) && std['parent_job'].invalid">
+                    <small *ngIf="std['parent_job'].errors && std['parent_job'].errors['required']">
+                      * required *
+                    </small>
+                  </small>
+                </label>
+                <input type="text" formControlName="parent_job" placeholder="enter parent Job" class="form-control"
+                  required>
+              </div>
+              <div class="col-5 ms-5 mt-3 ps-3">
+                <label for="parent_sex" class="col-4">Gender
+                  <small *ngIf="(submitted || std['parent_sex'].touched) && std['parent_sex'].invalid">
+                    <small *ngIf="std['parent_sex'].errors && std['parent_sex'].errors['required']">
+                      * required *
+                    </small>
+                  </small>
+                </label>
+                <div>
+                  <input type="radio" id="male" value="M" formControlName="parent_sex" class="form-check-input col-2">
+                  <label for="male" class="form-check-label">
+                    <pre style="font-size: 100%;"> Male </pre>
                   </label>
-                  <div>
-                    <input type="radio" id="male" value="M" formControlName="parent_sex" class="form-check-input col-2">
-                    <label for="male" class="form-check-label"> <pre style="font-size: 100%;"> Male </pre></label>
-                    <input type="radio" id="female" value="F" formControlName="parent_sex" class="form-check-input">
-                    <label for="female" class="form-check-label"><pre style="font-size: 100%;"> Female</pre></label>
-                  </div>
+                  <input type="radio" id="female" value="F" formControlName="parent_sex" class="form-check-input">
+                  <label for="female" class="form-check-label">
+                    <pre style="font-size: 100%;"> Female</pre>
+                  </label>
                 </div>
+              </div>
 
               <div class="col-2 ms-5 my-3 ps-3">
-                <button style="background-color: #00539CFF; color:white;" [disabled]="StudentForm.invalid" class="form-control">Submit</button>
+                <button style="background-color: #00539CFF; color:white;" [disabled]="StudentForm.invalid"
+                  class="form-control">Submit</button>
               </div>
               <!-- <div class="col-2 ms-5 my-3 ps-3">
                 <input type="reset" class="btn btn-primary">
@@ -184,7 +202,7 @@
     </div>
     <div [style.display]="displayTeacDone">
       <form [formGroup]="TeacherForm" (ngSubmit)="onSubmit()">
-        <div class="container col-lg-50 my-2" >
+        <div class="container col-lg-50 my-2">
           <div class="card">
             <div class="row">
               <h1 class="text-center" style="color:#00539CFF ;">Create Account</h1>
@@ -200,12 +218,12 @@
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label for="Phone">Phone
-                    <small *ngIf="tea['Phone'].errors && tea['Phone'].errors['minlength']">
-                      * enter only 11 numbers *
-                    </small>
-                    <small *ngIf="tea['Phone'].errors && tea['Phone'].errors['maxlength']">
-                      * enter only 11 numbers *
-                    </small>
+                  <small *ngIf="tea['Phone'].errors && tea['Phone'].errors['minlength']">
+                    * enter only 11 numbers *
+                  </small>
+                  <small *ngIf="tea['Phone'].errors && tea['Phone'].errors['maxlength']">
+                    * enter only 11 numbers *
+                  </small>
                 </label>
                 <input type="tel" formControlName="Phone" placeholder="enter phone number" class="form-control">
               </div>
@@ -223,7 +241,8 @@
                     </small>
                   </small>
                 </label>
-                <input type="tel" formControlName="National_Id" placeholder="enter national id or passport id" class="form-control" required>
+                <input type="tel" formControlName="National_Id" placeholder="enter national id or passport id"
+                  class="form-control" required>
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label>Address</label>
@@ -237,7 +256,8 @@
                     </small>
                   </small>
                 </label>
-                <input type="date" formControlName="birth_date" placeholder="enter birth date" class="form-control" required>
+                <input type="date" formControlName="birth_date" placeholder="enter birth date" class="form-control"
+                  required>
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label for="Sex" class="col-4">Gender
@@ -249,9 +269,13 @@
                 </label>
                 <div>
                   <input type="radio" id="male" value="M" formControlName="Sex" class="form-check-input col-2">
-                  <label for="male" class="form-check-label"> <pre style="font-size: 100%;"> Male </pre></label>
+                  <label for="male" class="form-check-label">
+                    <pre style="font-size: 100%;"> Male </pre>
+                  </label>
                   <input type="radio" id="female" value="F" formControlName="Sex" class="form-check-input">
-                  <label for="female" class="form-check-label"><pre style="font-size: 100%;"> Female</pre></label>
+                  <label for="female" class="form-check-label">
+                    <pre style="font-size: 100%;"> Female</pre>
+                  </label>
                 </div>
               </div>
               <div class="teacher" [style.display]="displayTeacDone">
@@ -263,7 +287,8 @@
                       </small>
                     </small>
                   </label>
-                  <input type="text" formControlName="Sub" placeholder="enter his subject" class="form-control" required>
+                  <input type="text" formControlName="Sub" placeholder="enter his subject" class="form-control"
+                    required>
                 </div>
                 <div class="col-5 ms-5 mt-3 ps-1">
                   <label for="Experience">Experience
@@ -273,11 +298,13 @@
                       </small>
                     </small>
                   </label>
-                  <input type="text" formControlName="Experience" placeholder="enter his experience" class="form-control" required>
+                  <input type="text" formControlName="Experience" placeholder="enter his experience"
+                    class="form-control" required>
                 </div>
               </div>
               <div class="col-2 ms-5 my-3 ps-3">
-                <button style="background-color: #00539CFF; color:white;" [disabled]="TeacherForm.invalid" class="form-control">Submit</button>
+                <button style="background-color: #00539CFF; color:white;" [disabled]="TeacherForm.invalid"
+                  class="form-control">Submit</button>
               </div>
             </div>
           </div>
@@ -286,7 +313,7 @@
     </div>
     <div [style.display]="displayStafDone">
       <form [formGroup]="StaffForm" (ngSubmit)="onSubmit()">
-        <div class="container col-lg-50 my-2" >
+        <div class="container col-lg-50 my-2">
           <div class="card">
             <div class="row">
               <h1 class="text-center" style="color:#00539CFF ;">Create Account</h1>
@@ -302,12 +329,12 @@
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label for="Phone">Phone
-                    <small *ngIf="staf['Phone'].errors && staf['Phone'].errors['minlength']">
-                      * enter only 11 numbers *
-                    </small>
-                    <small *ngIf="staf['Phone'].errors && staf['Phone'].errors['maxlength']">
-                      * enter only 11 numbers *
-                    </small>
+                  <small *ngIf="staf['Phone'].errors && staf['Phone'].errors['minlength']">
+                    * enter only 11 numbers *
+                  </small>
+                  <small *ngIf="staf['Phone'].errors && staf['Phone'].errors['maxlength']">
+                    * enter only 11 numbers *
+                  </small>
                 </label>
                 <input type="tel" formControlName="Phone" placeholder="enter phone number" class="form-control">
               </div>
@@ -325,7 +352,8 @@
                     </small>
                   </small>
                 </label>
-                <input type="tel" formControlName="National_Id" placeholder="enter national id or passport id" class="form-control" required>
+                <input type="tel" formControlName="National_Id" placeholder="enter national id or passport id"
+                  class="form-control" required>
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label>Address</label>
@@ -339,7 +367,8 @@
                     </small>
                   </small>
                 </label>
-                <input type="date" formControlName="birth_date" placeholder="enter birth date" class="form-control" required>
+                <input type="date" formControlName="birth_date" placeholder="enter birth date" class="form-control"
+                  required>
               </div>
               <div class="col-5 ms-5 mt-3 ps-3">
                 <label for="Sex" class="col-4">Gender
@@ -351,9 +380,13 @@
                 </label>
                 <div>
                   <input type="radio" id="male" value="M" formControlName="Sex" class="form-check-input col-2">
-                  <label for="male" class="form-check-label"> <pre style="font-size: 100%;"> Male </pre></label>
+                  <label for="male" class="form-check-label">
+                    <pre style="font-size: 100%;"> Male </pre>
+                  </label>
                   <input type="radio" id="female" value="F" formControlName="Sex" class="form-check-input">
-                  <label for="female" class="form-check-label"><pre style="font-size: 100%;"> Female</pre></label>
+                  <label for="female" class="form-check-label">
+                    <pre style="font-size: 100%;"> Female</pre>
+                  </label>
                 </div>
               </div>
               <div class="staff" [style.display]="displayStafDone">
@@ -365,11 +398,13 @@
                       </small>
                     </small>
                   </label>
-                  <input type="text" formControlName="Job" placeholder="enter his roles in school" class="form-control" required>
+                  <input type="text" formControlName="Job" placeholder="enter his roles in school" class="form-control"
+                    required>
                 </div>
               </div>
               <div class="col-2 ms-5 my-3 ps-3">
-                <button style="background-color: #00539CFF; color:white;" [disabled]="StaffForm.invalid" class="form-control">Submit</button>
+                <button style="background-color: #00539CFF; color:white;" [disabled]="StaffForm.invalid"
+                  class="form-control">Submit</button>
               </div>
             </div>
           </div>
@@ -384,5 +419,22 @@
       <option value="" [disabled]="true"> Select which one</option>
       <option *ngFor="let c of person" [value]="c?.name">{{ c?.name }}</option>
     </select>
+  </div>
+</div>
+
+
+<div *ngIf="displaybuttom" class="term">
+  <h3>Term is finished</h3>
+  <p>click here to transfer all the succeeded students to the next term</p>
+  <button (click)="transferTerm()" style="background-color: #00539CFF; color:white;" class="form-control w-25 m-auto">
+    Term is finished
+  </button>
+
+  <div class="error w-50 my-2" [style.display]="displayAlert">
+    <p>It can't happen right now</p>
+  </div>
+
+  <div class="done w-50 my-2" [style.display]="displayDone">
+    <p>It is successfully transfered</p>
   </div>
 </div>

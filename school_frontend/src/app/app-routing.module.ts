@@ -11,8 +11,18 @@ import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 import { SetGradesComponent } from './set-grades/set-grades.component';
 import { ShowGradesComponent } from './show-grades/show-grades.component';
+import { QuizGradeComponent } from './quiz-grade/quiz-grade.component';
+import { QuizDoneComponent } from './quiz-done/quiz-done.component';
+import { DiscussionStudentComponent } from './discussion-student/discussion-student.component';
+import { DiscussionTeacherComponent } from './discussion-teacher/discussion-teacher.component';
+import { ShowFeesComponent } from './show-fees/show-fees.component';
+import { SetFeesComponent } from './set-fees/set-fees.component';
 
 const routes: Routes = [
+  {path:'quiz_grade',component:QuizGradeComponent},
+  {path:'quiz_done',component:QuizDoneComponent},
+  {path:'set_fees',component:SetFeesComponent},
+  {path:'show_fees',component:ShowFeesComponent},
   {path:'show_grades',component:ShowGradesComponent},
   {path:'set_grades',component:SetGradesComponent},
   {path:'set_examsTable',component:SetExamTableComponent},
@@ -24,6 +34,8 @@ const routes: Routes = [
   {path:'log',component:LogInComponent},
   {path:'new_Quiz',component:NewQuizComponent},
   {path:'Quiz',component:QuizComponent},
+  {path:'DiscussionS',component:DiscussionStudentComponent},
+  {path:'DiscussionT',component:DiscussionTeacherComponent},
   {path:'',component:LogInComponent}
 ];
 

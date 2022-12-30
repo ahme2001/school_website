@@ -17,6 +17,15 @@ import { SetScheduleComponent } from './set-schedule/set-schedule.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 import { SetGradesComponent } from './set-grades/set-grades.component';
 import { ShowGradesComponent } from './show-grades/show-grades.component';
+import { QuizDoneComponent } from './quiz-done/quiz-done.component';
+import { QuizGradeComponent } from './quiz-grade/quiz-grade.component';
+
+import { DiscussionStudentComponent } from './discussion-student/discussion-student.component';
+import { DiscussionTeacherComponent } from './discussion-teacher/discussion-teacher.component';
+
+import { ShowFeesComponent } from './show-fees/show-fees.component';
+import { SetFeesComponent } from './set-fees/set-fees.component';
+
 
 
 
@@ -34,7 +43,14 @@ import { ShowGradesComponent } from './show-grades/show-grades.component';
     SetExamTableComponent,
     ShowExamTableComponent,
     SetScheduleComponent,
-    ShowScheduleComponent
+    ShowScheduleComponent,
+    QuizDoneComponent,
+    QuizGradeComponent
+    DiscussionStudentComponent,
+    DiscussionTeacherComponent,
+    ShowFeesComponent,
+    SetFeesComponent
+
   ],
   imports: [
     BrowserModule,
