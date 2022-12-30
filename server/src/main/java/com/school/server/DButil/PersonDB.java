@@ -1,7 +1,7 @@
 package com.school.server.DButil;
 
+import com.school.server.Config.AesEncryption;
 import com.school.server.model.Person;
-import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-@Repository
 public class PersonDB {
     private Connection connection;
 
@@ -30,17 +29,20 @@ public class PersonDB {
     public String getPass(String id){
         String pass = null;
         try {
-            PreparedStatement statement = connection.prepareStatement("select password from person where id = " + id);
+            PreparedStatement statement = connection.prepareStatement("select password from PERSON where id = " + id);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 pass = resultSet.getString(1);
+                AesEncryption aes = new AesEncryption();
+                pass = aes.decrypt(pass);
             }
+            System.out.println(pass);
         } catch (SQLException e) {
             return null;
         }
         return pass;
     }
-    
+
     public boolean getInfo(String ID, Person person){
         try {
             PreparedStatement statement = connection.prepareStatement("select * from PERSON where Id = " + ID);
@@ -58,7 +60,6 @@ public class PersonDB {
         }
         return true;
     }
-
     public Vector<String> getAllChildrenName(Vector<String> childrenIds){
         Vector<String> childrenNames = new Vector<>();
         for(int i=0;i<childrenIds.size();i++){

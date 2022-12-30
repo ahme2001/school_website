@@ -1,5 +1,7 @@
 package com.school.server.model;
 
+import com.school.server.Config.AesEncryption;
+
 public abstract class Person {
     String id;
     String Address;
@@ -73,8 +75,9 @@ public abstract class Person {
     public abstract String ToStringSpecific();
     public abstract String generateId();
     public  String generatePassword(){
-        return "@"+this.National_Id;
+        AesEncryption aes = new AesEncryption();
+        String encriptValue = aes.encrypt("@"+this.National_Id);
+        return encriptValue;
     }
 
 }
-
