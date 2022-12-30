@@ -5,6 +5,14 @@ import com.school.server.DButil.ParentDB;
 public class Parent extends Person{
     String P_id;
     String Job;
+    public Parent(String p_id, String job) {
+        P_id = p_id;
+        Job = job;
+    }
+
+    public Parent() {
+    }
+
 
     public String getP_id() {
         return P_id;

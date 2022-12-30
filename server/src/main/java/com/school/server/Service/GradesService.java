@@ -5,10 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.school.server.DButil.StaffDB;
 import com.school.server.DButil.StudentDB;
 
-
-import com.school.server.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;

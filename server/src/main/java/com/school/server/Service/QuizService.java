@@ -6,14 +6,10 @@ import com.school.server.gson.QuizQuestions;
 import com.school.server.gson.QuizRes;
 
 import com.school.server.gson.TeacherQuizzes;
-import com.school.server.model.Quiz;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-import java.sql.Connection;
 import java.util.HashMap;
 
 @Service
@@ -78,4 +74,3 @@ public class QuizService {
         return quizDB.getQuizResults(QId);
     }
 }
-

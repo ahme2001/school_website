@@ -13,6 +13,14 @@
       <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/discussion-teacher/discussion-teacher.component.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/discussion-teacher/discussion-teacher.component.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/discussion-teacher/discussion-teacher.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-done/quiz-done.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-done/quiz-done.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-done/quiz-done.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-done/quiz-done.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-grade/quiz-grade.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-grade/quiz-grade.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-grade/quiz-grade.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz-grade/quiz-grade.component.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-fees/set-fees.component.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-fees/set-fees.component.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../school_frontend/src/app/set-fees/set-fees.component.spec.ts" afterDir="false" />
@@ -33,6 +41,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/ParentInfo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/StudentFeesInfo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/StudentName_fees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/TeacherQuizzes.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/Year_Fees.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Fees.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties~merged" afterDir="false" />
@@ -41,7 +50,9 @@
       <change beforePath="$PROJECT_DIR$/../SWE_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SWE_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/new-quiz/new-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/new-quiz/new-quiz.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/new-quiz/new-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/new-quiz/new-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/quiz/quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/quiz/quiz.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../school_frontend/src/app/sidebar/sidebar.component.ts" afterDir="false" />
@@ -52,6 +63,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/GradesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/GradesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/QuizController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/profileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/Controller/profileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/ClassTableDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/ClassTableDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/EnrollmentDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/DButil/EnrollmentDB.java" afterDir="false" />
@@ -72,16 +84,16 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/gson/QuizQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/QuizQuestions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/gson/SubjectsInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/SubjectsInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/gson/Year_Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/gson/Year_Code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/DO_QUIZ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/DO_QUIZ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Parent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Quiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Staff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/school/server/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/school/server/model/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/CreateAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/CreateAccountTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/GradesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/GradesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/profileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/profileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/testLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/testLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/testQuiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/testQuiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/school/server/testSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/school/server/testSchedule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
@@ -126,7 +138,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/term7/SWE/school_website"
   }
 }]]></component>
   <component name="RunManager" selected="JUnit.DiscussionTest (1)">

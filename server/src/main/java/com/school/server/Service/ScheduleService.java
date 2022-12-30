@@ -11,11 +11,8 @@ import com.school.server.model.ClassTable;
 import com.school.server.model.Student;
 import com.school.server.model.Teacher;
 import com.school.server.model.TeacherTable;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
-
 @Service
 public class ScheduleService {
 

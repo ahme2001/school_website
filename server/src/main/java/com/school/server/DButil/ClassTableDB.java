@@ -5,7 +5,6 @@ import com.school.server.gson.Day_Lecture;
 import com.school.server.gson.Lectures;
 import com.school.server.model.ClassTable;
 import org.springframework.stereotype.Repository;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -9,6 +9,12 @@ public class Staff extends Person {
     public String getS_id() {
         return S_id;
     }
+    public Staff(String s_id, String job) {
+        S_id = s_id;
+        Job = job;
+    }
+    public Staff() {
+    }
 
     public void setS_id(String s_id) {
         S_id = s_id;
