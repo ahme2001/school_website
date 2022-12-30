@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Vector;
+
 @Repository
 public class StudentDB {
     private Connection connection;
@@ -108,6 +110,7 @@ public class StudentDB {
         }
         return mapGrades;
     }
+
     public Student getStudent(String ID){
         Student student = null;
         try {
@@ -160,7 +163,7 @@ public class StudentDB {
             System.out.println("33333   "+ e);
             return false;
         }
-        return true ;
+        return true;
     }
     public boolean IsEnd(){
         // check if all students are available to update
@@ -254,5 +257,32 @@ public class StudentDB {
         }catch (SQLException e) {
             System.out.println(e);
         }
+    }
+    public String getClass(String ID) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("select Class_Id from STUDENT where St_Id = " + ID);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            return resultSet.getString(1);
+        }catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+    public Vector<String> getAllChildrenIds(String P_Id){
+        Vector<String> children = new Vector<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select St_Id from STUDENT where P_Id = " + P_Id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                String s = resultSet.getString(1);
+                children.add(s);
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        }
+        return children;
     }
 }

@@ -9,6 +9,8 @@ import com.school.server.gson.ExamTableStudentInfo;
 import com.school.server.gson.SubjectsInfo;
 import com.school.server.gson.Year_Code;
 import com.school.server.model.Student;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,21 +19,27 @@ import java.util.List;
 @Service
 public class ExamTableService {
 
+    @Autowired
+    private StudentDB studentDB;
+
+    @Autowired
+    private EnrollmentDB enrollmentDB;
+
+    @Autowired
+    private SubDB subDB;
+
     public String getStudentExamTable(String input){
         ExamTableStudentInfo info = getInfo(input);
         String id = info.getId();
 
         // check if this student already exist
-        StudentDB studentDB = new StudentDB();
         Student student = studentDB.getStudent(id);
         if(student == null) return null;
 
         // get the subjects that are taken by this student
-        EnrollmentDB enrollmentDB = new EnrollmentDB();
         List<String> studentSubjectsIDs = enrollmentDB.getStudentSubject(id);
 
         // get student table
-        SubDB subDB = new SubDB();
         return new Gson().toJson(subDB.getSubjectInfo(studentSubjectsIDs));
 
     }
@@ -39,7 +47,7 @@ public class ExamTableService {
     public boolean setStudentExamTable(String input){
         SubjectsInfo[] subjectsInfoList = new Gson().fromJson(input,SubjectsInfo[].class);
 
-        SubDB subDB = new SubDB();
+        // update the table in the database
         return subDB.updateExamDates(subjectsInfoList);
     }
 
@@ -47,7 +55,6 @@ public class ExamTableService {
         Year_Code year_code = getYearCode(input);
         String code = year_code.getCode();
 
-        SubDB subDB = new SubDB();
         return new Gson().toJson(subDB.getAllSubjects(code));
     }
 

@@ -3,9 +3,18 @@ package com.school.server.model;
 import com.school.server.DButil.TeacherDB;
 
 public class Teacher extends Person{
-    String Teacher_id;
-    String Experience;
-    String Sub;
+    private String Teacher_id;
+    private String Experience;
+    private String Sub;
+
+    public Teacher(String teacher_id, String experience, String sub) {
+        this.Teacher_id = teacher_id;
+        this.Experience = experience;
+        this.Sub = sub;
+    }
+
+    public Teacher() {
+    }
 
     public String getTeacher_id() {
         return Teacher_id;
@@ -49,10 +58,19 @@ public class Teacher extends Person{
                 "\"" + this.Experience + "\"," +
                 "\"" + this.Sub + "\"" ;
     }
+
     @Override
     public String generateId() {
         TeacherDB Tdb = new TeacherDB();
         int count = Tdb.getCount();
+        String c = Integer.toString(count);
+        while(c.length() < 4)
+            c = "0"+c;
+        return "0303" + c;
+    }
+
+    public String generateTeacherId(TeacherDB teacherDB){
+        int count = teacherDB.getCount();
         String c = Integer.toString(count);
         while(c.length() < 4)
             c = "0"+c;

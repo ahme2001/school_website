@@ -2,12 +2,15 @@ package com.school.server.model;
 
 import com.school.server.DButil.QuizDB;
 
+import java.util.Date;
+
 public class Quiz {
     private String Quiz_Id ;
+    private String teacher_Id ;
     private String name ;
     private String endTime ;
     private String Class_Id ;
-
+    private String maxGrade ;
 
     public void setQuiz_Id(String quiz_Id) {
         Quiz_Id = quiz_Id;
@@ -25,16 +28,12 @@ public class Quiz {
         this.name = name;
     }
 
-    public String getClass_Id() {
-        return Class_Id;
+    public void setMaxGrade(String maxGrade) {
+        this.maxGrade = maxGrade;
     }
 
-    public String getQuiz_Id() {
-        return Quiz_Id;
-    }
-
-    public String getEndTime() {
-        return endTime;
+    public void setTeacher_Id(String teacher_Id) {
+        this.teacher_Id = teacher_Id;
     }
 
     public String getName() {
@@ -47,8 +46,11 @@ public class Quiz {
     public String ToString() {
         return "\"" + this.Quiz_Id + "\"," +
                 "\"" + this.name + "\"," +
+                "\"" + this.teacher_Id + "\"," +
                 "\"" + this.endTime + "\"," +
-                "\"" + this.Class_Id + "\"" ;
+                "\"" + this.Class_Id + "\"," +
+                "\"" + this.maxGrade + "\""
+                ;
     }
 
 }

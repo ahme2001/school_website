@@ -31,7 +31,19 @@ public class QuizController {
     public String getResult(@RequestBody String input){
         return new QuizService().calcRes(input);
     }
+    @PostMapping("getMyGrades")
+    public String getPrevResult(@RequestBody String input){
+        return new QuizService().getPrevResult(input);
+    }
+    @PostMapping("GetClassQuizzes")
+    public String getClassQuizzes(@RequestBody String input){
+        return new QuizService().getClassQuizzes(input);
+    }
 
+    @PostMapping("ShowStudentsGrades")
+    public String getQuizResults(@RequestBody String input){
+        return new QuizService().getQuizResults(input);
+    }
 
 
 }

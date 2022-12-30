@@ -1,6 +1,6 @@
 <app-sidebar></app-sidebar>
 <div *ngIf="f1">
-      <h1 class="text-center">The Quizes</h1>
+      <h1 class="text-center">The Quizzes</h1>
       <table class="text-center w-50 m-auto table table-striped">
         <thead>
           <tr>
@@ -18,7 +18,7 @@
             <td><button (click)="findingQuiz(item.Id)" class="btn btn-secondary my-1">Enter this quiz</button></td>
           </tr>
         </tbody>
-      </table>  
+      </table>
 </div>
 
 
@@ -33,17 +33,17 @@
             <!-- <p><b>Question {{i+1}} is:</b> {{item.question}}</p> -->
             <fieldset>
                 <legend><p><b>Question {{i+1}}:  </b>{{item.question}}</p></legend>
-                
+
                 <div>
                   <input type="radio" id="ch1" value="1" name = {{i}} [(ngModel)]="value[i]">
                   <label for="ch1">{{item.choice_1}}</label>
                 </div>
-            
+
                 <div>
                   <input type="radio" id="ch2" value="2" name = {{i}} [(ngModel)]="value[i]">
                   <label for="ch2">{{item.choice_2}}</label>
                 </div>
-            
+
                 <div>
                   <input type="radio" id="ch3" value="3" name = {{i}} [(ngModel)]="value[i]">
                   <label for="ch3">{{item.choice_3}}</label>
@@ -54,8 +54,8 @@
                     <label for="ch4">{{item.choice_4}}</label>
                   </div>
             </fieldset>
-            
-            
+
+
             <hr *ngIf="i == questions.length">
         </div>
         <div class="error" [style.display]="displayAlert">

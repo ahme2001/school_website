@@ -11,21 +11,31 @@ import com.school.server.model.ClassTable;
 import com.school.server.model.Student;
 import com.school.server.model.Teacher;
 import com.school.server.model.TeacherTable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 @Service
 public class ScheduleService {
+
+    @Autowired
+    private StudentDB studentDB;
+
+    @Autowired
+    private TeacherDB teacherDB;
+
+    @Autowired
+    private ClassTableDB classTableDB;
+
+    @Autowired
+    private TeacherTableDB teacherTableDB;
 
     public String getStudentTable(String input){
         schedulePersonInfo info = getInfo(input);
         String id = info.getId();
-        StudentDB studentDB = new StudentDB();
         Student student = studentDB.getStudent(id);
         if(student == null) return null;
         String classId = student.getClass_Id();
 
         // get table from class table with the class id
-        ClassTableDB classTableDB = new ClassTableDB();
         ClassTable[] classTable = classTableDB.getClassTable(classId);
 
         // format the gson to the front
@@ -37,12 +47,10 @@ public class ScheduleService {
     }
 
     public boolean setStudentTable(String input){
-
         // split the json
         ClassTableSetting classTableSetting = splitClassTable(input);
 
         // insert the table to the database
-        ClassTableDB classTableDB = new ClassTableDB();
         return classTableDB.insertTable(classTableSetting);
     }
 
@@ -51,12 +59,10 @@ public class ScheduleService {
         String id = info.getId();
 
         // check if the id exists in teacher table
-        TeacherDB teacherDB = new TeacherDB();
         Teacher teacher = teacherDB.getTeacher(id);
         if(teacher == null) return null;
-        
+
         // get table from teacher table with the id
-        TeacherTableDB teacherTableDB = new TeacherTableDB();
         TeacherTable[] teacherTables = teacherTableDB.getTeacherTable(id);
 
         TeacherTableSetting teacherTable = getTeacherTableObjects(teacherTables);
@@ -71,7 +77,6 @@ public class ScheduleService {
         TeacherTableSetting teacherTableSetting = splitTeacherTable(input);
 
         // insert the table to the database
-        TeacherTableDB teacherTableDB = new TeacherTableDB();
         return teacherTableDB.insertTable(teacherTableSetting);
 
     }
