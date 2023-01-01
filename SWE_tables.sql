@@ -86,8 +86,7 @@ PRIMARY KEY (Sub_Id)
 CREATE TABLE ENROLMENT (
 Sub_Id nchar(14) NOT NULL ,
 St_Id nchar(14) NOT NULL ,
-Term_Id nchar(14) NOT NULL ,
-Date_Flag boolean , 
+Term_Id nchar(14) NOT NULL , 
 Year_Works int ,
 Exam_grade int , 
 Grade_Flag boolean,
@@ -101,10 +100,13 @@ foreign Key ( Term_Id) REFERENCES TERM (Term_Id) on delete cascade on update cas
 CREATE TABLE QUIZ (
 Quiz_Id nchar(14) NOT NULL ,
 name nvarchar(1000) not null,
-endTime int not null,
+teacher_Id nchar(14) NOT NULL ,
+endTime nvarchar(150) not null,
 Class_Id nchar(14) NOT NULL ,
+maxGrade nchar(14) NOT NULL ,
 PRIMARY KEY (Quiz_Id , Class_Id) ,
-foreign Key ( Class_Id) REFERENCES CLASS (Class_Id) on delete cascade on update cascade
+foreign Key ( Class_Id) REFERENCES CLASS (Class_Id) on delete cascade on update cascade,
+foreign Key ( teacher_Id) REFERENCES TEACHER (Teacher_Id) on delete cascade on update cascade
 );
 
 CREATE TABLE Question(
@@ -124,7 +126,7 @@ CREATE TABLE DO_QUIZ (
 Quiz_Id nchar(14) NOT NULL ,
 St_Id nchar(14) NOT NULL ,
 grade int ,
-SubmissionTime date,
+SubmissionTime nchar(100),
 PRIMARY KEY (Quiz_Id , St_Id) ,
 foreign Key ( St_Id) REFERENCES STUDENT (St_Id) on delete cascade on update cascade ,
 foreign Key ( Quiz_Id) REFERENCES QUIZ (Quiz_Id) on delete cascade on update cascade
@@ -157,3 +159,48 @@ Lec_6  nvarchar(30) ,
 PRIMARY KEY (Teacher_Id,Day) ,
 Foreign Key ( Teacher_Id) REFERENCES TEACHER (Teacher_Id) on delete cascade on update cascade
 );
+
+CREATE TABLE Discussion (
+post_id nCHAR(14) NOT NULL ,
+parent_post_id nCHAR(14),
+content Text ,
+post_date nCHAR(14),
+person_id nCHAR(14),
+class_id nCHAR(14),
+PRIMARY KEY (Post_Id) ,
+foreign Key (person_id) REFERENCES PERSON (Id) on delete cascade on update cascade ,
+foreign Key (class_id) REFERENCES CLASS (Class_Id) on delete cascade on update cascade ,
+foreign Key (parent_post_id) REFERENCES Discussion (post_id) on delete cascade on update cascade
+);
+
+INSERT INTO person 
+VALUES ('01010000', 'elmontaza', '01032901480', 'st1', '30303030303030', 'male','123456789'),
+ ('01010001', 'El-ma3mora', '01032901480', 'st2', '30303030303031', 'female','123456789'),
+('02020000', 'AbuQir', '01032901480', 'p1', '30303030303032', 'male','123456789'),
+('02020001', 'El-shatby', '01032901480', 'p2', '30303030303033', 'female','123456789'),
+('03030000', 'sharm', '01032901480', 'teacher1', '30303030303034', 'male','123456789'),
+('03030001', 'qna', '01032901480', 'teacher2', '30303030303035', 'female','123456789');
+INSERT INTO teacher 
+VALUES ('03030000', 'A', 'math'),
+('03030001', 'B', 'Arabic');
+
+INSERT INTO class
+VALUES ('10', '1/1', '03030000'),
+('20', '1/2', '03030000'),
+('30', '2/1', '03030000'),
+('40', '2/2', '03030000'),
+('50', '3/1', '03030000');
+
+INSERT INTO `school`.`teach` (`Class_Id`, `Teacher_Id`)
+VALUES ('10', '03030000'),
+('20', '03030001'),
+('30', '03030000'),
+('40', '03030001'),
+('50', '03030000');
+
+INSERT INTO parent VALUES ('02020000', 'eng'),
+('02020001', 'doc');
+
+INSERT INTO student(`St_Id`, `Class_Id`, `St_Term_Id`, `Curr_Term_Id`, `P_id`) 
+VALUES ('01010000', '10', '1', '1', '02020000'),
+ ('01010001', '20', '1', '4', '02020001')

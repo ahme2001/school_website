@@ -36,12 +36,12 @@ export class NewQuizComponent implements OnInit {
     "Name": []
   }
   constructor(private _router: Router, private http: HttpClient) {
-    let id = localStorage.getItem("Id")
-    console.log(id);
-    
+    let id = localStorage.getItem("Id").replace("\"","").replace("\"","")
+    console.log(id)
+    this.teacherid = id;
     this.sendRequestClass(id)
-    
   }
+  teacherid = ""
   answer = ""
   sendRequestClass(x: string) {
     if (x != '') {
@@ -62,8 +62,7 @@ export class NewQuizComponent implements OnInit {
             this.classes.push(c)
           }
           console.log(this.classes);
-          
-          
+
         }
           , (error) => {
             console.log(error);
@@ -72,7 +71,7 @@ export class NewQuizComponent implements OnInit {
   }
   sendRequestSubmit(x: string) {
     console.log(x);
-    
+
     if (x != '') {
       const headers = new HttpHeaders({ 'Content-Type': "application/text" })
       this.http.post("http://localhost:8070/School/setQuiz", x,
@@ -80,7 +79,7 @@ export class NewQuizComponent implements OnInit {
         .subscribe(response => {
           this.answer = response;
           console.log(this.answer);
-          
+
         }
           , (error) => {
             console.log(error);
@@ -112,6 +111,7 @@ export class NewQuizComponent implements OnInit {
 
   t = {
     "classId": "",
+    "teacher_Id" : "",
     "endDate": "",
     "Qname":"",
     "questions": [],
@@ -121,7 +121,7 @@ export class NewQuizComponent implements OnInit {
     "choice4": [],
     "answers": []
   }
-  
+
   submit() {
     if (this.questions.length != 0) {
       let counter = 0;
@@ -131,7 +131,7 @@ export class NewQuizComponent implements OnInit {
       }
       else {
         // console.log(this.chosenClass);
-        
+
         this.t.classId = this.chosenClass
         this.t.endDate = this.endDate
         this.t.Qname = this.QuizTitle
@@ -144,11 +144,10 @@ export class NewQuizComponent implements OnInit {
           this.t.answers[i] = this.questions[i].solution
           counter++;
         }
-        
-        console.log(JSON.stringify(this.t));
+        this.t.teacher_Id = this.teacherid.replace("\"","").replace("\"","");
         this.sendRequestSubmit(JSON.stringify(this.t))
         this.questions = [
-         ]
+        ]
         this.displayAlert = "None"
       }
     }
@@ -178,7 +177,7 @@ export class NewQuizComponent implements OnInit {
       "Id": [],
       "Name": []
     }
-  
+
   }
   ngOnInit(): void {
   }
