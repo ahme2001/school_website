@@ -24,13 +24,3 @@ There are 4 types of users in the app. school staff, Teachers, Students and pare
 * Auto grading for the quizzes.
 * Teachers and students can add comments on all types of posts.
 * Parents can see the fees of their children.
-
-## Screenshots:
-### Adding Users
-
-## Thanks to:
-* [mohamed salama](https://www.github.com/m13salama)
-* [michael samir](https://www.github.com/michaelsamir75)
-* [mohamed aiad](https://www.github.com/mohamedaiad)
-* [ahmed abdallah](https://www.github.com/ahme2001)
-* [mohamed_mostafa](https://www.github.com/mohamed_euler)
